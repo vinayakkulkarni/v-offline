@@ -15,16 +15,16 @@ module.exports = {
             required: false
         }
     },
-    data() {
+    data: function() {
         return {
             state: {
                 online: navigator.onLine,
             },
         };
     },
-    mounted() {
+    mounted: function() {
         const vm = this;
-        window.addEventListener('load', () => {
+        window.addEventListener('load', function() {
             vm.updateOnlineStatus();
             window.addEventListener('online', vm.updateOnlineStatus);
             window.addEventListener('offline', vm.updateOnlineStatus);

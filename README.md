@@ -5,6 +5,7 @@
 
 + This is [on GitHub](https://github.com/vinayakkulkarni/v-offline)  so let me know if I've b0rked it somewhere, give me a star :star: if you like it :beers:
 
++ Demo here -> [💯 Webpackbin Link](https://goo.gl/Pq6Tky)
 ## Requirements
 
 * [Vue.js](https://vuejs.org/) 2.x

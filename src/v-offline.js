@@ -1,7 +1,7 @@
 module.exports = {
     template: '<div>\
-        <div :class="onlineClass" v-if="state.online"><slot="online"></slot></div>\
-        <div :class="offlineClass" v-if="!state.online"><slot="offline"></slot></div>\
+        <div :class="onlineClass" v-if="state.online"><slot name="online"></slot></div>\
+        <div :class="offlineClass" v-if="!state.online"><slot name="offline"></slot></div>\
     </div>',
     props: {
         onlineClass: {

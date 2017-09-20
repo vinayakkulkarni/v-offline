@@ -23,4 +23,12 @@ describe('VueDetectOffline', function() {
             done();
         });
     });
+
+    it('has correct DOM structure', function() {
+        const vm = getComponent(VDetectOffline, {
+            data: exampleData
+        });
+
+        expect(vm.$el.nodeName).toBe('DIV');
+    });
 });

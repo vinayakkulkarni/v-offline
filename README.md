@@ -20,24 +20,20 @@ yarn add v-offline
 
 Register the component globally:
 ```javascript
-Vue.component('offline', require('v-offline'));
+Vue.component('detectNetwork', require('v-offline'));
 ```
 Or use locally
 ```javascript
-import offline from 'v-offline';
+import detectNetwork from 'v-offline';
 ```
 
-## :white_check_mark: Example :four_leaf_clover:
+## :white_check_mark: Example 1 :four_leaf_clover:
 
 ```html
-<offline v-on:detected-condition="detected">
-	<div slot="online">
-		Your Online Content!
-	</div>
-	<div slot="offline">
-		Your Offline Content!
-	</div>
-</offline>
+<detect-network v-on:detected-condition="detected">
+	<div slot="online">Your Online Content!</div>
+	<div slot="offline">Your Offline Content!</div>
+</detect-network>
 ```
 
 ```javascript
@@ -54,6 +50,16 @@ Vue.component('example-component', {
 	}
 });
 ```
+
+## :white_check_mark: Example 2 :four_leaf_clover:
+
+```html
+<detect-network>
+	<div slot="online">Your Online Content!</div>
+	<div slot="offline">Your Offline Content!</div>
+</detect-network>
+```
+
 ### :white_check_mark: :book: Props
 
 | Name | Type | Required? | Description |

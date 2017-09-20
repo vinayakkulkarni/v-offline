@@ -6,12 +6,10 @@ module.exports = {
     props: {
         onlineClass: {
             type: String,
-            default: 'ui success message',
             required: false
         },
         offlineClass: {
             type: String,
-            default: 'ui error message',
             required: false
         }
     },

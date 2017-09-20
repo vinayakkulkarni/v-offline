@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/vinayakkulkarni/v-offline.svg?branch=master)](https://travis-ci.org/vinayakkulkarni/v-offline)
-
-# V-Offline :zap:
+# V-Offline :zap: [![Build Status](https://travis-ci.org/vinayakkulkarni/v-offline.svg?branch=master)](https://travis-ci.org/vinayakkulkarni/v-offline) <a href="https://github.com/vinayakkulkarni/v-offline/releases/latest"><img src="https://img.shields.io/github/release/vinayakkulkarni/v-offline.svg" alt="github release"></a> <a href="http://npmjs.org/package/v-offline"><img src="https://img.shields.io/npm/v/v-offline.svg" alt="npm version"></a> <a href="https://travis-ci.org/vinayakkulkarni/v-offline"><img src="https://travis-ci.org/vinayakkulkarni/v-offline.svg?branch=master" alt="Build Status"></a> <a href="http://npm-stat.com/charts.html?package=v-offline"><img src="https://img.shields.io/npm/dm/v-offline.svg" alt="npm downloads"></a>
 + Detect offline & online events for your vue app.
 
 + This is [on GitHub](https://github.com/vinayakkulkarni/v-offline)  so let me know if I've b0rked it somewhere, give me a star :star: if you like it :beers:
@@ -58,10 +56,10 @@ Vue.component('example-component', {
 ```
 ### :white_check_mark: :book: Props
 
-| Name | Type | Default | Required? | Description |
-| --- | --- | --- | --- | --- |
-| `onlineClass` | String | `ui success message` | No | Styling the `div` which you want to give if you're online. |
-| `offlineClass` | String | `ui error message` | No | Styling the `div` which you want to give if you're offline. |
+| Name | Type | Required? | Description |
+| --- | --- | --- | --- |
+| `onlineClass` | String | No | Styling the `div` which you want to give if you're online. |
+| `offlineClass` | String | No | Styling the `div` which you want to give if you're offline. |
 
 ### :white_check_mark: :ear: Events
 

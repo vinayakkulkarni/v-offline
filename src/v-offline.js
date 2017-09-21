@@ -1,8 +1,11 @@
 module.exports = {
+    name: 'v-offline',
+
     template: '<div>\
         <div v-bind:class="onlineClass" v-if="state.online"><slot name="online"></slot></div>\
         <div v-bind:class="offlineClass" v-if="!state.online"><slot name="offline"></slot></div>\
     </div>',
+
     props: {
         onlineClass: {
             type: String,
@@ -13,6 +16,7 @@ module.exports = {
             required: false
         }
     },
+
     data: function() {
         return {
             state: {
@@ -20,6 +24,7 @@ module.exports = {
             },
         };
     },
+
     mounted: function() {
         const vm = this;
         window.addEventListener('load', function() {
@@ -28,6 +33,12 @@ module.exports = {
             window.addEventListener('offline', vm.updateOnlineStatus);
         });
     },
+
+    beforeDestroy: function() {
+        window.removeEventListener('online', this.updateOnlineStatus);
+        window.removeEventListener('offline', this.updateOnlineStatus);
+    },
+
     methods: {
         updateOnlineStatus: function() {
             const vm = this;

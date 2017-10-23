@@ -31,23 +31,23 @@ import detectNetwork from 'v-offline';
 
 ```html
 <detect-network v-on:detected-condition="detected">
-	<div slot="online">Your Online Content!</div>
-	<div slot="offline">Your Offline Content!</div>
+  <div slot="online">Your Online Content!</div>
+  <div slot="offline">Your Offline Content!</div>
 </detect-network>
 ```
 
 ```javascript
 Vue.component('example-component', {
-	data() {
-		return {
-			state: null,
-		}
-	},
-	methods: {
-		detected(e) {
-			this.state = e;
-		}
-	}
+  data() {
+    return {
+      state: null,
+    }
+  },
+  methods: {
+    detected(e) {
+      this.state = e;
+    }
+  }
 });
 ```
 
@@ -55,17 +55,17 @@ Vue.component('example-component', {
 
 ```html
 <detect-network>
-	<div slot="online">Your Online Content!</div>
-	<div slot="offline">Your Offline Content!</div>
+  <div slot="online">Your Online Content!</div>
+  <div slot="offline">Your Offline Content!</div>
 </detect-network>
 ```
 
 ### :white_check_mark: :book: Props
 
-| Name | Type | Required? | Description |
+| Name | Type | Required? | Default | Description |
 | --- | --- | --- | --- |
-| `onlineClass` | String | No | Styling the `div` which you want to give if you're online. |
-| `offlineClass` | String | No | Styling the `div` which you want to give if you're offline. |
+| `onlineClass` | String | No | `v-online` | Styling the `div` which you want to give if you're online. |
+| `offlineClass` | String | No | `v-offline` | Styling the `div` which you want to give if you're offline. |
 
 ### :white_check_mark: :ear: Events
 
@@ -74,6 +74,6 @@ Vue.component('example-component', {
 | `detected-condition` | Emits an Boolean value which can be used for multiple purposes in your app. |
 
 
-## NPM :octocat:  
+## NPM :octocat:
 
 [![NPM](https://nodei.co/npm/v-offline.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/v-offline/)

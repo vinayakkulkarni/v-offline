@@ -9,10 +9,12 @@ module.exports = {
     props: {
         onlineClass: {
             type: String,
+            default: 'v-online',
             required: false
         },
         offlineClass: {
             type: String,
+            default: 'v-offline',
             required: false
         }
     },
@@ -42,7 +44,7 @@ module.exports = {
     methods: {
         updateOnlineStatus: function() {
             const vm = this;
-            vm.state.online = navigator.onLine || false;
+            vm.state.online = navigator.onLine;
             vm.$emit('detected-condition', vm.state.online);
         }
     }

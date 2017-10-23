@@ -19,7 +19,7 @@ describe('VueDetectOffline', function() {
         });
 
         vm.$on('detected-condition', function(status) {
-            expect(exampleData.state.online).toBe(true);
+            expect(exampleData.state.online).toBe(navigator.onLine);
             done();
         });
     });

@@ -1,5 +1,5 @@
 const Vue = require('vue');
-const VDetectOffline = require('../src/v-offline.js');
+const VDetectOffline = require('v-offline');
 
 function getComponent(Component, propsData) {
     const Ctor = Vue.extend(Component);

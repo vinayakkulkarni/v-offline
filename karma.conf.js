@@ -53,7 +53,14 @@ module.exports = function(config) {
         browserify: {
             transform: [
                 ['babelify', { presets: ['es2015'] }],
-                ['aliasify', { aliases: { 'vue': 'vue/dist/vue.js' } }]
+                ['aliasify',
+                  {
+                    aliases: {
+                      'vue': 'vue/dist/vue.js',
+                      'v-offline': './dist/v-offline.js'
+                    }
+                  }
+                ]
             ],
             debug: true
         }

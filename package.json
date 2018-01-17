@@ -23,7 +23,7 @@
         "url": "git+https://github.com/vinayakkulkarni/v-offline.git"
     },
     "scripts": {
-        "test": "karma start karma.conf.js",
+        "test": "npm run bundle && karma start karma.conf.js",
         "test-watch": "karma start karma.conf.js --no-single-run",
         "build": "npm run bundle && npm run bundle:min",
         "bundle": "rollup -c build/rollup.conf.js",

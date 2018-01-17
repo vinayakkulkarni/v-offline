@@ -37,7 +37,12 @@
         "karma-phantomjs-launcher": "^1.0.2",
         "karma-spec-reporter": "^0.0.26",
         "phantomjs-prebuilt": "^2.1.14",
-        "vue": "^2.4.4",
+        "rollup": "^0.54.1",
+        "rollup-plugin-babel": "^3.0.3",
+        "rollup-plugin-uglify": "^2.0.1",
+        "rollup-plugin-vue": "^3.0.0",
+        "vue": "^2.5.13",
+        "vue-template-compiler": "^2.5.13",
         "watchify": "^3.8.0"
     },
     "licenses": [

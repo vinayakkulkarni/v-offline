@@ -8,7 +8,8 @@
         "url": "https://vinayak.website"
     },
     "private": false,
-    "main": "src/v-offline.js",
+    "main": "dist/v-offline.min.js",
+    "module": "dist/v-offline.esm.js",
     "keywords": [
         "vuejs",
         "offline",

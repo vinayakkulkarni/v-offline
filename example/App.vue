@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import detectNetwork from '../src/v-offline';
+import detectNetwork from '../src';
 
 export default {
   components: {

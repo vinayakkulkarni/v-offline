@@ -7,9 +7,7 @@ function getComponent(Component, propsData) {
 }
 
 var exampleData = {
-    state: {
-        online: navigator.onLine,
-    },
+    online: navigator.onLine,
 };
 
 describe('VueDetectOffline', function() {
@@ -19,7 +17,7 @@ describe('VueDetectOffline', function() {
         });
 
         vm.$on('detected-condition', function(status) {
-            expect(exampleData.state.online).toBe(true);
+            expect(status).toBe(true);
             done();
         });
     });

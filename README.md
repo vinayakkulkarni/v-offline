@@ -12,7 +12,7 @@
 
 ```bash
 npm install v-offline
-// or
+# or
 yarn add v-offline
 ```
 
@@ -31,23 +31,23 @@ import detectNetwork from 'v-offline';
 
 ```html
 <detect-network v-on:detected-condition="detected">
-	<div slot="online">Your Online Content!</div>
-	<div slot="offline">Your Offline Content!</div>
+  <div slot="online">Your Online Content!</div>
+  <div slot="offline">Your Offline Content!</div>
 </detect-network>
 ```
 
 ```javascript
 Vue.component('example-component', {
-	data() {
-		return {
-			state: null,
-		}
-	},
-	methods: {
-		detected(e) {
-			this.state = e;
-		}
-	}
+  data() {
+    return {
+      state: null,
+    }
+  },
+  methods: {
+    detected(e) {
+      this.state = e;
+    }
+  }
 });
 ```
 
@@ -55,8 +55,8 @@ Vue.component('example-component', {
 
 ```html
 <detect-network>
-	<div slot="online">Your Online Content!</div>
-	<div slot="offline">Your Offline Content!</div>
+  <div slot="online">Your Online Content!</div>
+  <div slot="offline">Your Offline Content!</div>
 </detect-network>
 ```
 

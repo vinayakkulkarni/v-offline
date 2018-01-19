@@ -10,6 +10,9 @@
     "private": false,
     "main": "dist/v-offline.min.js",
     "module": "dist/v-offline.esm.js",
+    "files": [
+        "dist/*"
+    ],
     "keywords": [
         "vuejs",
         "offline",

@@ -1,7 +1,13 @@
 <template>
-  <div>
-    <div :class="onlineClass" v-if="onLine"><slot name="online"/></div>
-    <div :class="offlineClass" v-else><slot name="offline"/></div>
+  <div :class="{onlineClass: onLine, offlineClass: !onLine}">
+    <slot
+      v-if="onLine"
+      name="online"
+    />
+    <slot
+      v-else
+      name="offline"
+    />
   </div>
 </template>
 

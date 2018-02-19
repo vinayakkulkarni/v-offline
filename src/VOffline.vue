@@ -12,6 +12,8 @@
 </template>
 
 <script>
+const EVENTS = ['online', 'offline', 'load'];
+
 export default {
   name: 'v-offline',
   props: {
@@ -28,15 +30,10 @@ export default {
     onLine: navigator.onLine || false,
   }),
   mounted() {
-    window.addEventListener('load', () => {
-      this.updateOnlineStatus();
-      window.addEventListener('online', this.updateOnlineStatus);
-      window.addEventListener('offline', this.updateOnlineStatus);
-    });
+    EVENTS.forEach(event => window.addEventListener(event, this.updateOnlineStatus));
   },
   beforeDestroy() {
-    window.removeEventListener('online', this.updateOnlineStatus);
-    window.removeEventListener('offline', this.updateOnlineStatus);
+    EVENTS.forEach(event => window.removeEventListener(event, this.updateOnlineStatus));
   },
   methods: {
     updateOnlineStatus() {

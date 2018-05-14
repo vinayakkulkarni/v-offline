@@ -41,5 +41,5 @@ export default {
       this.$emit('detected-condition', this.isOnline);
     }
   }
-}
+};
 </script>

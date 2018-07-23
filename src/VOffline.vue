@@ -1,7 +1,7 @@
 <template>
-  <div :class="{onlineClass: onLine, offlineClass: !onLine}">
+  <div :class="{onlineClass: isOnline, offlineClass: !isOnline}">
     <slot
-      v-if="onLine"
+      v-if="isOnline"
       name="online"
     />
     <slot
@@ -27,7 +27,7 @@ export default {
     }
   },
   data: () => ({
-    onLine: navigator.onLine || false,
+    isOnline: navigator.onLine || false,
   }),
   mounted() {
     EVENTS.forEach(event => window.addEventListener(event, this.updateOnlineStatus));

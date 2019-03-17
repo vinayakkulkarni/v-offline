@@ -80,6 +80,17 @@ Vue.component('example-component', {
 | -------------------- | --------------------------------------------------------------------------- |
 | `detected-condition` | Emits an Boolean value which can be used for multiple purposes in your app. |
 
-## NPM :octocat:
+## Contributing
 
-[![NPM](https://nodei.co/npm/v-offline.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/v-offline/)
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a pull request :D
+
+## Author
+
+**v-offline** © [Vinayak](https://github.com/vinayakkulkarni), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by Vinayak Kulkarni with help from contributors ([list](https://github.com/vinayakkulkarni/v-offline/contributors)).
+
+> [vinayak.pw](https://vinayak.pw) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)

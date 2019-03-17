@@ -1,5 +1,5 @@
 <template>
-  <div :class="{onlineClass: isOnline, offlineClass: !isOnline}">
+  <div :class="{ onlineClass: isOnline, offlineClass: !isOnline }">
     <slot
       v-if="isOnline"
       name="online"
@@ -15,15 +15,17 @@
 const EVENTS = ['online', 'offline', 'load'];
 
 export default {
-  name: 'v-offline',
+  name: 'VOffline',
   props: {
     onlineClass: {
       type: String,
-      required: false
+      required: false,
+      default: '',
     },
     offlineClass: {
       type: String,
-      required: false
+      required: false,
+      default: '',
     }
   },
   data: () => ({

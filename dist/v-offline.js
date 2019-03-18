@@ -9,6 +9,11 @@
   var script = {
     name: 'VOffline',
     props: {
+      slotName: {
+        type: String,
+        required: false,
+        default: 'online'
+      },
       onlineClass: {
         type: String,
         required: false,
@@ -25,7 +30,12 @@
         isOnline: navigator.onLine || false
       };
     },
-    mounted: function mounted() {
+    computed: {
+      computedClass: function computedClass() {
+        return this.isOnline ? this.onlineClass : this.offlineClass;
+      }
+    },
+    created: function created() {
       var _this = this;
 
       EVENTS.forEach(function (event) {
@@ -124,7 +134,7 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", { class: { onlineClass: _vm.isOnline, offlineClass: !_vm.isOnline } }, [_vm.isOnline ? _vm._t("online") : _vm._t("offline")], 2);
+    return _c("div", { class: _vm.computedClass }, [_vm._t(_vm.slotName)], 2);
   };
   var __vue_staticRenderFns__ = [];
   __vue_render__._withStripped = true;

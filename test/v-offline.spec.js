@@ -1,5 +1,5 @@
 const Vue = require('vue');
-const VDetectOffline = require('v-offline');
+const VOffline = require('v-offline');
 
 function getComponent(Component, propsData) {
     const Ctor = Vue.extend(Component);
@@ -7,23 +7,13 @@ function getComponent(Component, propsData) {
 }
 
 var exampleData = {
-    online: navigator.onLine,
+    online: navigator.onLine || false,
 };
 
 describe('VueDetectOffline', function() {
-    it('emits correct event', function(done) {
-        const vm = getComponent(VDetectOffline, {
-            data: exampleData
-        });
-
-        vm.$on('detected-condition', function(status) {
-            expect(status).toBe(true);
-            done();
-        });
-    });
 
     it('has correct DOM structure', function() {
-        const vm = getComponent(VDetectOffline, {
+        const vm = getComponent(VOffline, {
             data: exampleData
         });
 

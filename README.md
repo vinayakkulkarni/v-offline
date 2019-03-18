@@ -18,61 +18,79 @@ npm install v-offline
 yarn add v-offline
 ```
 
-CDN: [UNPKG](https://unpkg.com/v-offline/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-offline/dist/)
+CDN: [UNPKG](https://unpkg.com/v-offline/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-offline/dist/) (available as `window.VOffline`)
 
 ## :white_check_mark: Usage :mortar_board:
 
 Register the component globally:
 
 ```javascript
-Vue.component('detectNetwork', require('v-offline'));
+Vue.component('VOffline', require('v-offline'));
 ```
 
 Or use locally
 
 ```javascript
-import detectNetwork from 'v-offline';
+import VOffline from 'v-offline';
 ```
 
 ## :white_check_mark: Example 1 :four_leaf_clover:
 
+### HTML
 ```html
-<detect-network v-on:detected-condition="detected">
-  <div slot="online">Your Online Content!</div>
-  <div slot="offline">Your Offline Content!</div>
-</detect-network>
+<v-offline
+  online-class="online"
+  offline-class="offline"
+  @detected-condition="amIOnline">
+  <template v-slot:[onlineSlot] :slot-name="onlineSlot">
+    ( Online: {{ onLine }} )
+  </template>
+  <template v-slot:[offlineSlot] :slot-name="offlineSlot">
+    ( Online: {{ onLine }} )
+  </template>
+</v-offline>
 ```
 
+### JS
 ```javascript
+import VOffline from 'v-offline';
+
 Vue.component('example-component', {
-  data() {
-    return {
-      state: null,
-    };
+  components: {
+    VOffline
   },
+  data: () => ({
+    onLine: null,
+    onlineSlot: 'online',
+    offlineSlot: 'offline',
+  }),
   methods: {
-    detected(e) {
-      this.state = e;
+    amIOnline(e) {
+      this.onLine = e;
     },
   },
 });
 ```
 
-## :white_check_mark: Example 2 :four_leaf_clover:
-
-```html
-<detect-network>
-  <div slot="online">Your Online Content!</div>
-  <div slot="offline">Your Offline Content!</div>
-</detect-network>
+### CSS
+```css
+.offline {
+  background-color: #fc9842;
+  background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+}
+.online {
+  background-color: #00b712;
+  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
+}
 ```
 
 ### :white_check_mark: :book: Props
 
-| Name           | Type   | Required? | Description                                                 |
-| -------------- | ------ | --------- | ----------------------------------------------------------- |
-| `onlineClass`  | String | No        | Styling the `div` which you want to give if you're online.  |
-| `offlineClass` | String | No        | Styling the `div` which you want to give if you're offline. |
+| Name            | Type   | Required? | Description                                                 |
+| --------------  | ------ | --------- | ----------------------------------------------------------- |
+| `slot-name`     | String | No        | The name of the slot, refer to the [v-slot docs](https://vuejs.org/v2/guide/components-slots.html#Dynamic-Slot-Names)    |
+| `online-class`  | String | No        | Styling the `div` which you want to give if you're online.  |
+| `offline-class` | String | No        | Styling the `div` which you want to give if you're offline. |
 
 ### :white_check_mark: :ear: Events
 
@@ -80,6 +98,17 @@ Vue.component('example-component', {
 | -------------------- | --------------------------------------------------------------------------- |
 | `detected-condition` | Emits an Boolean value which can be used for multiple purposes in your app. |
 
-## NPM :octocat:
+## Contributing
 
-[![NPM](https://nodei.co/npm/v-offline.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/v-offline/)
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a pull request :D
+
+## Author
+
+**v-offline** © [Vinayak](https://github.com/vinayakkulkarni), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by Vinayak Kulkarni with help from contributors ([list](https://github.com/vinayakkulkarni/v-offline/contributors)).
+
+> [vinayak.pw](https://vinayak.pw) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)

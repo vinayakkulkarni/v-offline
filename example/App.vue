@@ -1,20 +1,38 @@
 <template>
   <div id="app">
-    <detect-network>
-      <h2 slot="online">Try turning on offline in devtools or disable network in system network settings.</h2>
-      <h2 slot="offline">
-        You don't have internet! Lulz.
-      </h2>
-    </detect-network>
+    <v-offline @detected-condition="amIOnline">
+      <template
+        v-slot:[onlineSlot]
+        :slot-name="onlineSlot"
+      >
+        ( Online: {{ onLine }} )
+      </template>
+      <template
+        v-slot:[offlineSlot]
+        :slot-name="offlineSlot"
+      >
+        ( Online: {{ onLine }} )
+      </template>
+    </v-offline>
   </div>
 </template>
 
 <script>
-import detectNetwork from '../src';
+import VOffline from '../src';
 
 export default {
   components: {
-    detectNetwork
-  }
+    VOffline
+  },
+  data: () => ({
+    onLine: null,
+    onlineSlot: 'online',
+    offlineSlot: 'offline',
+  }),
+  methods: {
+    amIOnline(e) {
+      this.onLine = e;
+    },
+  },
 }
 </script>

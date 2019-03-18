@@ -1,13 +1,6 @@
 <template>
-  <div :class="{onlineClass: isOnline, offlineClass: !isOnline}">
-    <slot
-      v-if="isOnline"
-      name="online"
-    />
-    <slot
-      v-else
-      name="offline"
-    />
+  <div :class="computedClass">
+    <slot :name="slotName" />
   </div>
 </template>
 
@@ -15,21 +8,33 @@
 const EVENTS = ['online', 'offline', 'load'];
 
 export default {
-  name: 'v-offline',
+  name: 'VOffline',
   props: {
+    slotName: {
+      type: String,
+      required: false,
+      default: 'online',
+    },
     onlineClass: {
       type: String,
-      required: false
+      required: false,
+      default: '',
     },
     offlineClass: {
       type: String,
-      required: false
-    }
+      required: false,
+      default: '',
+    },
   },
   data: () => ({
     isOnline: navigator.onLine || false,
   }),
-  mounted() {
+  computed: {
+    computedClass() {
+      return this.isOnline ? this.onlineClass : this.offlineClass;
+    },
+  },
+  created() {
     EVENTS.forEach(event => window.addEventListener(event, this.updateOnlineStatus));
   },
   beforeDestroy() {
@@ -39,7 +44,7 @@ export default {
     updateOnlineStatus() {
       this.isOnline = navigator.onLine || false;
       this.$emit('detected-condition', this.isOnline);
-    }
-  }
+    },
+  },
 };
 </script>

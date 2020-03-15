@@ -49,7 +49,7 @@ module.exports = function(config) {
     // Browserify config
     browserify: {
       transform: [
-        ['babelify', { presets: ['env'] }],
+        ['babelify', { presets: ['@babel/preset-env'] }],
         [
           'aliasify',
           {

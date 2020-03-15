@@ -1,3 +1,3 @@
-import VOffline from './VOffline.vue'
+import VOffline from './VOffline.vue';
 
 export default VOffline;

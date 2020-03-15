@@ -86,11 +86,12 @@ Vue.component('example-component', {
 
 ### :white_check_mark: :book: Props
 
-| Name            | Type   | Required? | Description                                                 |
-| --------------  | ------ | --------- | ----------------------------------------------------------- |
-| `slot-name`     | String | No        | The name of the slot, refer to the [v-slot docs](https://vuejs.org/v2/guide/components-slots.html#Dynamic-Slot-Names)    |
-| `online-class`  | String | No        | Styling the `div` which you want to give if you're online.  |
-| `offline-class` | String | No        | Styling the `div` which you want to give if you're offline. |
+| Name            | Type   | Required? | Default              | Description                                                 |
+| --------------  | ------ | --------- | ---------            | ----------------------------------------------------------- |
+| `slot-name`     | String | No        | 'online'             | The name of the slot, refer to the [v-slot docs](https://vuejs.org/v2/guide/components-slots.html#Dynamic-Slot-Names)    |
+| `online-class`  | String | No        | ''                   | Styling the `div` which you want to give if you're online.  |
+| `offline-class` | String | No        | ''                   | Styling the `div` which you want to give if you're offline. |
+| `ping-url`      | String | No        | https://google.com   | Pinging any url to double check if you're online or not.    |
 
 ### :white_check_mark: :ear: Events
 
@@ -111,4 +112,4 @@ Vue.component('example-component', {
 **v-offline** © [Vinayak](https://github.com/vinayakkulkarni), Released under the [MIT](./LICENSE) License.<br>
 Authored and maintained by Vinayak Kulkarni with help from contributors ([list](https://github.com/vinayakkulkarni/v-offline/contributors)).
 
-> [vinayak.pw](https://vinayak.pw) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
+> GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)

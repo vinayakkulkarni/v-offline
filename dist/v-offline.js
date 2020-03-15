@@ -1,155 +1,258 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global.VOffline = factory());
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global = global || self, global.VOffline = factory());
 }(this, (function () { 'use strict';
 
-  var EVENTS = ['online', 'offline', 'load'];
+	function createCommonjsModule(fn, module) {
+		return module = { exports: {} }, fn(module, module.exports), module.exports;
+	}
 
-  var script = {
-    name: 'VOffline',
-    props: {
-      slotName: {
-        type: String,
-        required: false,
-        default: 'online'
-      },
-      onlineClass: {
-        type: String,
-        required: false,
-        default: ''
-      },
-      offlineClass: {
-        type: String,
-        required: false,
-        default: ''
-      }
-    },
-    data: function data() {
-      return {
-        isOnline: navigator.onLine || false
-      };
-    },
-    computed: {
-      computedClass: function computedClass() {
-        return this.isOnline ? this.onlineClass : this.offlineClass;
-      }
-    },
-    created: function created() {
-      var _this = this;
+	var ping = createCommonjsModule(function (module, exports) {
+	  var Ping = function Ping(opt) {
+	    this.opt = opt || {};
+	    this.favicon = this.opt.favicon || "/favicon.ico";
+	    this.timeout = this.opt.timeout || 0;
+	    this.logError = this.opt.logError || false;
+	  };
 
-      EVENTS.forEach(function (event) {
-        return window.addEventListener(event, _this.updateOnlineStatus);
-      });
-    },
-    beforeDestroy: function beforeDestroy() {
-      var _this2 = this;
+	  Ping.prototype.ping = function (source, callback) {
+	    var self = this;
+	    self.wasSuccess = false;
+	    self.img = new Image();
+	    self.img.onload = onload;
+	    self.img.onerror = onerror;
+	    var timer;
+	    var start = new Date();
 
-      EVENTS.forEach(function (event) {
-        return window.removeEventListener(event, _this2.updateOnlineStatus);
-      });
-    },
+	    function onload(e) {
+	      self.wasSuccess = true;
+	      pingCheck.call(self, e);
+	    }
 
-    methods: {
-      updateOnlineStatus: function updateOnlineStatus() {
-        this.isOnline = navigator.onLine || false;
-        this.$emit('detected-condition', this.isOnline);
-      }
-    }
-  };
+	    function onerror(e) {
+	      self.wasSuccess = false;
+	      pingCheck.call(self, e);
+	    }
 
-  function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
-    if (typeof shadowMode !== 'boolean') {
-      createInjectorSSR = createInjector;
-      createInjector = shadowMode;
-      shadowMode = false;
-    }
+	    if (self.timeout) {
+	      timer = setTimeout(function () {
+	        pingCheck.call(self, undefined);
+	      }, self.timeout);
+	    }
 
-    var options = typeof script === 'function' ? script.options : script;
+	    function pingCheck() {
+	      if (timer) {
+	        clearTimeout(timer);
+	      }
 
-    if (template && template.render) {
-      options.render = template.render;
-      options.staticRenderFns = template.staticRenderFns;
-      options._compiled = true;
+	      var pong = new Date() - start;
 
-      if (isFunctionalTemplate) {
-        options.functional = true;
-      }
-    }
+	      if (typeof callback === "function") {
+	        if (!this.wasSuccess) {
+	          if (self.logError) {
+	            console.error("error loading resource");
+	          }
 
-    if (scopeId) {
-      options._scopeId = scopeId;
-    }
+	          return callback("error", pong);
+	        }
 
-    var hook;
+	        return callback(null, pong);
+	      }
+	    }
 
-    if (moduleIdentifier) {
-      hook = function hook(context) {
-        context = context || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext;
+	    self.img.src = source + self.favicon + "?" + +new Date();
+	  };
 
-        if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-          context = __VUE_SSR_CONTEXT__;
-        }
+	  {
+	    if ( module.exports) {
+	      module.exports = Ping;
+	    }
+	  }
+	});
 
-        if (style) {
-          style.call(this, createInjectorSSR(context));
-        }
+	var ping_js = ping;
 
-        if (context && context._registeredComponents) {
-          context._registeredComponents.add(moduleIdentifier);
-        }
-      };
+	var EVENTS = ['online', 'offline', 'load'];
+	var script = {
+	  name: 'VOffline',
+	  props: {
+	    slotName: {
+	      type: String,
+	      required: false,
+	      "default": 'online'
+	    },
+	    onlineClass: {
+	      type: String,
+	      required: false,
+	      "default": ''
+	    },
+	    offlineClass: {
+	      type: String,
+	      required: false,
+	      "default": ''
+	    },
+	    pingUrl: {
+	      type: String,
+	      required: false,
+	      "default": 'https://google.com'
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      isOnline: navigator.onLine || false
+	    };
+	  },
+	  computed: {
+	    computedClass: function computedClass() {
+	      return this.isOnline ? this.onlineClass : this.offlineClass;
+	    }
+	  },
+	  created: function created() {
+	    var _this = this;
 
-      options._ssrRegister = hook;
-    } else if (style) {
-      hook = shadowMode ? function () {
-        style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
-      } : function (context) {
-        style.call(this, createInjector(context));
-      };
-    }
+	    EVENTS.forEach(function (event) {
+	      return window.addEventListener(event, _this.updateOnlineStatus);
+	    });
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    var _this2 = this;
 
-    if (hook) {
-      if (options.functional) {
-        var originalRender = options.render;
+	    EVENTS.forEach(function (event) {
+	      return window.removeEventListener(event, _this2.updateOnlineStatus);
+	    });
+	  },
+	  methods: {
+	    updateOnlineStatus: function updateOnlineStatus() {
+	      var _this3 = this;
 
-        options.render = function renderWithStyleInjection(h, context) {
-          hook.call(context);
-          return originalRender(h, context);
-        };
-      } else {
-        var existing = options.beforeCreate;
-        options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
-      }
-    }
+	      var p = new ping_js();
+	      p.ping(this.pingUrl, function (err) {
+	        if (err) {
+	          if ('onLine' in navigator && navigator.onLine) {
+	            _this3.isOnline = true;
+	          } else {
+	            _this3.isOnline = false;
+	          }
+	        }
 
-    return script;
-  }
+	        _this3.isOnline = true;
+	      });
+	      this.$emit('detected-condition', this.isOnline);
+	    }
+	  }
+	};
 
-  var normalizeComponent_1 = normalizeComponent;
+	function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+	  if (typeof shadowMode !== 'boolean') {
+	    createInjectorSSR = createInjector;
+	    createInjector = shadowMode;
+	    shadowMode = false;
+	  }
 
-  var __vue_script__ = script;
+	  var options = typeof script === 'function' ? script.options : script;
 
-  var __vue_render__ = function __vue_render__() {
-    var _vm = this;
-    var _h = _vm.$createElement;
-    var _c = _vm._self._c || _h;
-    return _c("div", { class: _vm.computedClass }, [_vm._t(_vm.slotName)], 2);
-  };
-  var __vue_staticRenderFns__ = [];
-  __vue_render__._withStripped = true;
+	  if (template && template.render) {
+	    options.render = template.render;
+	    options.staticRenderFns = template.staticRenderFns;
+	    options._compiled = true;
 
-  var __vue_inject_styles__ = undefined;
+	    if (isFunctionalTemplate) {
+	      options.functional = true;
+	    }
+	  }
 
-  var __vue_scope_id__ = undefined;
+	  if (scopeId) {
+	    options._scopeId = scopeId;
+	  }
 
-  var __vue_module_identifier__ = undefined;
+	  var hook;
 
-  var __vue_is_functional_template__ = false;
+	  if (moduleIdentifier) {
+	    hook = function hook(context) {
+	      context = context || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext;
 
+	      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+	        context = __VUE_SSR_CONTEXT__;
+	      }
 
-  var VOffline = normalizeComponent_1({ render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, undefined, undefined);
+	      if (style) {
+	        style.call(this, createInjectorSSR(context));
+	      }
 
-  return VOffline;
+	      if (context && context._registeredComponents) {
+	        context._registeredComponents.add(moduleIdentifier);
+	      }
+	    };
+
+	    options._ssrRegister = hook;
+	  } else if (style) {
+	    hook = shadowMode ? function (context) {
+	      style.call(this, createInjectorShadow(context, this.$root.$options.shadowRoot));
+	    } : function (context) {
+	      style.call(this, createInjector(context));
+	    };
+	  }
+
+	  if (hook) {
+	    if (options.functional) {
+	      var originalRender = options.render;
+
+	      options.render = function renderWithStyleInjection(h, context) {
+	        hook.call(context);
+	        return originalRender(h, context);
+	      };
+	    } else {
+	      var existing = options.beforeCreate;
+	      options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+	    }
+	  }
+
+	  return script;
+	}
+
+	/* script */
+	const __vue_script__ = script;
+
+	/* template */
+	var __vue_render__ = function() {
+	  var _vm = this;
+	  var _h = _vm.$createElement;
+	  var _c = _vm._self._c || _h;
+	  return _c("div", { class: _vm.computedClass }, [_vm._t(_vm.slotName)], 2)
+	};
+	var __vue_staticRenderFns__ = [];
+	__vue_render__._withStripped = true;
+
+	  /* style */
+	  const __vue_inject_styles__ = undefined;
+	  /* scoped */
+	  const __vue_scope_id__ = undefined;
+	  /* module identifier */
+	  const __vue_module_identifier__ = undefined;
+	  /* functional template */
+	  const __vue_is_functional_template__ = false;
+	  /* style inject */
+	  
+	  /* style inject SSR */
+	  
+	  /* style inject shadow dom */
+	  
+
+	  
+	  const __vue_component__ = normalizeComponent(
+	    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+	    __vue_inject_styles__,
+	    __vue_script__,
+	    __vue_scope_id__,
+	    __vue_is_functional_template__,
+	    __vue_module_identifier__,
+	    false,
+	    undefined,
+	    undefined,
+	    undefined
+	  );
+
+	return __vue_component__;
 
 })));

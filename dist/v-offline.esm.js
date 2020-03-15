@@ -120,19 +120,17 @@ var script = {
     updateOnlineStatus: function updateOnlineStatus() {
       var _this3 = this;
 
+      var t = this;
       var p = new ping_js();
-      p.ping(this.pingUrl, function (err) {
-        if (err) {
-          if ('onLine' in navigator && navigator.onLine) {
-            _this3.isOnline = true;
-          } else {
-            _this3.isOnline = false;
-          }
+      p.ping(t.pingUrl, function (err) {
+        if (err || !navigator.onLine) {
+          t.isOnline = false;
+          t.$emit('detected-condition', _this3.isOnline);
+        } else {
+          t.isOnline = true;
+          t.$emit('detected-condition', _this3.isOnline);
         }
-
-        _this3.isOnline = true;
       });
-      this.$emit('detected-condition', this.isOnline);
     }
   }
 };

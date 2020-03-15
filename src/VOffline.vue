@@ -52,18 +52,17 @@
     },
     methods: {
       updateOnlineStatus() {
+        const t = this;
         const p = new Ping();
-        p.ping(this.pingUrl, (err) => {
-          if (err) {
-            if ('onLine' in navigator && navigator.onLine) {
-              this.isOnline = true;
-            } else {
-              this.isOnline = false;
-            }
+        p.ping(t.pingUrl, (err) => {
+          if (err || !navigator.onLine) {
+            t.isOnline = false;
+            t.$emit('detected-condition', this.isOnline);
+          } else {
+            t.isOnline = true;
+            t.$emit('detected-condition', this.isOnline);
           }
-          this.isOnline = true;
         });
-        this.$emit('detected-condition', this.isOnline);
       },
     },
   };

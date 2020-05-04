@@ -1,4 +1,5 @@
 # V-Offline :zap: <a href="http://npmjs.org/package/v-offline"><img src="https://img.shields.io/npm/v/v-offline.svg" alt="npm version"></a> <a href="https://bundlephobia.com/result?p=v-offline"><img src="http://img.badgesize.io/vinayakkulkarni/v-offline/master/dist/v-offline.min.js?compression=gzip" alt="gzip size"></a> <a href="https://travis-ci.org/vinayakkulkarni/v-offline"><img src="https://travis-ci.org/vinayakkulkarni/v-offline.svg?branch=master" alt="Build Status"></a> <a href="http://npm-stat.com/charts.html?package=v-offline"><img src="https://img.shields.io/npm/dm/v-offline.svg" alt="npm downloads"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline.svg?type=shield"/></a>
 
 * Detect offline & online events for your vue app.
 
@@ -113,3 +114,7 @@ Vue.component('example-component', {
 Authored and maintained by Vinayak Kulkarni with help from contributors ([list](https://github.com/vinayakkulkarni/v-offline/contributors)).
 
 > GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline?ref=badge_large)

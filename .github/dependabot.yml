@@ -4,9 +4,16 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: '23:30'
+    time: '00:00'
+    timezone: Asia/Calcutta
   open-pull-requests-limit: 10
   reviewers:
   - vinayakkulkarni
+  assignees:
+  - vinayakkulkarni
   labels:
   - dependencies
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope

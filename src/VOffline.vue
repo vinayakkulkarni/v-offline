@@ -55,13 +55,8 @@
         const t = this;
         const p = new Ping();
         p.ping(t.pingUrl, (err) => {
-          if (err || !navigator.onLine) {
-            t.isOnline = false;
-            t.$emit('detected-condition', this.isOnline);
-          } else {
-            t.isOnline = true;
-            t.$emit('detected-condition', this.isOnline);
-          }
+          (err || !navigator.onLine) ? t.isOnline = false : t.isOnline = true;
+          t.$emit('detected-condition', this.isOnline);
         });
       },
     },

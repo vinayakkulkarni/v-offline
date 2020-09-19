@@ -1,18 +1,31 @@
 version: 2
 updates:
+# Fetch and update latest `npm` packages
 - package-ecosystem: npm
-  directory: "/"
+  directory: '/'
   schedule:
     interval: daily
     time: '00:00'
-    timezone: Asia/Calcutta
   open-pull-requests-limit: 10
   reviewers:
-  - vinayakkulkarni
+    - vinayakkulkarni
   assignees:
-  - vinayakkulkarni
-  labels:
-  - dependencies
+    - vinayakkulkarni
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope
+# Fetch and update latest `github-actions` pkgs
+- package-ecosystem: github-actions
+  directory: '/'
+  schedule:
+    interval: daily
+    time: '00:00'
+  open-pull-requests-limit: 10
+  reviewers:
+    - vinayakkulkarni
+  assignees:
+    - vinayakkulkarni
   commit-message:
     prefix: fix
     prefix-development: chore

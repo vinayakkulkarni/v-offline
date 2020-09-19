@@ -1,0 +1,39 @@
+name: Ship js trigger
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+  build:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'releases/v')
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Setup node env 📦
+        uses: actions/setup-node@v2.1.1
+        with:
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Restore cached node_modules ⚡️
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies 👨🏻‍💻
+        run: npm ci
+
+      - name: Perform a new release 🚨
+        run: npx shipjs trigger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          SLACK_INCOMING_HOOK: ${{ secrets.SLACK_INCOMING_HOOK }}

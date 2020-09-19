@@ -57,10 +57,10 @@
         p.ping(t.pingUrl, (err) => {
           if (err || !navigator.onLine) {
             t.isOnline = false;
-            t.$emit('detected-condition', this.isOnline);
+            t.$emit('detected-condition', t.isOnline);
           } else {
             t.isOnline = true;
-            t.$emit('detected-condition', this.isOnline);
+            t.$emit('detected-condition', t.isOnline);
           }
         });
       },

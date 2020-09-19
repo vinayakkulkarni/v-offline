@@ -1,73 +1,82 @@
 {
-    "name": "v-offline",
-    "description": "Offline and Online components for VueJS",
-    "version": "1.2.1",
-    "author": {
-        "name": "Vinayak Kulkarni",
-        "email": "vinayak.kulkarni@live.com",
-        "url": "https://vinayakkulkarni.github.io/"
-    },
-    "private": false,
-    "main": "dist/v-offline.min.js",
-    "module": "dist/v-offline.esm.js",
-    "files": [
-        "dist/*"
-    ],
-    "keywords": [
-        "vuejs",
-        "offline",
-        "online",
-        "detect",
-        "internet-connectivity",
-        "disconnect"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vinayakkulkarni/v-offline.git"
-    },
-    "scripts": {
-        "test": "npm run bundle && karma start karma.conf.js",
-        "test-watch": "karma start karma.conf.js --no-single-run",
-        "build": "npm run bundle && npm run bundle:min",
-        "bundle": "rollup -c build/rollup.conf.js",
-        "bundle:min": "rollup -c build/rollup.min.conf.js"
-    },
-    "dependencies": {
-        "ping.js": "^0.2.3"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.8.7",
-        "@babel/preset-env": "^7.8.7",
-        "@rollup/plugin-commonjs": "^15.0.0",
-        "@rollup/plugin-node-resolve": "^9.0.0",
-        "aliasify": "^2.1.0",
-        "babel-eslint": "^10.0.1",
-        "babel-loader": "^8.0.6",
-        "babelify": "^10.0.0",
-        "browserify": "^16.5.0",
-        "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.10.0",
-        "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-vue": "^6.2.2",
-        "jasmine-core": "^3.5.0",
-        "karma": "^5.0.0",
-        "karma-browserify": "^7.0.0",
-        "karma-jasmine": "^4.0.0",
-        "karma-phantomjs-launcher": "^1.0.4",
-        "karma-spec-reporter": "^0.0.32",
-        "phantomjs-prebuilt": "^2.1.16",
-        "prettier": "^2.0.2",
-        "rollup": "^2.0.6",
-        "rollup-plugin-babel": "^4.4.0",
-        "rollup-plugin-terser": "^7.0.0",
-        "rollup-plugin-vue": "^5.1.6",
-        "vue": "^2.6.11",
-        "vue-template-compiler": "^2.6.11",
-        "watchify": "^3.11.1"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/vinayakkulkarni/v-offline/issues"
-    },
-    "homepage": "https://we-online.site/"
+  "name": "v-offline",
+  "description": "Offline and Online components for VueJS",
+  "version": "1.2.1",
+  "author": {
+    "name": "Vinayak Kulkarni",
+    "email": "inbox.vinayak@gmail.com",
+    "url": "https://vinayakkulkarni.dev"
+  },
+  "private": false,
+  "main": "dist/v-offline.min.js",
+  "module": "dist/v-offline.esm.js",
+  "files": [
+    "dist/*"
+  ],
+  "keywords": [
+    "vuejs",
+    "offline",
+    "online",
+    "detect",
+    "internet-connectivity",
+    "disconnect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinayakkulkarni/v-offline.git"
+  },
+  "scripts": {
+    "test": "npm run bundle && karma start karma.conf.js",
+    "test-watch": "karma start karma.conf.js --no-single-run",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lintfix": "npm run lint:eslint:fix && npm run lint:prettier:fix",
+    "lint:eslint": "eslint \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
+    "lint:eslint:fix": "eslint --fix \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
+    "lint:prettier": "prettier --check \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
+    "lint:prettier:fix": "prettier --write \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
+    "build": "npm run bundle && npm run bundle:min",
+    "bundle": "rollup -c build/rollup.config.js",
+    "bundle:min": "rollup -c build/rollup.config.min.js",
+    "release": "shipjs prepare"
+  },
+  "dependencies": {
+    "ping.js": "^0.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@vinayakkulkarni/prettier-config-vue": "^1.0.0",
+    "aliasify": "^2.1.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.2",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "jasmine-core": "^3.6.0",
+    "karma": "^5.2.2",
+    "karma-browserify": "^7.0.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "^0.0.32",
+    "phantomjs-prebuilt": "^2.1.16",
+    "prettier": "^2.1.2",
+    "rollup": "^2.27.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^5.1.6",
+    "shipjs": "^0.21.0",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
+    "watchify": "^3.11.1"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinayakkulkarni/v-offline/issues"
+  },
+  "homepage": "https://vinayakkulkarni.github.io/offline/"
 }

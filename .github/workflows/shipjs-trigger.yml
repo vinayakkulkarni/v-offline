@@ -21,7 +21,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Restore cached node_modules ⚡️
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}

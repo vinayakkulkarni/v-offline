@@ -16,8 +16,9 @@ jobs:
           ref: main
 
       - name: Setup node env 📦
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2.1.5
         with:
+          node-version: 15
           registry-url: "https://registry.npmjs.org"
 
       - name: Restore cached node_modules ⚡️
@@ -29,7 +30,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies 👨🏻‍💻
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit
 
       - name: Perform a new release 🚨
         run: npx shipjs trigger

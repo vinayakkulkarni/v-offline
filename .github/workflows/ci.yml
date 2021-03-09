@@ -15,14 +15,14 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [15]
 
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
       - name: Setup node env 🏗
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: ${{ matrix.node }}
 
@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-node-
       
       - name: Install dependencies 👨🏻‍💻
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit
 
       - name: Run linter 👀
         run: npm run lint

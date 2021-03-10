@@ -62,7 +62,7 @@
     "eslint-plugin-vue": "^7.1.0",
     "husky": "^4.3.0",
     "jasmine-core": "^3.6.0",
-    "karma": "^5.2.2",
+    "karma": "^6.1.2",
     "karma-browserify": "^8.0.0",
     "karma-jasmine": "^4.0.1",
     "karma-phantomjs-launcher": "^1.0.4",

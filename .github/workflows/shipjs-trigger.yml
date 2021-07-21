@@ -16,7 +16,7 @@ jobs:
           ref: main
 
       - name: Setup node env 📦
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v2.3.0
         with:
           registry-url: "https://registry.npmjs.org"
 

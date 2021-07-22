@@ -1,12 +1,8 @@
 <template>
   <div id="app">
     <v-offline @detected-condition="amIOnline">
-      <template v-slot:[onlineSlot] :slot-name="onlineSlot">
-        ( Online: {{ onLine }} )
-      </template>
-      <template v-slot:[offlineSlot] :slot-name="offlineSlot">
-        ( Online: {{ onLine }} )
-      </template>
+      <template #online> ( Online: {{ onLine }} ) </template>
+      <template #offline> ( Online: {{ onLine }} ) </template>
     </v-offline>
   </div>
 </template>
@@ -18,14 +14,23 @@
     components: {
       VOffline,
     },
-    data: () => ({
-      onLine: null,
-      onlineSlot: 'online',
-      offlineSlot: 'offline',
-    }),
+    data() {
+      return {
+        online: null,
+        onlineSlot: 'online',
+        offlineSlot: 'offline',
+      };
+    },
     methods: {
+      /**
+       * Listened value emitted from the
+       * `detected-condition` event.
+       *
+       * @param {boolean} e - Boolean value
+       * @returns {void} - Void
+       */
       amIOnline(e) {
-        this.onLine = e;
+        this.online = e;
       },
     },
   };

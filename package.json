@@ -1,18 +1,80 @@
 {
   "name": "v-offline",
-  "description": "Offline and Online components for VueJS",
   "version": "1.3.0",
-  "author": {
-    "name": "Vinayak Kulkarni",
-    "email": "inbox.vinayak@gmail.com",
-    "url": "https://vinayakkulkarni.dev"
-  },
-  "private": false,
-  "main": "dist/v-offline.min.js",
+  "description": "Offline and Online components for Vue",
+  "types": "types/index.d.ts",
+  "main": "dist/v-offline.cjs.js",
   "module": "dist/v-offline.esm.js",
+  "unpkg": "dist/v-offline.js",
+  "jsdelivr": "dist/v-offline.js",
+  "cdn": "dist/v-offline.js",
   "files": [
-    "dist/*"
+    "dist",
+    "types"
   ],
+  "scripts": {
+    "build": "rimraf dist && npm run bundle && npm run bundle:min",
+    "bundle": "rollup -c build/rollup.config.ts",
+    "bundle:min": "rollup -c build/rollup.min.config.ts",
+    "test": "echo 'test!'",
+    "prepare": "husky install",
+    "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:css",
+    "lintfix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint:css:fix",
+    "lint:js": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\" --ignore-path .gitignore",
+    "lint:eslint:fix": "eslint --fix \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\" --ignore-path .gitignore",
+    "lint:prettier:fix": "prettier --write \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\" --ignore-path .gitignore",
+    "lint:css": "stylelint \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\" --ignore-path .gitignore",
+    "lint:css:fix": "stylelint --fix \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\" --ignore-path .gitignore",
+    "lint-staged": "lint-staged",
+    "release": "shipjs prepare",
+    "release:auto": "shipjs prepare --yes",
+    "release:dry": "shipjs prepare --dry-run"
+  },
+  "dependencies": {
+    "ping.js": "^0.3.0"
+  },
+  "peerDependencies": {
+    "ping.js": "^0.3.0",
+    "@vue/composition-api": "^1.0.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.8",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@rollup/plugin-alias": "^3.1.4",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-beep": "^0.2.0",
+    "@rollup/plugin-commonjs": "^19.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.2",
+    "@rollup/plugin-sucrase": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "@vinayakkulkarni/prettier-config-vue": "^1.0.0",
+    "@vue/composition-api": "^1.0.3",
+    "@vue/runtime-dom": "^3.1.5",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsdoc": "^35.5.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.14.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
+    "prettier": "^2.3.2",
+    "rollup": "^2.53.3",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "5.1.9",
+    "sass": "^1.35.2",
+    "shipjs": "^0.23.3",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "typescript": "^4.3.5",
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14"
+  },
   "keywords": [
     "vuejs",
     "offline",
@@ -21,65 +83,20 @@
     "internet-connectivity",
     "disconnect"
   ],
+  "author": {
+    "name": "Vinayak Kulkarni",
+    "email": "inbox.vinayak@gmail.com",
+    "url": "https://vinayakkulkarni.dev"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinayakkulkarni/v-offline.git"
   },
-  "scripts": {
-    "test": "npm run bundle && karma start karma.conf.js",
-    "test-watch": "karma start karma.conf.js --no-single-run",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "lintfix": "npm run lint:eslint:fix && npm run lint:prettier:fix",
-    "lint:eslint": "eslint \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
-    "lint:eslint:fix": "eslint --fix \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
-    "lint:prettier": "prettier --check \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
-    "lint:prettier:fix": "prettier --write \"{,!(node_modules|dist)/**/}*.{js,vue}\"",
-    "build": "npm run bundle && npm run bundle:min",
-    "bundle": "rollup -c build/rollup.config.js",
-    "bundle:min": "rollup -c build/rollup.config.min.js",
-    "release": "shipjs prepare"
-  },
-  "dependencies": {
-    "ping.js": "^0.3.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@commitlint/cli": "^12.0.0",
-    "@commitlint/config-conventional": "^12.0.0",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@vinayakkulkarni/prettier-config-vue": "^1.0.0",
-    "aliasify": "^2.1.0",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
-    "eslint": "^7.9.0",
-    "eslint-config-prettier": "^7.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^7.1.0",
-    "husky": "^4.3.0",
-    "jasmine-core": "^3.6.0",
-    "karma": "^5.2.2",
-    "karma-browserify": "^8.0.0",
-    "karma-jasmine": "^4.0.1",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-spec-reporter": "^0.0.32",
-    "phantomjs-prebuilt": "^2.1.16",
-    "prettier": "^2.1.2",
-    "rollup": "^2.27.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-vue": "^5.1.6",
-    "shipjs": "^0.23.0",
-    "vue": "^2.6.12",
-    "vue-template-compiler": "^2.6.12",
-    "watchify": "^3.11.1"
-  },
-  "license": "MIT",
+  "private": false,
+  "sideEffects": false,
   "bugs": {
     "url": "https://github.com/vinayakkulkarni/v-offline/issues"
   },
-  "homepage": "https://vinayakkulkarni.github.io/offline/"
+  "homepage": "https://github.com/vinayakkulkarni/v-offline#readme"
 }

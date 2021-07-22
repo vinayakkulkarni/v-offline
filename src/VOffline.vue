@@ -32,9 +32,11 @@
         default: 'https://google.com',
       },
     },
-    data: () => ({
-      isOnline: navigator.onLine || false,
-    }),
+    data() {
+      return {
+        isOnline: navigator.onLine || false,
+      };
+    },
     computed: {
       computedClass() {
         return this.isOnline ? this.onlineClass : this.offlineClass;

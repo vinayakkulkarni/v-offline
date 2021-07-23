@@ -1,6 +1,6 @@
 <template>
   <div :class="wrapperClass">
-    <slot :name="dynamicSlotName" />
+    <slot />
   </div>
 </template>
 
@@ -21,11 +21,6 @@
   export default defineComponent({
     name: 'VOffline',
     props: {
-      slotName: {
-        type: String as PropType<string>,
-        required: false,
-        default: 'online',
-      },
       onlineClass: {
         type: String as PropType<string>,
         required: false,

@@ -1,33 +1,34 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
       "esnext",
-      "esnext.asynciterable",
-      "dom"
+      "dom",
+      "dom.iterable",
+      "scripthost",
+      "esnext.asynciterable"
     ],
     "outDir": "./dist",
     "esModuleInterop": true,
-    "resolveJsonModule": true,
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
-    "noEmit": false,
+    "noEmit": true,
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "types": [
       "@types/node"
     ]
   },
   "include": [
-    "src/**/*.vue",
-    "src/**/*.ts",
+    "src",
     "build",
     "shims"
   ],

@@ -13,10 +13,12 @@
     onBeforeUnmount,
     PropType,
     ComputedRef,
+    SetupContext,
+    defineComponent,
   } from '@vue/composition-api';
-  import { VOfflineProps } from 'types';
+  import { VOfflineProps } from '../types';
 
-  export default {
+  export default defineComponent({
     name: 'VOffline',
     props: {
       slotName: {
@@ -40,7 +42,7 @@
         default: 'https://google.com',
       },
     },
-    setup(props: VOfflineProps, { emit }) {
+    setup(props: VOfflineProps, { emit }: SetupContext) {
       // Local state
       const isOnline: Ref<boolean> = ref(navigator.onLine || false);
       const events: Ref<string[]> = ref(['online', 'offline', 'load']);
@@ -50,9 +52,15 @@
       const dynamicSlotName: ComputedRef<string> = computed(
         () => props.slotName || 'online',
       );
-      const wrapperClass: ComputedRef<string | undefined> = computed(() =>
-        isOnline.value ? props.onlineClass : props.offlineClass,
-      );
+      const wrapperClass: ComputedRef<string> = computed(() => {
+        if (isOnline.value) {
+          return typeof props.onlineClass === 'string' ? props.onlineClass : '';
+        } else {
+          return typeof props.offlineClass === 'string'
+            ? props.offlineClass
+            : '';
+        }
+      });
 
       /**
        * Created lifecycle hook
@@ -94,5 +102,5 @@
         wrapperClass,
       };
     },
-  };
+  });
 </script>

@@ -41,12 +41,9 @@
       // Local state
       const isOnline: Ref<boolean> = ref(navigator.onLine || false);
       const events: Ref<string[]> = ref(['online', 'offline', 'load']);
-      const source: Ref<string> = ref(props.pingUrl || 'https://google.com');
+      const url: Ref<string> = ref(props.pingUrl || 'https://google.com');
 
       // Local computed
-      const dynamicSlotName: ComputedRef<string> = computed(
-        () => props.slotName || 'online',
-      );
       const wrapperClass: ComputedRef<string> = computed(() => {
         if (isOnline.value) {
           return typeof props.onlineClass === 'string' ? props.onlineClass : '';
@@ -77,23 +74,25 @@
        * Pings the URL and emits an
        * detected online/offline event.
        *
-       * @returns {void}
+       * @returns {Promise<void>}
        */
-      function check(): void {
+      async function check(): Promise<void> {
         const p = new Ping();
-        p.ping(source.value, (err) => {
-          if (err || !navigator.onLine) {
-            isOnline.value = false;
-            emit('detected-condition', isOnline.value);
-          } else {
+        try {
+          const ping = await p.ping(url.value);
+          if (ping || navigator.onLine) {
             isOnline.value = true;
             emit('detected-condition', isOnline.value);
           }
-        });
+        } catch (error) {
+          if (error || !navigator.onLine) {
+            isOnline.value = false;
+            emit('detected-condition', isOnline.value);
+          }
+        }
       }
 
       return {
-        dynamicSlotName,
         wrapperClass,
       };
     },

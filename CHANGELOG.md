@@ -1,3 +1,17 @@
+# [2.1.0](https://github.com/vinayakkulkarni/v-offline/compare/v2.0.0...v2.1.0) (2021-07-23)
+
+
+### Bug Fixes
+
+* better error handling of ping response ⚡️ ([4d40b40](https://github.com/vinayakkulkarni/v-offline/commit/4d40b407b6aa46d1cc8294d6b81f7e4b0e9f9f93))
+
+
+### Features
+
+* remove unnecessary dynamic slots, use `v-if` instead 🥳 ([c3c370e](https://github.com/vinayakkulkarni/v-offline/commit/c3c370e91644fc2a417950d170fee9d80dfced03))
+
+
+
 # [2.0.0](https://github.com/vinayakkulkarni/v-offline/compare/v1.3.0...v2.0.0) (2021-07-23)
 
 

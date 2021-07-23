@@ -1,69 +1,106 @@
 <template>
-  <div :class="computedClass">
-    <slot :name="slotName" />
+  <div :class="wrapperClass">
+    <slot :name="dynamicSlotName" />
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import Ping from 'ping.js';
-  const EVENTS = ['online', 'offline', 'load'];
+  import {
+    ref,
+    Ref,
+    computed,
+    onBeforeUnmount,
+    PropType,
+    ComputedRef,
+    SetupContext,
+    defineComponent,
+  } from '@vue/composition-api';
+  import { VOfflineProps } from '../types';
 
-  export default {
+  export default defineComponent({
     name: 'VOffline',
     props: {
       slotName: {
-        type: String,
+        type: String as PropType<string>,
         required: false,
         default: 'online',
       },
       onlineClass: {
-        type: String,
+        type: String as PropType<string>,
         required: false,
         default: '',
       },
       offlineClass: {
-        type: String,
+        type: String as PropType<string>,
         required: false,
         default: '',
       },
       pingUrl: {
-        type: String,
+        type: String as PropType<string>,
         required: false,
         default: 'https://google.com',
       },
     },
-    data: () => ({
-      isOnline: navigator.onLine || false,
-    }),
-    computed: {
-      computedClass() {
-        return this.isOnline ? this.onlineClass : this.offlineClass;
-      },
-    },
-    created() {
-      EVENTS.forEach((event) =>
-        window.addEventListener(event, this.updateOnlineStatus),
+    setup(props: VOfflineProps, { emit }: SetupContext) {
+      // Local state
+      const isOnline: Ref<boolean> = ref(navigator.onLine || false);
+      const events: Ref<string[]> = ref(['online', 'offline', 'load']);
+      const source: Ref<string> = ref(props.pingUrl || 'https://google.com');
+
+      // Local computed
+      const dynamicSlotName: ComputedRef<string> = computed(
+        () => props.slotName || 'online',
       );
-    },
-    beforeDestroy() {
-      EVENTS.forEach((event) =>
-        window.removeEventListener(event, this.updateOnlineStatus),
-      );
-    },
-    methods: {
-      updateOnlineStatus() {
-        const t = this;
+      const wrapperClass: ComputedRef<string> = computed(() => {
+        if (isOnline.value) {
+          return typeof props.onlineClass === 'string' ? props.onlineClass : '';
+        } else {
+          return typeof props.offlineClass === 'string'
+            ? props.offlineClass
+            : '';
+        }
+      });
+
+      /**
+       * Created lifecycle hook
+       */
+      events.value.forEach((event) => window.addEventListener(event, check));
+
+      /**
+       * Before unmount lifecycle hook
+       */
+      onBeforeUnmount(() => {
+        // Cleanup of the event listeners
+        events.value.forEach((event) =>
+          window.removeEventListener(event, check),
+        );
+      });
+
+      // Local functions
+      /**
+       * Pings the URL and emits an
+       * detected online/offline event.
+       *
+       * @returns {void}
+       */
+      function check(): void {
         const p = new Ping();
-        p.ping(t.pingUrl, (err) => {
+        p.ping(source.value, (err) => {
           if (err || !navigator.onLine) {
-            t.isOnline = false;
-            t.$emit('detected-condition', t.isOnline);
+            isOnline.value = false;
+            emit('detected-condition', isOnline.value);
           } else {
-            t.isOnline = true;
-            t.$emit('detected-condition', t.isOnline);
+            isOnline.value = true;
+            emit('detected-condition', isOnline.value);
           }
         });
-      },
+      }
+
+      return {
+        dynamicSlotName,
+        wrapperClass,
+      };
     },
-  };
+  });
 </script>

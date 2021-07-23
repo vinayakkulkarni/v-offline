@@ -7,6 +7,7 @@
 [![npm](https://img.shields.io/npm/dm/v-offline?logo=npm)](http://npm-stat.com/charts.html?package=v-offline)
 [![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/latest)](https://bundlephobia.com/package/v-offline@latest)
 [![npm type definitions](https://img.shields.io/npm/types/v-offline)](https://github.com/vinayakkulkarni/v-offline/blob/master/package.json)
+[![DeepScan grade](https://deepscan.io/api/teams/9055/projects/16121/branches/339368/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9055&pid=16121&bid=339368)
 [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/vinayakkulkarni/v-offline)](https://snyk.io/test/github/vinayakkulkarni/v-offline)
 [![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/vinayakkulkarni/v-offline?logo=lgtm)](https://lgtm.com/projects/g/vinayakkulkarni/v-offline/alerts/)
 [![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/vinayakkulkarni/v-offline?logo=lgtm)](https://lgtm.com/projects/g/vinayakkulkarni/v-offline/context:javascript)

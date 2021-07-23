@@ -111,8 +111,8 @@ import { VOffline } from 'v-offline';
 
 ```html
 <v-offline @detected-condition="amIOnline">
-  <template #online> ( Online: {{ onLine }} ) </template>
-  <template #offline> ( Online: {{ onLine }} ) </template>
+  <template v-if="online"> ( Online: {{ onLine }} ) </template>
+  <template v-if="offline"> ( Online: {{ onLine }} ) </template>
 </v-offline>
 ```
 
@@ -125,9 +125,7 @@ Vue.component('example-component', {
   },
   data() {
     return {
-      onLine: null,
-      onlineSlot: 'online',
-      offlineSlot: 'offline',
+      onLine: true,
     };
   },
   methods: {
@@ -156,7 +154,6 @@ Vue.component('example-component', {
 
 | Name            | Type   | Required? | Default              | Description                                                 |
 | --------------  | ------ | --------- | ---------            | ----------------------------------------------------------- |
-| `slot-name`     | String | No        | 'online'             | The name of the slot, refer to the [v-slot docs](https://vuejs.org/v2/guide/components-slots.html#Dynamic-Slot-Names)    |
 | `online-class`  | String | No        | ''                   | Styling the `div` which you want to give if you're online.  |
 | `offline-class` | String | No        | ''                   | Styling the `div` which you want to give if you're offline. |
 | `ping-url`      | String | No        | https://google.com   | Pinging any url to double check if you're online or not.    |

@@ -1,3 +1,4 @@
+// @TODO: Remove this once PR is merged – https://github.com/rollup/plugins/pull/956
 declare module '@rollup/plugin-sucrase' {
   import { Plugin } from 'rollup';
   type Options = {

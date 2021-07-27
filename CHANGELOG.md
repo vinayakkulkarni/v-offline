@@ -1,3 +1,18 @@
+# [2.2.0](https://github.com/vinayakkulkarni/v-offline/compare/v2.1.0...v2.2.0) (2021-07-27)
+
+
+### Bug Fixes
+
+* remove the d.ts for `rollup-plugin-sucrase` ([f92e096](https://github.com/vinayakkulkarni/v-offline/commit/f92e0963d41b6a6d87f429f17f3154667a990dc3))
+* update file name convention ✨ ([f4167a4](https://github.com/vinayakkulkarni/v-offline/commit/f4167a4a98f3164f4bf747dee6a9fb42bbd27a91))
+
+
+### Features
+
+* enable support for semantic pull request ([d7413b5](https://github.com/vinayakkulkarni/v-offline/commit/d7413b570b5aba91f90c83f034139db7492f6257))
+
+
+
 # [2.1.0](https://github.com/vinayakkulkarni/v-offline/compare/v2.0.0...v2.1.0) (2021-07-23)
 
 

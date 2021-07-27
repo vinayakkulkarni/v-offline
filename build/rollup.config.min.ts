@@ -24,7 +24,7 @@ export default {
   output: {
     file: 'dist/v-offline.min.js',
     format: 'umd',
-    name: 'Widget',
+    name: 'VOffline',
     exports: 'named',
     strict: true,
     sourcemap: true,

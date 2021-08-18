@@ -1,3 +1,13 @@
+## [2.2.1](https://github.com/vinayakkulkarni/v-offline/compare/v2.2.0...v2.2.1) (2021-08-18)
+
+
+### Bug Fixes
+
+* **ci:** workflow for dependabot ([0ac0417](https://github.com/vinayakkulkarni/v-offline/commit/0ac04177ce1944bc96d610f1dd0ee9d951368cb0))
+* **deps:** bump actions/setup-node from 2.3.0 to 2.4.0 ([5278c11](https://github.com/vinayakkulkarni/v-offline/commit/5278c1165d2943bcf4e32266ce01bd4d6e6f26ca))
+
+
+
 # [2.2.0](https://github.com/vinayakkulkarni/v-offline/compare/v2.1.0...v2.2.0) (2021-07-27)
 
 

@@ -9,60 +9,64 @@ import { terser } from 'rollup-plugin-terser';
 import vue from 'rollup-plugin-vue';
 import pkg from '../package.json';
 
-const extensions = ['.js', '.ts', '.vue'];
+const plugins = [
+  alias({
+    entries: {
+      vue: '@vue/runtime-dom',
+    },
+  }),
+  resolve({
+    extensions: ['.js', '.ts', '.vue'],
+    browser: true,
+  }),
+  babel({
+    babelHelpers: 'bundled',
+    exclude: 'node_modules/**',
+  }),
+  commonjs({
+    extensions: ['.js', '.ts', '.vue'],
+    exclude: 'src/**',
+  }),
+  vue({ preprocessStyles: false }),
+  scss({
+    output: 'dist/v-offline.min.css',
+    // @ts-ignore
+    outputStyle: 'compressed',
+  }),
+  sucrase({
+    exclude: ['node_modules/**'],
+    transforms: ['typescript'],
+  }),
+  beep(),
+  terser({
+    compress: {
+      drop_console: true,
+      drop_debugger: true,
+    },
+  }),
+];
 
 const banner = `/*!
- * ${pkg.name} v${pkg.version}
- * ${pkg.description}
- * (c) 2021 ${pkg.author.name}<${pkg.author.email}>
- * Released under the ${pkg.license} License
- */
-`;
+  * ${pkg.name} v${pkg.version}
+  * (c) ${new Date().getFullYear()} ${pkg.author.name}
+  * @license ${pkg.license}
+  */`;
 
 export default {
   input: 'src/index.ts',
-  output: {
-    file: 'dist/v-offline.min.js',
-    format: 'umd',
-    name: 'VOffline',
-    exports: 'named',
-    strict: true,
-    sourcemap: true,
-    banner,
-    globals: {
-      vue: 'vue',
-      'ping.js': 'ping',
-      '@vue/composition-api': 'vueCompositionApi',
+  output: [
+    {
+      file: pkg.jsdelivr,
+      format: 'umd',
+      name: 'VOffline',
+      exports: 'named',
+      banner,
+      sourcemap: true,
+      globals: {
+        vue: 'vue',
+      },
     },
-  },
-  plugins: [
-    alias({
-      entries: {
-        vue: 'vue/dist/vue.runtime.esm.js',
-      },
-    }),
-    resolve({ extensions, browser: true }),
-    babel({
-      babelHelpers: 'bundled',
-      exclude: 'node_modules/**',
-    }),
-    commonjs({ extensions, exclude: 'src/**' }),
-    vue({ css: false }),
-    scss({
-      output: 'dist/v-offline.min.css',
-      outputStyle: 'compressed',
-    }),
-    sucrase({
-      exclude: ['node_modules/**'],
-      transforms: ['typescript'],
-    }),
-    terser({
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    }),
-    beep(),
   ],
-  external: ['vue', 'ping.js', '@vue/composition-api'],
+  plugins,
+  external: ['vue'],
 };

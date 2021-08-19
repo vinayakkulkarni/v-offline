@@ -8,21 +8,31 @@ import scss from 'rollup-plugin-scss';
 import vue from 'rollup-plugin-vue';
 import pkg from '../package.json';
 
-const extensions = ['.js', '.ts', '.vue'];
+export const banner = `/*!
+* ${pkg.name} v${pkg.version}
+* (c) ${new Date().getFullYear()} ${pkg.author.name}
+* @license ${pkg.license}
+*/`;
 
 const plugins = [
   alias({
     entries: {
-      vue: 'vue/dist/vue.runtime.esm.js',
+      vue: '@vue/runtime-dom',
     },
   }),
-  resolve({ extensions, browser: true }),
+  resolve({
+    extensions: ['.js', '.ts', '.vue'],
+    browser: true,
+  }),
   babel({
     babelHelpers: 'bundled',
     exclude: 'node_modules/**',
   }),
-  commonjs({ extensions, exclude: 'src/**' }),
-  vue({ css: false }),
+  commonjs({
+    extensions: ['.js', '.ts', '.vue'],
+    exclude: 'src/**',
+  }),
+  vue({ preprocessStyles: false }),
   scss({
     output: 'dist/v-offline.css',
   }),
@@ -33,47 +43,38 @@ const plugins = [
   beep(),
 ];
 
-const banner = `/*!
- * ${pkg.name} v${pkg.version}
- * ${pkg.description}
- * (c) ${new Date().getFullYear()} ${pkg.author.name}<${pkg.author.email}>
- * Released under the ${pkg.license} License
- */
-`;
-
 export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/v-offline.esm.js',
-      format: 'esm',
-      name: 'VOffline',
-      exports: 'named',
-      sourcemap: true,
-      banner,
-    },
-    {
-      file: 'dist/v-offline.cjs.js',
+      file: pkg.main,
       format: 'cjs',
       name: 'VOffline',
       exports: 'named',
+      strict: true,
       sourcemap: true,
       banner,
     },
     {
-      file: 'dist/v-offline.js',
-      format: 'umd',
+      file: pkg.module,
+      format: 'es',
       name: 'VOffline',
       exports: 'named',
       sourcemap: true,
       banner,
+    },
+    {
+      file: pkg.cdn,
+      format: 'umd',
+      name: 'VOffline',
+      exports: 'named',
+      banner,
+      sourcemap: true,
       globals: {
         vue: 'vue',
-        'ping.js': 'ping',
-        '@vue/composition-api': 'vueCompositionApi',
       },
     },
   ],
   plugins,
-  external: ['vue', 'ping.js', '@vue/composition-api'],
+  external: ['vue'],
 };

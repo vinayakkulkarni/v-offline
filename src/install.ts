@@ -1,16 +1,17 @@
-import VueCompositionApi from '@vue/composition-api';
-import { VueConstructor } from 'vue';
-import VOffline from './VOffline.vue';
+import { App as Application, Plugin } from 'vue';
+import VOffline from './components/VOffline.vue';
+import { setVueInstance } from './utils/config/index';
 
-let installed = false;
+let installed: boolean = false;
 
-const install = {
-  install(Vue: VueConstructor): void {
-    if (installed) return;
-    Vue.use(VueCompositionApi);
-    Vue.component('VOffline', VOffline);
+const install: Exclude<Plugin['install'], undefined> = (
+  instance: Application,
+) => {
+  if (!installed) {
+    setVueInstance(instance);
+    instance.component('VOffline', VOffline);
     installed = true;
-  },
+  }
 };
 
 export default install;

@@ -1,9 +1,19 @@
-import Vue, { VueConstructor } from 'vue';
+import {
+  AllowedComponentProps,
+  ComponentCustomProps,
+  DefineComponent,
+  VNodeProps,
+} from 'vue';
 
-export type VOfflineProps = {
+export interface VOfflineProps {
   onlineClass?: string;
   offlineClass?: string;
   pingUrl?: string;
-};
+}
 
-export const VOffline: VueConstructor<Vue>;
+type VOfflineComponentProps = AllowedComponentProps &
+  ComponentCustomProps &
+  VNodeProps &
+  VOfflineProps;
+
+export const VOffline: DefineComponent<VOfflineComponentProps>;

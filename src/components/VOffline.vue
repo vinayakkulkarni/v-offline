@@ -1,22 +1,8 @@
-<template>
-  <div :class="wrapperClass">
-    <slot />
-  </div>
-</template>
-
 <script lang="ts">
   import Ping from 'ping.js';
-  import {
-    ref,
-    Ref,
-    computed,
-    onBeforeUnmount,
-    PropType,
-    ComputedRef,
-    SetupContext,
-    defineComponent,
-  } from '@vue/composition-api';
-  import { VOfflineProps } from '../types';
+  import type { Ref, PropType, ComputedRef, SetupContext } from 'vue';
+  import { h, ref, computed, defineComponent, onBeforeUnmount } from 'vue';
+  import { VOfflineProps } from '~/types';
 
   export default defineComponent({
     name: 'VOffline',
@@ -37,7 +23,7 @@
         default: 'https://google.com',
       },
     },
-    setup(props: VOfflineProps, { emit }: SetupContext) {
+    setup(props: VOfflineProps, { slots, emit }: SetupContext) {
       // Local state
       const isOnline: Ref<boolean> = ref(navigator.onLine || false);
       const events: Ref<string[]> = ref(['online', 'offline', 'load']);
@@ -92,9 +78,7 @@
         }
       }
 
-      return {
-        wrapperClass,
-      };
+      return () => h('div', { class: wrapperClass.value }, slots);
     },
   });
 </script>

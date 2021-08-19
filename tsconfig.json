@@ -24,13 +24,15 @@
       "@/*": ["./src/*"]
     },
     "types": [
-      "@types/node"
+      "@types/node",
+      "vue"
     ]
   },
   "include": [
     "src",
     "build",
-    "shims"
+    "shims",
+    "types"
   ],
   "exclude": [
     "node_modules",

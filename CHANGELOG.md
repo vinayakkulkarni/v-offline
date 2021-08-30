@@ -1,3 +1,7 @@
+## [3.0.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.0.0...v3.0.1) (2021-08-30)
+
+
+
 ## [2.2.1](https://github.com/vinayakkulkarni/v-offline/compare/v2.2.0...v2.2.1) (2021-08-18)
 
 

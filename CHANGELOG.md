@@ -1,3 +1,7 @@
+## [2.2.4](https://github.com/vinayakkulkarni/v-offline/compare/v2.2.3...v2.2.4) (2021-09-25)
+
+
+
 ## [2.2.3](https://github.com/vinayakkulkarni/v-offline/compare/v2.2.2...v2.2.3) (2021-08-30)
 
 

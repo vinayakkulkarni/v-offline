@@ -2,16 +2,17 @@
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/vinayakkulkarni/v-offline/ci?logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/ci.yml)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/vinayakkulkarni/v-offline/Ship%20js%20trigger?label=⛴%20Ship.js%20trigger)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/shipjs-trigger.yml)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vinayakkulkarni/v-offline?sort=semver&logo=github)](https://github.com/vinayakkulkarni/v-offline/releases)
-[![npm](https://img.shields.io/npm/v/v-offline?logo=npm)](https://www.npmjs.com/package/v-offline)
 [![npm](https://img.shields.io/npm/dm/v-offline?logo=npm)](http://npm-stat.com/charts.html?package=v-offline)
-[![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/latest)](https://bundlephobia.com/package/v-offline@latest)
+[![npm](https://img.shields.io/npm/v/v-offline/latest?logo=npm)](https://www.npmjs.com/package/v-offline)
+[![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/latest?label=@latest%20size&logo=vue.js)](https://bundlephobia.com/package/v-offline@latest)
+[![npm](https://img.shields.io/npm/v/v-offline/next?logo=npm)](https://www.npmjs.com/package/v-offline)
+[![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/next?label=@next%20size&logo=vue.js)](https://bundlephobia.com/package/v-offline@next)
 [![npm type definitions](https://img.shields.io/npm/types/v-offline)](https://github.com/vinayakkulkarni/v-offline/blob/master/package.json)
 [![DeepScan grade](https://deepscan.io/api/teams/9055/projects/16121/branches/339368/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9055&pid=16121&bid=339368)
 [![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/vinayakkulkarni/v-offline)](https://snyk.io/test/github/vinayakkulkarni/v-offline)
 [![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/vinayakkulkarni/v-offline?logo=lgtm)](https://lgtm.com/projects/g/vinayakkulkarni/v-offline/alerts/)
 [![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/vinayakkulkarni/v-offline?logo=lgtm)](https://lgtm.com/projects/g/vinayakkulkarni/v-offline/context:javascript)
-[![GitHub contributors](https://img.shields.io/github/contributors/vinayakkulkarni/v-offline)](https://github.com/vinayakkulkarni/v-offline/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/vinayakkulkarni/v-offline?logo=github)](https://github.com/vinayakkulkarni/v-offline/graphs/contributors)
 [![FOSSA](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline?ref=badge_shield)
 
 [![eslint](https://img.shields.io/npm/dependency-version/v-offline/dev/eslint?logo=eslint)](https://eslint.org/)
@@ -20,13 +21,12 @@
 [![vue](https://img.shields.io/npm/dependency-version/v-offline/dev/vue?logo=vue.js)](https://vuejs.org/)
 [![typescript](https://img.shields.io/npm/dependency-version/v-offline/dev/typescript?logo=TypeScript)](https://www.typescriptlang.org/)
 
-## Features
+⚠️ Docs are for Vue 3, for Vue 2 docs, [click here](https://github.com/vinayakkulkarni/v-offline#v-offline-%EF%B8%8F)
 
+## Features
 * Detect offline & online events for your vue app.
 * Built from scratch usign Vue 2 & Composition API with TypeScript
-* For Vue 2.x version – `npm i v-offline@2`
 * For Vue 3.x version – `npm i v-offline@3`
-
 
 ## Table of Contents
 
@@ -57,14 +57,12 @@
 
 ## Requirements
 
-* [vue](https://vuejs.org/) `^2.x`
-* [@vue/composition-api](https://v3.vuejs.org/guide/composition-api-introduction.html) `^1.x`
+* [vue](https://vuejs.org/) `^3.x`
 
 ### Installation
 
 ```sh
 npm install --save v-offline
-npm install --save-dev @vue/composition-api
 ```
 
 CDN: [UNPKG](https://unpkg.com/v-offline/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-offline/dist/) (available as `window.VOffline`)
@@ -166,8 +164,8 @@ Vue.component('example-component', {
 
 ## Built with
 
-- [TypeScript](https://www.typescriptlang.org/).
-- [Vue 2](https://v3.vuejs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vue 3](https://v3.vuejs.org)
 
 ## Contributing 
 

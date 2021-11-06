@@ -43,7 +43,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@rollup/plugin-alias": "^3.1.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-beep": "^0.2.0",

@@ -50,7 +50,7 @@
     "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-sucrase": "^4.0.0",
-    "@types/node": "^16.7.6",
+    "@types/node": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "@vinayakkulkarni/prettier-config-vue": "^1.0.0",

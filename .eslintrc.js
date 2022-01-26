@@ -2,28 +2,28 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    es6: true,
     node: true,
+    es2021: true,
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
     sourceType: 'module',
-    lib: ['es2020'],
+    lib: ['es2021'],
     ecmaFeatures: {
       jsx: true,
       tsx: true,
     },
     extraFileExtensions: ['.vue'],
   },
-  plugins: ['vue', 'prettier', 'jsdoc', 'security', '@typescript-eslint'],
+  plugins: ['vue', 'jsdoc', 'security', '@typescript-eslint', 'prettier'],
   extends: [
-    'prettier',
-    'plugin:prettier/recommended',
     'plugin:jsdoc/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:vue/vue3-recommended',
     'plugin:security/recommended',
+    'plugin:prettier/recommended',
+    'prettier',
   ],
   // add your custom rules here
   rules: {

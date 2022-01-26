@@ -1,21 +1,23 @@
 <template>
   <div id="app">
-    <v-offline
-      online-class="online"
-      offline-class="offline"
-      @detected-condition="amIOnline"
-    >
-      <template v-if="online">
-        <div class="flex w-full h-full justify-center items-center text-6xl">
-          ⚡️
-        </div>
-      </template>
-      <template v-if="!online">
-        <div class="flex w-full h-full justify-center items-center text-6xl">
-          💩
-        </div>
-      </template>
-    </v-offline>
+    <main class="w-screen h-screen">
+      <v-offline
+        online-class="online"
+        offline-class="offline"
+        @detected-condition="amIOnline"
+      >
+        <template v-if="online">
+          <div class="flex w-full h-full justify-center items-center text-6xl">
+            ⚡️
+          </div>
+        </template>
+        <template v-if="!online">
+          <div class="flex w-full h-full justify-center items-center text-6xl">
+            💩
+          </div>
+        </template>
+      </v-offline>
+    </main>
   </div>
 </template>
 
@@ -41,15 +43,42 @@
     },
   };
 </script>
-<style lang="scss">
-  @import url("https://unpkg.com/tailwindcss@latest/dist/tailwind.min.css");
-
+<style>
   * {
     margin: 0;
   }
 
-  #app {
-    @apply w-screen h-screen;
+  .w-screen {
+    width: 100vw;
+  }
+
+  .h-screen {
+    height: 100vh;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .h-full {
+    height: 100%;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 
   .offline {

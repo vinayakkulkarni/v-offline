@@ -16,13 +16,14 @@ module.exports = {
     },
     extraFileExtensions: ['.vue'],
   },
-  plugins: ['vue', 'jsdoc', '@typescript-eslint', 'prettier'],
+  plugins: ['vue', 'prettier', 'jsdoc', 'security', '@typescript-eslint'],
   extends: [
-    'plugin:vue/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    'prettier',
     'plugin:prettier/recommended',
     'plugin:jsdoc/recommended',
-    'prettier',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:security/recommended',
   ],
   // add your custom rules here
   rules: {

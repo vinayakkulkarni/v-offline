@@ -26,15 +26,15 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [16]
+        node: [17]
 
     steps:
       - name: Check out repository ✨
-        if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' && github.actor != 'dependabot[bot]' }}
+        if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'pull_request_target' && github.actor != 'dependabot[bot]' }}
         uses: actions/checkout@v2
 
       - name: Check out repository 🎉 (dependabot)
-        if: ${{ github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]' }}
+        if: ${{ github.event_name == 'pull_request_target' }}
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -45,7 +45,7 @@ jobs:
           node-version: ${{ matrix.node }}
           check-latest: true
           registry-url: https://registry.npmjs.org
-          cache: 'npm' 
+          cache: 'npm'
 
       - name: Upgrade npm 🎉
         run: npm install -g npm@latest

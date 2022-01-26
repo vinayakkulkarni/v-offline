@@ -18,11 +18,11 @@ jobs:
       - name: Setup node env 📦
         uses: actions/setup-node@v2.5.1
         with:
-          node-version: 16
+          node-version: 17
           check-latest: true
           registry-url: 'https://npm.pkg.github.com'
           cache: 'npm'
-          
+
       - name: Upgrade npm 🎉
         run: npm install -g npm@latest
 

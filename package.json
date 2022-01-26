@@ -1,6 +1,6 @@
 {
   "name": "v-offline",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "description": "Offline and Online components for Vue",
   "types": "types/index.d.ts",
   "main": "dist/v-offline.cjs.js",

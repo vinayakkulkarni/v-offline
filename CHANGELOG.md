@@ -1,3 +1,20 @@
+# [2.3.0](https://github.com/vinayakkulkarni/v-offline/compare/v2.2.4...v2.3.0) (2022-01-26)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/setup-node from 2.4.0 to 2.4.1 ([0e79d84](https://github.com/vinayakkulkarni/v-offline/commit/0e79d84e73710e21a0eaace27cbdc8e09d9c088a))
+* **deps:** bump actions/setup-node from 2.4.1 to 2.5.0 ([331778d](https://github.com/vinayakkulkarni/v-offline/commit/331778d3fc1a6e5ebf2aba46d736db0d451f5ee5))
+* **deps:** bump actions/setup-node from 2.5.0 to 2.5.1 ([e68554f](https://github.com/vinayakkulkarni/v-offline/commit/e68554fde8f6504fc0ffa492c628cb9f014a5dcf))
+
+
+### Features
+
+* add support for `eslint-plugin-security` ([7aee06a](https://github.com/vinayakkulkarni/v-offline/commit/7aee06a60cbea24123eb35fd6de790d3c65bc321))
+* update stylelint config ([e7d1173](https://github.com/vinayakkulkarni/v-offline/commit/e7d1173dda81031c8f83947fa518a2e18f51e9c4))
+
+
+
 ## [2.2.4](https://github.com/vinayakkulkarni/v-offline/compare/v2.2.3...v2.2.4) (2021-09-25)
 
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="w-screen h-screen">
+  <div id="app">
     <v-offline
       online-class="online"
       offline-class="offline"
@@ -42,16 +42,23 @@
   };
 </script>
 <style lang="scss">
-  @import url('https://unpkg.com/tailwindcss@latest/dist/tailwind.min.css');
+  @import url("https://unpkg.com/tailwindcss@latest/dist/tailwind.min.css");
+
   * {
     margin: 0;
   }
+
+  #app {
+    @apply w-screen h-screen;
+  }
+
   .offline {
     width: 100%;
     height: 100%;
     background-color: #fc9842;
     background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
   }
+
   .online {
     width: 100%;
     height: 100%;

@@ -1,3 +1,19 @@
+# [3.1.0](https://github.com/vinayakkulkarni/v-offline/compare/v3.0.3...v3.1.0) (2022-01-26)
+
+
+### Bug Fixes
+
+* remove volar settings for vscode ([3fc1422](https://github.com/vinayakkulkarni/v-offline/commit/3fc142281bc2ada0f9baba8b57870387e4c34f04))
+* run lint-staged via npx ([fdc75de](https://github.com/vinayakkulkarni/v-offline/commit/fdc75de9b435af505aa0242a60302ee176fc8f84))
+* update eslintrc config to support security plugin ([e4b6720](https://github.com/vinayakkulkarni/v-offline/commit/e4b672017a529beda3e0c8f95626ed6fdfada530))
+
+
+### Features
+
+* add `.nvmrc` ([f014666](https://github.com/vinayakkulkarni/v-offline/commit/f01466663acbd00ef1b6ace0d2a1b1e340ee06d2))
+
+
+
 ## [3.0.3](https://github.com/vinayakkulkarni/v-offline/compare/v3.0.2...v3.0.3) (2021-09-29)
 
 

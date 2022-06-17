@@ -63,7 +63,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-vue": "^9.1.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.2",
+    "lint-staged": "^13.0.2",
     "prettier": "^2.5.1",
     "rollup": "^2.66.1",
     "rollup-plugin-scss": "^3.0.0",

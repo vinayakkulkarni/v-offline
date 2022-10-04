@@ -1,6 +1,6 @@
 {
   "name": "v-offline",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Offline and Online components for Vue",
   "type": "module",
   "types": "types/index.d.ts",

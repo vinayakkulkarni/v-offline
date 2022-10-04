@@ -1,3 +1,18 @@
+# [3.2.0](https://github.com/vinayakkulkarni/v-offline/compare/v3.1.0...v3.2.0) (2022-10-04)
+
+
+### Bug Fixes
+
+* **deps:** bump wearerequired/lint-action from 1 to 2 ([66bbeaf](https://github.com/vinayakkulkarni/v-offline/commit/66bbeaf67f05e61f4b5d197efc47a2b414670e35))
+* remove semantic-pr github probot app ([37f8c54](https://github.com/vinayakkulkarni/v-offline/commit/37f8c549f172b41ce2dbbd00785cd0b6c194237b))
+
+
+### Features
+
+* **types:** auto-generated types using vue-tsc 🎉 ([93fbaf4](https://github.com/vinayakkulkarni/v-offline/commit/93fbaf443dac873c17fe0327490dc67697524f55))
+
+
+
 # [3.1.0](https://github.com/vinayakkulkarni/v-offline/compare/v3.0.3...v3.1.0) (2022-01-26)
 
 

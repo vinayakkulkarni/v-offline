@@ -23,9 +23,10 @@
 ## Features
 
 * Detect offline & online events for your vue app.
-* Built from scratch usign Vue 2 & Composition API with TypeScript
-* For Vue 2.x version – `npm i v-offline@2`
-* For Vue 3.x version – `npm i v-offline@3`
+* Built from scratch usign Vue 2.7 with TypeScript
+* For Vue >3.x version – `npm i v-offline`
+* For Vue >=2.7 version – `npm i v-offline@legacy`
+* For Vue <2.7 version – `npm i v-offline@2.3.0`
 
 
 ## Table of Contents
@@ -57,14 +58,13 @@
 
 ## Requirements
 
-* [vue](https://vuejs.org/) `^2.x`
+* [vue](https://vuejs.org/) `>^2.7`
 * [@vue/composition-api](https://v3.vuejs.org/guide/composition-api-introduction.html) `^1.x`
 
 ### Installation
 
 ```sh
 npm install --save v-offline
-npm install --save-dev @vue/composition-api
 ```
 
 CDN: [UNPKG](https://unpkg.com/v-offline/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-offline/dist/) (available as `window.VOffline`)

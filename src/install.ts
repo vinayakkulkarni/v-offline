@@ -1,15 +1,11 @@
-import { App as Application, Plugin } from 'vue';
+import { App as Application } from 'vue';
 import VOffline from './components/VOffline.vue';
-import { setVueInstance } from './utils/config/index';
 
 let installed = false;
 
-const install: Exclude<Plugin['install'], undefined> = (
-  instance: Application,
-) => {
+const install = (app: Application) => {
   if (!installed) {
-    setVueInstance(instance);
-    instance.component('VOffline', VOffline);
+    app.component('VOffline', VOffline);
     installed = true;
   }
 };

@@ -2,7 +2,12 @@
   import Ping from 'ping.js';
   import type { ComputedRef, PropType, Ref, SetupContext } from 'vue';
   import { computed, defineComponent, h, onBeforeUnmount, ref } from 'vue';
-  import type { VOfflineProps } from '~/types';
+
+  type VOfflineProps = {
+    onlineClass?: string;
+    offlineClass?: string;
+    pingUrl?: string;
+  };
 
   export default defineComponent({
     name: 'VOffline',

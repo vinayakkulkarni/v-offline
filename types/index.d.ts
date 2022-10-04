@@ -1,9 +1,2 @@
-import Vue, { VueConstructor } from 'vue';
-
-export type VOfflineProps = {
-  onlineClass?: string;
-  offlineClass?: string;
-  pingUrl?: string;
-};
-
-export const VOffline: VueConstructor<Vue>;
+export { default } from './install';
+export { default as VOffline } from './VOffline.vue';

@@ -6,17 +6,14 @@
 
 <script lang="ts">
   import Ping from 'ping.js';
-  import {
-    ref,
-    Ref,
-    computed,
-    onBeforeUnmount,
-    PropType,
-    ComputedRef,
-    SetupContext,
-    defineComponent,
-  } from '@vue/composition-api';
-  import { VOfflineProps } from '../types';
+  import { computed, defineComponent, onBeforeUnmount, ref } from 'vue';
+  import type { ComputedRef, PropType, Ref, SetupContext } from 'vue';
+
+  type VOfflineProps = {
+    onlineClass?: string;
+    offlineClass?: string;
+    pingUrl?: string;
+  };
 
   export default defineComponent({
     name: 'VOffline',
@@ -57,14 +54,16 @@
       /**
        * Created lifecycle hook
        */
-      events.value.forEach((event) => window.addEventListener(event, check));
+      events.value.forEach((event: string) =>
+        window.addEventListener(event, check),
+      );
 
       /**
        * Before unmount lifecycle hook
        */
       onBeforeUnmount(() => {
         // Cleanup of the event listeners
-        events.value.forEach((event) =>
+        events.value.forEach((event: string) =>
           window.removeEventListener(event, check),
         );
       });

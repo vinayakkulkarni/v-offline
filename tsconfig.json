@@ -15,7 +15,8 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
@@ -24,7 +25,9 @@
       "@/*": ["./src/*"]
     },
     "types": [
-      "@types/node"
+      "@types/node",
+      "vite",
+      "@vitejs/plugin-vue2"
     ]
   },
   "include": [

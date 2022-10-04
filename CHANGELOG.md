@@ -1,3 +1,23 @@
+# [2.5.0](https://github.com/vinayakkulkarni/v-offline/compare/v2.3.0...v2.5.0) (2022-10-04)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/checkout from 2 to 3 ([0273c56](https://github.com/vinayakkulkarni/v-offline/commit/0273c56ecefe93b5a55c60b0733a8ffd8574173b))
+* **deps:** bump actions/setup-node from 2.5.1 to 3 ([2364484](https://github.com/vinayakkulkarni/v-offline/commit/2364484a126799151219fcf4a5c1fb9e82426a35))
+* **deps:** bump ejs from 3.1.6 to 3.1.7 ([bb3824c](https://github.com/vinayakkulkarni/v-offline/commit/bb3824ca118373f749c52ddc145812564a61d313))
+* **deps:** bump follow-redirects from 1.14.7 to 1.14.8 ([31a7ece](https://github.com/vinayakkulkarni/v-offline/commit/31a7ecef9fdf934b37070203ff9e3b8fb69aabca))
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([68353fd](https://github.com/vinayakkulkarni/v-offline/commit/68353fd41664dcb861fd655a4117c82fe3b564cf))
+* **deps:** bump terser from 5.10.0 to 5.14.2 ([0df3c45](https://github.com/vinayakkulkarni/v-offline/commit/0df3c45780a1e8a4b18c3be6947ee05945e72a01))
+* **deps:** bump wearerequired/lint-action from 1 to 2 ([a340740](https://github.com/vinayakkulkarni/v-offline/commit/a340740fd0c96d4b50fd210fb8cd94b0ea6a0d38))
+
+
+### Features
+
+* update package.json & lockfile ([f90c83d](https://github.com/vinayakkulkarni/v-offline/commit/f90c83d8bed817251cdd0129f7f62b724d140bf7))
+
+
+
 # [2.3.0](https://github.com/vinayakkulkarni/v-offline/compare/v2.2.4...v2.3.0) (2022-01-26)
 
 

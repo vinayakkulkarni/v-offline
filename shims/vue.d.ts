@@ -1,7 +1,7 @@
+/// <reference types="vite/client" />
+
 declare module '*.vue' {
-  import type { App, DefineComponent, Plugin } from 'vue';
-  const component: DefineComponent<{}, {}, any> & {
-    install(app: App): Exclude<Plugin['install'], undefined>;
-  };
+  import type { DefineComponent } from 'vue';
+  const component: DefineComponent<{}, {}, any>;
   export default component;
 }

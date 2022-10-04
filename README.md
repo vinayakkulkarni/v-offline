@@ -55,7 +55,7 @@
 
 ## Demo
 
-[![Edit v-offline demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/v-offline-demo-8itb1?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit v-offline demo](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/v-offline?file=src/App.vue)
 
 ## Requirements
 
@@ -93,9 +93,9 @@ Vue.component('VOffline', require('v-offline'));
 
 ```javascript
 import Vue from 'vue';
-import VOffline from 'v-offline';
+import { VOffline } from 'v-offline';
 
-Vue.use(VOffline);
+Vue.component('v-offline', VOffline);
 ```
 
 ### Locally
@@ -110,9 +110,9 @@ import { VOffline } from 'v-offline';
 <br />
 
 ```html
-<v-offline @detected-condition="amIOnline">
-  <template v-if="online"> ( Online: {{ onLine }} ) </template>
-  <template v-if="offline"> ( Online: {{ onLine }} ) </template>
+<v-offline @detected-condition="setOnline">
+  <template v-if="online"> ( Online: {{ online }} ) </template>
+  <template v-if="!online"> ( Online: {{ online }} ) </template>
 </v-offline>
 ```
 
@@ -125,12 +125,12 @@ Vue.component('example-component', {
   },
   data() {
     return {
-      onLine: true,
+      online: true,
     };
   },
   methods: {
-    amIOnline(e) {
-      this.onLine = e;
+    setOnline(e) {
+      this.online = e;
     },
   },
 });

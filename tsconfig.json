@@ -15,7 +15,8 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
@@ -25,6 +26,8 @@
     },
     "types": [
       "@types/node",
+      "@vitejs/plugin-vue",
+      "vite",
       "vue"
     ]
   },

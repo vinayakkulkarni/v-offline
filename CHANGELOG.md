@@ -1,3 +1,21 @@
+# [3.3.0](https://github.com/vinayakkulkarni/v-offline/compare/v3.2.1...v3.3.0) (2022-11-05)
+
+
+### Bug Fixes
+
+* **badge:** remove rollup & add vite badge ([2af4c2a](https://github.com/vinayakkulkarni/v-offline/commit/2af4c2ac2753d97e326eb96f73944b630302efdd))
+* **deps:** bump amannn/action-semantic-pull-request from 4 to 5.0.1 ([8c7e1bf](https://github.com/vinayakkulkarni/v-offline/commit/8c7e1bfc06e70be298ec6a9ced0724eda3785f1f))
+* **deps:** bump amannn/action-semantic-pull-request from 5.0.1 to 5.0.2 ([2eb34be](https://github.com/vinayakkulkarni/v-offline/commit/2eb34be29b8dfa28498d39e845f0e099c0d558e1))
+* remove types directory ❤️ ([e0e2009](https://github.com/vinayakkulkarni/v-offline/commit/e0e20099d6f0c218df6360a5ad72b3799f680736))
+
+
+### Features
+
+* add extensions ([f66b1ea](https://github.com/vinayakkulkarni/v-offline/commit/f66b1eaf63e1b778630038865ee58ec910e2d76b))
+* add netlify deploy ([6f05fb9](https://github.com/vinayakkulkarni/v-offline/commit/6f05fb95c3cb05e5311d1af8c8d738724bc6a1fd))
+
+
+
 ## [3.2.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.2.0...v3.2.1) (2022-10-04)
 
 

@@ -1,5 +1,5 @@
 <template>
-  <v-github-icon url="https://github.com/vinayakkulkarni/v-image" />
+  <v-github-icon url="https://github.com/vinayakkulkarni/v-offline" />
   <v-offline
     online-class="online"
     offline-class="offline"
@@ -19,7 +19,7 @@
   <!-- Netlify Badge -->
   <div class="absolute bottom-4 right-4">
     <a
-      href="https://app.netlify.com/sites/v-image/deploys"
+      href="https://app.netlify.com/sites/v-offline/deploys"
       aria-label="View deploys on Netlify"
       target="_blank"
       rel="noopener noreferrer"

@@ -9,8 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ping.js": "^0.3.0",
     "v-github-icon": "^3.0.1",
-    "v-offline": "^3.2.1",
+    "v-offline": "^3.3.0",
     "vue": "^3.2.41"
   },
   "devDependencies": {

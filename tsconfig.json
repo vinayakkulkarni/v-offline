@@ -2,7 +2,20 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "strict": true,
+    "importHelpers": true,
     "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "jsx": "preserve",
     "lib": [
       "esnext",
       "dom",
@@ -10,35 +23,11 @@
       "scripthost",
       "esnext.asynciterable"
     ],
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "strict": true,
-    "noEmit": false,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./src/*"]
-    },
-    "types": [
-      "@types/node",
-      "@vitejs/plugin-vue",
-      "vite",
-      "vue"
-    ]
+      "@/*": ["src/*"]
+    }
   },
-  "include": [
-    "src",
-    "build",
-    "shims",
-    "types"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src", "shims"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,0 +1,39 @@
+name: 'Deploy to Pages'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-demo:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: './example/'
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Setup node env 📦
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'current'
+          check-latest: true
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Install dependencies 🚀
+        run: npm ci --prefer-offline --no-audit --omit=optional
+
+      - name: Run build 🏁
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3.9.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./example/dist
+          cname: v-offline.netlify.app

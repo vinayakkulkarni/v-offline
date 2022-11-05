@@ -16,7 +16,7 @@
 
 [![eslint](https://img.shields.io/npm/dependency-version/v-offline/dev/eslint?logo=eslint)](https://eslint.org/)
 [![prettier](https://img.shields.io/npm/dependency-version/v-offline/dev/prettier?logo=prettier)](https://prettier.io/)
-[![rollup](https://img.shields.io/npm/dependency-version/v-offline/dev/rollup?logo=rollup.js)](https://rollupjs.org/guide/en/)
+[![vite](https://img.shields.io/npm/dependency-version/v-image/dev/vite?logo=vite)](https://vitejs.dev/)
 [![vue](https://img.shields.io/npm/dependency-version/v-offline/dev/vue?logo=vue.js)](https://vuejs.org/)
 [![typescript](https://img.shields.io/npm/dependency-version/v-offline/dev/typescript?logo=TypeScript)](https://www.typescriptlang.org/)
 

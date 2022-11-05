@@ -24,11 +24,12 @@
 ⚠️ Docs are for Vue 3, for Vue 2 docs, [click here](https://github.com/vinayakkulkarni/v-offline#v-offline-%EF%B8%8F)
 
 ## Features
-* Detect offline & online events for your vue app.
-* Built from scratch usign Vue 2 & Composition API with TypeScript
-* For Vue >3.x version – `npm i v-offline@latest`
-* For Vue >=2.7 version – `npm i v-offline@legacy`
-* For Vue <2.7 version – `npm i v-offline@2.3.0`
+
+- Detect offline & online events for your vue app.
+- Built from scratch usign Vue 2 & Composition API with TypeScript
+- For Vue >3.x version – `npm i v-offline@latest`
+- For Vue >=2.7 version – `npm i v-offline@legacy`
+- For Vue <2.7 version – `npm i v-offline@2.3.0`
 
 ## Table of Contents
 
@@ -39,16 +40,11 @@
   - [Requirements](#requirements)
     - [Installation](#installation)
     - [Build Setup](#build-setup)
-  - [Usage](#usage)
-    - [Globally](#globally)
-      - [As a component](#as-a-component)
-      - [As a plugin](#as-a-plugin)
-    - [Locally](#locally)
-      - [Example](#example)
+    - [Usage](#usage)
+    - [Example](#example)
   - [API](#api)
     - [Props](#props)
     - [Events](#events)
-  - [Built with](#built-with)
   - [Contributing](#contributing)
   - [Author](#author)
   - [License](#license)
@@ -59,117 +55,156 @@
 
 ## Requirements
 
-* [vue](https://vuejs.org/) `^3.x`
+- [vue](https://vuejs.org/) `^3.x`
 
 ### Installation
 
 ```sh
-npm install --save v-offline
+npm install --save v-offline ping.js
 ```
 
 CDN: [UNPKG](https://unpkg.com/v-offline/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-offline/dist/) (available as `window.VOffline`)
 
 ### Build Setup
 
-``` bash
+```bash
 # install dependencies
-$ npm ci
+$ npm install
 
 # package the library
 $ npm run build
 ```
 
+### Usage
 
-## Usage
+Global component:
 
-### Globally
+```js
+// main.ts
+import { VOffline } from 'v-offline';
+import { createApp } from 'vue';
 
-#### As a component
-```javascript
-Vue.component('VOffline', require('v-offline'));
+const app = createApp({});
+app.component('VOffline', VOffline);
 ```
 
-#### As a plugin
+Or use locally
 
-```javascript
-import Vue from 'vue';
+```js
+// component.vue
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { VOffline } from 'v-offline';
 
-Vue.component('v-offline', VOffline);
-```
-
-### Locally
-
-```javascript
-import { VOffline } from 'v-offline';
-```
-
-#### Example
-<details>
-<summary>Locally imported as a component</summary>
-<br />
-
-```html
-<v-offline @detected-condition="setOnline">
-  <template v-if="online"> ( Online: {{ online }} ) </template>
-  <template v-if="!online"> ( Online: {{ online }} ) </template>
-</v-offline>
-```
-
-```javascript
-import { VOffline } from 'v-offline';
-
-Vue.component('example-component', {
+export default defineComponent({
   components: {
-    VOffline
+    VOffline,
   },
-  data() {
-    return {
-      online: true,
-    };
-  },
-  methods: {
-    setOnline(e) {
-      this.online = e;
-    },
-  },
+});
+</script>
+```
+
+For Nuxt 3, create a file in `plugins/v-offline.ts`
+
+```js
+import { VOffline } from 'v-offline';
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.component('VOffline', VOffline);
 });
 ```
 
-```css
-.offline {
-  background-color: #fc9842;
-  background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
-}
-.online {
-  background-color: #00b712;
-  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%);
-}
-```
-</details>
+then import the file in `nuxt.config.{j|t}s`:
 
+```js
+export default {
+  // ...
+  plugins: [
+    // ...
+    { src: '~/plugins/v-offline', mode: 'client' },
+    // ...
+  ],
+  // ...
+};
+```
+
+### Example
+
+```html
+<template>
+  <v-offline
+    online-class="online"
+    offline-class="offline"
+    @detected-condition="onNetworkChange"
+  >
+    <template v-if="online">
+      <div class="flex w-full h-full justify-center items-center text-6xl">
+        ⚡️
+      </div>
+    </template>
+    <template v-if="!online">
+      <div class="flex w-full h-full justify-center items-center text-6xl">
+        💩
+      </div>
+    </template>
+  </v-offline>
+  <!-- Netlify Badge -->
+  <div class="absolute bottom-4 right-4">
+    <a
+      href="https://app.netlify.com/sites/v-offline/deploys"
+      aria-label="View deploys on Netlify"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="gray-400"
+    >
+      <img
+        src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
+        alt="Deploys by Netlify"
+      />
+    </a>
+  </div>
+</template>
+
+<script lang="ts">
+  import { defineComponent, ref } from 'vue';
+  import type { Ref } from 'vue';
+  import { VOffline } from 'v-offline';
+
+  export default defineComponent({
+    components: {
+      VOffline,
+    },
+    setup() {
+      const online: Ref<boolean> = ref(false);
+      const onNetworkChange = (status: boolean) => {
+        online.value = status;
+      };
+      return { online, onNetworkChange };
+    },
+  });
+</script>
+<style>
+  @import 'v-github-icon/dist/v-github-icon.css';
+</style>
+```
 
 ## API
+
 ### Props
 
-| Name            | Type   | Required? | Default              | Description                                                 |
-| --------------  | ------ | --------- | ---------            | ----------------------------------------------------------- |
-| `online-class`  | String | No        | ''                   | Styling the `div` which you want to give if you're online.  |
-| `offline-class` | String | No        | ''                   | Styling the `div` which you want to give if you're offline. |
-| `ping-url`      | String | No        | https://google.com   | Pinging any url to double check if you're online or not.    |
+| Name            | Type   | Required? | Default            | Description                                                 |
+| --------------- | ------ | --------- | ------------------ | ----------------------------------------------------------- |
+| `online-class`  | String | No        | ''                 | Styling the `div` which you want to give if you're online.  |
+| `offline-class` | String | No        | ''                 | Styling the `div` which you want to give if you're offline. |
+| `ping-url`      | String | No        | https://google.com | Pinging any url to double check if you're online or not.    |
 
 ### Events
 
-| Name                  | Returns | Description            |
-| ---                   | ---     | ---                    |
-| `@detected-condition` | String  | Emits a boolean value  |
+| Name                  | Returns | Description           |
+| --------------------- | ------- | --------------------- |
+| `@detected-condition` | String  | Emits a boolean value |
 
-## Built with
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vue 3](https://v3.vuejs.org)
-
-## Contributing 
+## Contributing
 
 1. Fork it ( [https://github.com/vinayakkulkarni/v-offline/fork](https://github.com/vinayakkulkarni/v-offline/fork) )
 2. Create your feature branch (`git checkout -b feat/new-feature`)
@@ -177,11 +212,11 @@ Vue.component('example-component', {
 4. Push to the branch (`git push origin feat/new-feature`)
 5. Create a new [Pull Request](https://github.com/vinayakkulkarni/v-offline/compare)
 
-_Note_: 
-1. Please contribute using [Github Flow](https://guides.github.com/introduction/flow/)
+_Note_:
+
+1. Please contribute using [GitHub Flow](https://web.archive.org/web/20191104103724/https://guides.github.com/introduction/flow/)
 2. Commits & PRs will be allowed only if the commit messages & PR titles follow the [conventional commit standard](https://www.conventionalcommits.org/), _read more about it [here](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum)_
 3. PS. Ensure your commits are signed. _[Read why](https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html)_
-
 
 ## Author
 
@@ -190,6 +225,6 @@ Authored and maintained by Vinayak Kulkarni with help from contributors ([list](
 
 > [vinayakkulkarni.dev](https://vinayakkulkarni.dev) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline?ref=badge_large)

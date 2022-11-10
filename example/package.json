@@ -12,7 +12,7 @@
     "ping.js": "^0.3.0",
     "v-github-icon": "^3.0.1",
     "v-offline": "^3.3.0",
-    "vue": "^3.2.41"
+    "vue": "^3.2.44"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",

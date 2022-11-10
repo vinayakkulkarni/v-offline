@@ -61,7 +61,7 @@
     "lint-staged": "^13.0.3",
     "postcss-html": "^1.5.0",
     "prettier": "^2.7.1",
-    "sass": "^1.56.0",
+    "sass": "^1.56.1",
     "shipjs": "^0.24.4",
     "stylelint": "^14.14.1",
     "stylelint-config-prettier": "^9.0.4",

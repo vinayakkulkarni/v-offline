@@ -1,8 +1,8 @@
 # V-Offline ⚡️
 
-[![CI](https://img.shields.io/github/workflow/status/vinayakkulkarni/v-offline/ci?logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/ci.yml)
-[![CodeQL](https://img.shields.io/github/workflow/status/vinayakkulkarni/v-offline/codeql?logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/codeql.yml)
-[![Ship.js Trigger](https://img.shields.io/github/workflow/status/vinayakkulkarni/v-offline/Ship%20js%20trigger?label=⛴%20Ship.js%20trigger)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/shipjs-trigger.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/ci.yml?label=CI&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/ci.yml)
+[![CodeQL](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/codeql.yml?label=CodeQL&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/codeql.yml)
+[![Ship.js Trigger](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/shipjs-trigger.yml?label=⛴%20Ship.js%20trigger)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/shipjs-trigger.yml)
 [![npm](https://img.shields.io/npm/dm/v-offline?logo=npm)](http://npm-stat.com/charts.html?package=v-offline)
 [![npm](https://img.shields.io/npm/v/v-offline/latest?logo=npm)](https://www.npmjs.com/package/v-offline)
 [![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/latest?label=@latest%20size&logo=vue.js)](https://bundlephobia.com/package/v-offline@latest)
@@ -16,7 +16,7 @@
 
 [![eslint](https://img.shields.io/npm/dependency-version/v-offline/dev/eslint?logo=eslint)](https://eslint.org/)
 [![prettier](https://img.shields.io/npm/dependency-version/v-offline/dev/prettier?logo=prettier)](https://prettier.io/)
-[![vite](https://img.shields.io/npm/dependency-version/v-image/dev/vite?logo=vite)](https://vitejs.dev/)
+[![vite](https://img.shields.io/npm/dependency-version/v-offline/dev/vite?logo=vite)](https://vitejs.dev/)
 [![vue](https://img.shields.io/npm/dependency-version/v-offline/dev/vue?logo=vue.js)](https://vuejs.org/)
 [![typescript](https://img.shields.io/npm/dependency-version/v-offline/dev/typescript?logo=TypeScript)](https://www.typescriptlang.org/)
 

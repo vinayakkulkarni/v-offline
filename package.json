@@ -1,6 +1,6 @@
 {
   "name": "v-offline",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Offline and Online components for Vue",
   "main": "./dist/v-offline.js",
   "module": "./dist/v-offline.js",

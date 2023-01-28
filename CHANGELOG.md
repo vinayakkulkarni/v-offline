@@ -1,3 +1,16 @@
+## [3.3.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.3.0...v3.3.1) (2023-01-28)
+
+
+### Bug Fixes
+
+* **deps:** bump peaceiris/actions-gh-pages from 3.9.0 to 3.9.1 ([c06cacc](https://github.com/vinayakkulkarni/v-offline/commit/c06cacce7a0cb9d63c231b2034d3e9ed8becfbf2))
+* **deps:** bump peaceiris/actions-gh-pages from 3.9.1 to 3.9.2 ([e5ae2a0](https://github.com/vinayakkulkarni/v-offline/commit/e5ae2a0c3cb4eae38b3b91f63d6ff865a7975834))
+* **deps:** bump vue from 3.2.41 to 3.2.44 in /example ([ed9568d](https://github.com/vinayakkulkarni/v-offline/commit/ed9568d044fa1bea4f20d39dcec0338194098c37))
+* **deps:** bump vue from 3.2.44 to 3.2.45 in /example ([2572f13](https://github.com/vinayakkulkarni/v-offline/commit/2572f139b981970751b54fbfff7dc688c1c7dfc7))
+* update git settings in ship.js trigger ([164670a](https://github.com/vinayakkulkarni/v-offline/commit/164670a5967f24aba9a49f25ed727741f6929def))
+
+
+
 # [3.3.0](https://github.com/vinayakkulkarni/v-offline/compare/v3.2.1...v3.3.0) (2022-11-05)
 
 

@@ -11,7 +11,7 @@
   "dependencies": {
     "ping.js": "^0.3.0",
     "v-github-icon": "^3.0.2",
-    "v-offline": "^3.3.0",
+    "v-offline": "^3.3.1",
     "vue": "^3.2.45"
   },
   "devDependencies": {

@@ -1,0 +1,36 @@
+name: 'Automerge Dependabot PRs'
+
+on: pull_request_target
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Dependabot metadata 🤖
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.3.6
+        with:
+          alert-lookup: true
+          compat-lookup: true
+          github-token: ${{ secrets.DEPENDABOT_TOKEN }}
+
+      - name: Authenticate CLI with PAT 🔐
+        run: echo "${{ secrets.DEPENDABOT_TOKEN }}" | gh auth login --with-token
+
+      - name: Approve Dependabot PRs 👍
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}
+
+      - name: Auto-merge Dependabot PRs 🕺
+        if: steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.DEPENDABOT_TOKEN }}

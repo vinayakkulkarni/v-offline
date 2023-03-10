@@ -1,13 +1,7 @@
 <script lang="ts">
   import Ping from 'ping.js';
-  import type { ComputedRef, PropType, Ref, SetupContext } from 'vue';
+  import type { ComputedRef, PropType, Ref } from 'vue';
   import { computed, defineComponent, h, onBeforeUnmount, ref } from 'vue';
-
-  type VOfflineProps = {
-    onlineClass?: string;
-    offlineClass?: string;
-    pingUrl?: string;
-  };
 
   export default defineComponent({
     name: 'VOffline',
@@ -29,7 +23,7 @@
       },
     },
     emits: ['detected-condition'],
-    setup(props: VOfflineProps, { slots, emit }: SetupContext) {
+    setup(props, { slots, emit }) {
       // Local state
       const isOnline: Ref<boolean> = ref(navigator.onLine || false);
       const events: Ref<string[]> = ref(['online', 'offline', 'load']);

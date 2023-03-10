@@ -85,6 +85,7 @@
     "url": "https://vinayakkulkarni.dev"
   },
   "license": "MIT",
+  "access": "public",
   "engines": {
     "node": ">=18.13.0",
     "npm": ">=9.0.0"

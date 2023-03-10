@@ -1,3 +1,21 @@
+# [3.4.0](https://github.com/vinayakkulkarni/v-offline/compare/v3.3.1...v3.4.0) (2023-03-10)
+
+
+### Bug Fixes
+
+* **deps:** bump amannn/action-semantic-pull-request from 5.0.2 to 5.1.0 ([9f7fbdb](https://github.com/vinayakkulkarni/v-offline/commit/9f7fbdb8d398c6b56b96e2669ca43d0c038c6e9c))
+* **deps:** bump v-offline from 3.3.0 to 3.3.1 in /example ([6affeff](https://github.com/vinayakkulkarni/v-offline/commit/6affeff8d65e10e33525419cbfdb2d21e7809708))
+* **deps:** bump vue from 3.2.45 to 3.2.47 in /example ([bd05878](https://github.com/vinayakkulkarni/v-offline/commit/bd05878bc4b1373b282cc6e36d192f068f19af09))
+* issue with typings ([a708f45](https://github.com/vinayakkulkarni/v-offline/commit/a708f459ae4fc9d2bea77572391ff38a889e55cc))
+* update publishCommand ([2257adb](https://github.com/vinayakkulkarni/v-offline/commit/2257adb746266f4212a4f46a2a7cf2cc098ec318))
+
+
+### Features
+
+* add automerger workflow 🎉 ([555e331](https://github.com/vinayakkulkarni/v-offline/commit/555e331d6fe7b5ac2abdeccd39d7d2b61e6a39b6))
+
+
+
 ## [3.3.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.3.0...v3.3.1) (2023-01-28)
 
 

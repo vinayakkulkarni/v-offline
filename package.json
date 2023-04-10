@@ -51,7 +51,7 @@
     "@vinayakkulkarni/prettier-config-vue": "^1.0.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/runtime-dom": "^3.2.47",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-jsdoc": "^40.1.1",
     "eslint-plugin-prettier": "^4.2.1",

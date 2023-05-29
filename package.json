@@ -45,7 +45,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
-    "@types/node": "^20.2.4",
+    "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
     "@vinayakkulkarni/prettier-config-vue": "^1.0.0",

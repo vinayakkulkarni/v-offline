@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Dependabot metadata 🤖
         id: metadata
-        uses: dependabot/fetch-metadata@v1.5.1
+        uses: dependabot/fetch-metadata@v1.6.0
         with:
           alert-lookup: true
           compat-lookup: true

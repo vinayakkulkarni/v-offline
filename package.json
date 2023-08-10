@@ -43,7 +43,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.7",
+    "@commitlint/cli": "^17.7.0",
     "@commitlint/config-conventional": "^17.6.7",
     "@types/node": "^20.4.9",
     "@typescript-eslint/eslint-plugin": "^5.61.0",

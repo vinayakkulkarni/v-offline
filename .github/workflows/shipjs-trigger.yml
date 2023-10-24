@@ -21,7 +21,7 @@ jobs:
           git config --global user.name "GitHub Action"
 
       - name: Setup node environment 📦
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: 'package.json'
           check-latest: true

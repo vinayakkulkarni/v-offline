@@ -55,7 +55,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsdoc": "^46.9.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-security": "^2.1.1",
     "eslint-plugin-vue": "^9.21.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",

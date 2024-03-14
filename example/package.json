@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
-    "sass": "^1.71.1",
+    "sass": "^1.72.0",
     "typescript": "^5.4.2",
     "vite": "^5.1.6",
     "vite-plugin-windicss": "^1.9.3",

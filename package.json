@@ -22,16 +22,16 @@
   "scripts": {
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly && prettier --write dist/*{js,js,ts}",
     "test": "echo 'test!'",
-    "prepare": "husky install",
+    "prepare": "is-ci || husky install",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:css",
     "lintfix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint:css:fix",
     "lint:js": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "eslint './src/**/*.{js,ts,vue}' --ignore-path .gitignore",
-    "lint:eslint:fix": "eslint --fix './src/**/*.{js,ts,vue}' --ignore-path .gitignore",
-    "lint:prettier": "prettier --check \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\" --ignore-path .gitignore",
-    "lint:prettier:fix": "prettier --write \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\" --ignore-path .gitignore",
-    "lint:css": "stylelint \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\" --ignore-path .gitignore",
-    "lint:css:fix": "stylelint --fix \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\" --ignore-path .gitignore",
+    "lint:eslint": "eslint \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
+    "lint:eslint:fix": "eslint --fix \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
+    "lint:prettier": "prettier --check \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
+    "lint:prettier:fix": "prettier --write \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
+    "lint:css": "stylelint \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\"",
+    "lint:css:fix": "stylelint --fix \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\"",
     "release": "shipjs prepare",
     "release:auto": "shipjs prepare --yes",
     "release:dry": "shipjs prepare --dry-run"
@@ -41,7 +41,7 @@
   },
   "peerDependencies": {
     "ping.js": "^0.3.0",
-    "vue": "^3.3.10"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
@@ -60,6 +60,7 @@
     "eslint-plugin-security": "^1.7.1",
     "eslint-plugin-vue": "^9.23.0",
     "husky": "^9.0.11",
+    "is-ci": "^3.0.1",
     "lint-staged": "^15.2.2",
     "postcss-html": "^1.6.0",
     "prettier": "^3.2.5",

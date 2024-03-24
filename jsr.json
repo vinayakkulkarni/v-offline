@@ -1,0 +1,8 @@
+{
+  "name": "@vinayakkulkarni/v-offline",
+  "version": "3.4.0",
+  "exports": "./dist/v-offline.js",
+  "publish": {
+    "exclude": ["!dist"]
+  }
+}

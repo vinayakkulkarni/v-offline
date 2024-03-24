@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true,
+    node: false,
     es2022: true,
   },
   parserOptions: {
@@ -16,18 +16,27 @@ module.exports = {
     },
     extraFileExtensions: ['.vue'],
   },
-  plugins: ['vue', 'jsdoc', 'security', '@typescript-eslint', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'import',
+    'jsdoc',
+    'prettier',
+    'security',
+    'vue',
+  ],
   extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:jsdoc/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:vue/vue3-recommended',
     'plugin:security/recommended',
-    'plugin:prettier/recommended',
+    'plugin:vue/vue3-recommended',
     'prettier',
   ],
   // add your custom rules here
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'import/no-unresolved': 'off',
   },
 };

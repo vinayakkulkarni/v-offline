@@ -18,7 +18,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'VOffline',
-      formats: ['es', 'cjs', 'umd'],
+      formats: ['es', 'cjs', 'umd', 'iife'],
       fileName: pkg.name,
     },
     commonjsOptions: {
@@ -34,7 +34,6 @@ export default defineConfig({
         exports: 'named',
         banner,
         strict: true,
-        sourcemap: true,
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {

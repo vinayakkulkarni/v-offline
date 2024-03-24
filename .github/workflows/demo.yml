@@ -17,19 +17,14 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup node env 📦
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'current'
-          check-latest: true
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+      - name: Setup bun env 🐰
+        uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies 🚀
-        run: npm ci --prefer-offline --no-audit --omit=optional
+        run: bun install
 
       - name: Run build 🏁
-        run: npm run build
+        run: bun run build
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3.9.3

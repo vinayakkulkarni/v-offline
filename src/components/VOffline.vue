@@ -59,7 +59,6 @@
       /**
        * Pings the URL and emits an
        * detected online/offline event.
-       *
        * @returns {Promise<void>}
        */
       async function check(): Promise<void> {

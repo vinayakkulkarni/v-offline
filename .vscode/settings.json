@@ -2,7 +2,8 @@
   "files.eol": "\n",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "never"
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

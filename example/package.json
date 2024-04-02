@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "ping.js": "^0.3.0",
-    "unocss": "^0.58.6",
+    "unocss": "^0.58.9",
     "v-github-icon": "^3.2.1",
     "v-offline": "^3.4.0",
     "vue": "^3.4.21"

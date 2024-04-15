@@ -13,7 +13,7 @@
     "unocss": "^0.59.0",
     "v-github-icon": "^3.2.1",
     "v-offline": "^3.5.0",
-    "vue": "^3.4.21"
+    "vue": "^3.4.22"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

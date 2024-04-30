@@ -72,7 +72,7 @@
     "typescript": "^5.4.3",
     "vite": "^5.2.8",
     "vue": "^3.4.21",
-    "vue-tsc": "^2.0.10"
+    "vue-tsc": "^2.0.15"
   },
   "keywords": [
     "vuejs",

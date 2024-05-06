@@ -64,7 +64,7 @@
     "lint-staged": "^15.2.2",
     "postcss-html": "^1.6.0",
     "prettier": "^3.2.5",
-    "sass": "^1.74.1",
+    "sass": "^1.76.0",
     "shipjs": "^0.26.3",
     "stylelint": "^16.5.0",
     "stylelint-config-recommended-vue": "^1.5.0",

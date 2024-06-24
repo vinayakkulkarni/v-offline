@@ -23,7 +23,7 @@ jobs:
           git config --global user.name "GitHub Action"
 
       - name: Setup bun env 🐰
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.0.25+a8ff7be64
 
@@ -52,7 +52,7 @@ jobs:
           ref: main
 
       - name: Setup bun env 🐰
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 

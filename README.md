@@ -103,7 +103,7 @@ export default defineComponent({
 </script>
 ```
 
-For Nuxt 3, create a file in `plugins/v-offline.ts`
+For Nuxt 3, create a file in `plugins/v-offline.client.ts`
 
 ```js
 import { VOffline } from 'v-offline';
@@ -111,20 +111,6 @@ import { VOffline } from 'v-offline';
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('VOffline', VOffline);
 });
-```
-
-then import the file in `nuxt.config.{j|t}s`:
-
-```js
-export default {
-  // ...
-  plugins: [
-    // ...
-    { src: '~/plugins/v-offline', mode: 'client' },
-    // ...
-  ],
-  // ...
-};
 ```
 
 ### Example

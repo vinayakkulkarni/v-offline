@@ -41,7 +41,7 @@
   },
   "peerDependencies": {
     "ping.js": "^0.3.0",
-    "vue": "^3.4.21"
+    "vue": "^3.5.19"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -71,7 +71,7 @@
     "stylelint-prettier": "^5.0.0",
     "typescript": "^5.4.5",
     "vite": "^5.3.1",
-    "vue": "^3.4.21",
+    "vue": "^3.5.19",
     "vue-tsc": "^2.0.16"
   },
   "keywords": [

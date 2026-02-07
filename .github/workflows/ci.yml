@@ -1,4 +1,4 @@
-name: 'Continuous Integration'
+name: Continuous Integration
 
 on:
   push:
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   ci:
-    name: 'CI'
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository 🎉
@@ -23,28 +23,15 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup bun env 🐰
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
       - name: Install dependencies 🚀
         run: bun install
 
-      - name: Run linter(s) 👀
-        uses: wearerequired/lint-action@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          continue_on_error: false
-          git_name: github-actions[bot]
-          git_email: github-actions[bot]@users.noreply.github.com
-          auto_fix: false
-          neutral_check_on_warning: true
-          stylelint: false
-          stylelint_extensions: css,scss,vue
-          eslint: true
-          eslint_extensions: js,ts,vue
-          prettier: true
-          prettier_extensions: js,ts,vue
+      - name: Run linter 👀
+        run: bun run lint
 
       - name: Build the package 🎉
         run: bun run build

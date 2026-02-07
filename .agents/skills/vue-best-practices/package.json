@@ -1,0 +1,15 @@
+{
+  "name": "vue-best-practices",
+  "version": "1.2.1",
+  "description": "Vue.js performance optimization best practices for AI agents",
+  "author": {
+    "name": "Vinayak Kulkarni",
+    "email": "inbox.vinayak@gmail.com",
+    "url": "https://vinayakkulkarni.dev"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "bun run scripts/build.ts",
+    "validate": "bun run scripts/validate.ts"
+  }
+}

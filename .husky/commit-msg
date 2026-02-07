@@ -15,4 +15,4 @@ git interpret-trailers --if-exists doNothing --trailer \
     "Signed-off-by: $NAME <$EMAIL>" \
     --in-place "$1"
 
-bun commitlint --edit $1
+bunx --no -- commitlint --edit $1

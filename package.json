@@ -2,16 +2,10 @@
   "name": "v-offline",
   "version": "3.5.0",
   "description": "Offline and Online components for Vue",
-  "main": "./dist/v-offline.js",
-  "module": "./dist/v-offline.js",
-  "umd": "./dist/v-offline.umd.cjs",
-  "unpkg": "./dist/v-offline.cjs",
-  "jsdelivr": "./dist/v-offline.cjs",
-  "cdn": "./dist/v-offline.iife.js",
   "exports": {
     ".": {
       "import": "./dist/v-offline.js",
-      "require": "./dist/v-offline.umd.js"
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
@@ -20,59 +14,36 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly && prettier --write dist/*{js,js,ts}",
+    "lint": "oxlint --config .oxlintrc.jsonc",
+    "lint:fix": "oxlint --fix --config .oxlintrc.jsonc",
+    "format": "oxfmt --config .oxfmtrc.jsonc .",
+    "format:check": "oxfmt --check --config .oxfmtrc.jsonc .",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
     "test": "echo 'test!'",
-    "prepare": "is-ci || husky install",
-    "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:css",
-    "lintfix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint:css:fix",
-    "lint:js": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "eslint \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
-    "lint:eslint:fix": "eslint --fix \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
-    "lint:prettier": "prettier --check \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
-    "lint:prettier:fix": "prettier --write \"{,!(node_modules|dist)/**/}*.{js,ts,vue}\"",
-    "lint:css": "stylelint \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\"",
-    "lint:css:fix": "stylelint --fix \"{,!(node_modules|dist)/**/}*.{css,scss,vue}\"",
-    "release": "shipjs prepare",
-    "release:auto": "shipjs prepare --yes",
-    "release:dry": "shipjs prepare --dry-run"
+    "prepare": "is-ci || husky"
   },
   "dependencies": {
     "ping.js": "^0.3.0"
   },
   "peerDependencies": {
     "ping.js": "^0.3.0",
-    "vue": "^3.4.21"
+    "vue": "^3.5.27"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@types/node": "^20.12.8",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
-    "@vinayakkulkarni/prettier-config-vue": "^1.0.0",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/runtime-dom": "^3.4.21",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.2.3",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-security": "^1.7.1",
-    "eslint-plugin-vue": "^9.32.0",
-    "husky": "^9.0.11",
-    "is-ci": "^3.0.1",
-    "lint-staged": "^15.2.11",
-    "postcss-html": "^1.6.0",
-    "prettier": "^3.3.3",
-    "sass": "^1.76.0",
-    "shipjs": "^0.27.0",
-    "stylelint": "^16.5.0",
-    "stylelint-config-recommended-vue": "^1.5.0",
-    "stylelint-prettier": "^5.0.0",
-    "typescript": "^5.4.5",
-    "vite": "^5.3.1",
-    "vue": "^3.4.21",
-    "vue-tsc": "^2.0.16"
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@types/node": "^25.2.1",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vue/runtime-dom": "^3.5.27",
+    "husky": "latest",
+    "is-ci": "latest",
+    "lint-staged": "latest",
+    "oxlint": "latest",
+    "sass": "^1.97.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vue": "^3.5.27",
+    "vue-tsc": "^3.2.4"
   },
   "keywords": [
     "vuejs",
@@ -89,10 +60,6 @@
   },
   "license": "MIT",
   "access": "public",
-  "engines": {
-    "node": ">=18.13.0",
-    "npm": ">=9.0.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinayakkulkarni/v-offline.git"

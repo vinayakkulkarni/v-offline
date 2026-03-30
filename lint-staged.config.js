@@ -1,3 +1,3 @@
 export default {
-  '*.{js,ts,vue}': ['oxlint --fix --config .oxlintrc.jsonc'],
+  '*.{js,ts,vue}': ['vp lint --fix'],
 };

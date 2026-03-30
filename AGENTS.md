@@ -35,10 +35,10 @@ v-offline/
 
 | Need        | Tool                                 |
 |-------------|--------------------------------------|
-| Build       | Vite (lib mode)                      |
-| Types       | vue-tsc                              |
-| Linting     | oxlint                               |
-| Formatting  | oxfmt                                |
+| Build       | vite-plus (vp pack)                  |
+| Types       | rolldown-plugin-dts (via vp pack)    |
+| Linting     | vp lint (oxlint bundled)             |
+| Formatting  | vp fmt (oxfmt bundled)               |
 | Package Mgr | Bun                                  |
 | Git Hooks   | Husky + lint-staged + commitlint     |
 | Release     | release-please                       |
@@ -49,11 +49,11 @@ v-offline/
 ## Commands
 
 ```bash
-bun run lint          # oxlint
-bun run lint:fix      # oxlint --fix
-bun run format        # oxfmt
-bun run format:check  # oxfmt --check
-bun run build         # vite build + vue-tsc declarations
+bun run lint          # vp lint
+bun run lint:fix      # vp lint --fix
+bun run format        # vp fmt
+bun run format:check  # vp fmt --check
+bun run build         # vp pack (tsdown + dts)
 bun run test          # Tests
 ```
 

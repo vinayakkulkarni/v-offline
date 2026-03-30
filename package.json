@@ -44,7 +44,7 @@
     "vite": "^7.3.1",
     "vite-plus": "^0.1.14",
     "vue": "^3.5.27",
-    "vue-tsc": "^3.2.4"
+    "vue-tsc": "^3.2.6"
   },
   "keywords": [
     "vuejs",

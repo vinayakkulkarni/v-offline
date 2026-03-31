@@ -72,6 +72,26 @@
 
 
 
+## [3.5.2](https://github.com/vinayakkulkarni/v-offline/compare/v-offline-v3.5.1...v-offline-v3.5.2) (2026-03-31)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/setup-node from 4 to 6 ([834f043](https://github.com/vinayakkulkarni/v-offline/commit/834f0435179547b129e4bde36aa5034f79d436ec))
+* **deps:** bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 ([c1fbe95](https://github.com/vinayakkulkarni/v-offline/commit/c1fbe95e448852a07a6eb24e5c0710b787e551ba))
+* **deps:** bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 ([eec343f](https://github.com/vinayakkulkarni/v-offline/commit/eec343f3a3611a96c1f95a1343cdaee9a456da49))
+* **deps:** update v-offline requirement from ^3.5.0 to ^3.5.1 in /example ([173a243](https://github.com/vinayakkulkarni/v-offline/commit/173a243ba500d3edbf35a08edb915705848c5ea8))
+* **deps:** update v-offline requirement in /example ([5862ea3](https://github.com/vinayakkulkarni/v-offline/commit/5862ea3e8ab6f96aa4c88baaa0f5aa00914e3c33))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump vue-tsc from 2.2.12 to 3.2.6 in /example ([be11c54](https://github.com/vinayakkulkarni/v-offline/commit/be11c54b0473e44a0d75612941e43a7bc99ff558))
+* **deps-dev:** bump vue-tsc from 2.2.12 to 3.2.6 in /example ([19919aa](https://github.com/vinayakkulkarni/v-offline/commit/19919aac54d325fd003a0ee5a0f42c65e878efc7))
+* **deps-dev:** update sass requirement from ^1.77.6 to ^1.98.0 in /example ([bccc224](https://github.com/vinayakkulkarni/v-offline/commit/bccc2247e9d720eb65aaa6a0e28bd6ed27c21ea2))
+* **deps-dev:** update sass requirement in /example ([323e58b](https://github.com/vinayakkulkarni/v-offline/commit/323e58bede4ae2f095df975d895ab1044613e8f7))
+* update dependencies and fix tsconfig for TypeScript 6.0 ([500dd11](https://github.com/vinayakkulkarni/v-offline/commit/500dd11a596a48155288e316effef308505719db))
+
 ## [3.5.1](https://github.com/vinayakkulkarni/v-offline/compare/v-offline-v3.5.0...v-offline-v3.5.1) (2026-02-07)
 
 

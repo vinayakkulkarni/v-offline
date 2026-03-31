@@ -4,7 +4,7 @@
     "module": "esnext",
     "strict": true,
     "importHelpers": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -12,8 +12,7 @@
     "allowJs": true,
     "noEmit": false,
     "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "baseUrl": ".",
+    "rootDir": "./src",
     "outDir": "./dist",
     "jsx": "preserve",
     "lib": [
@@ -22,11 +21,7 @@
       "dom.iterable",
       "scripthost",
       "esnext.asynciterable"
-    ],
-    "paths": {
-      "~/*": ["./*"],
-      "@/*": ["src/*"]
-    }
+    ]
   },
   "include": ["src", "shims"],
   "exclude": ["node_modules", "dist"]

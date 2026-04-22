@@ -33,7 +33,7 @@
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@types/node": "^25.5.0",
-    "@vitejs/plugin-vue": "^6.0.5",
+    "@vitejs/plugin-vue": "^6.0.6",
     "@vue/runtime-dom": "^3.5.31",
     "husky": "latest",
     "is-ci": "latest",

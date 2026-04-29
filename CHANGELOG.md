@@ -72,6 +72,52 @@
 
 
 
+## [3.5.2](https://github.com/vinayakkulkarni/v-offline/compare/v-offline-v3.5.1...v-offline-v3.5.2) (2026-04-29)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/setup-node from 4 to 6 ([834f043](https://github.com/vinayakkulkarni/v-offline/commit/834f0435179547b129e4bde36aa5034f79d436ec))
+* **deps:** bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 ([c1fbe95](https://github.com/vinayakkulkarni/v-offline/commit/c1fbe95e448852a07a6eb24e5c0710b787e551ba))
+* **deps:** bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 ([eec343f](https://github.com/vinayakkulkarni/v-offline/commit/eec343f3a3611a96c1f95a1343cdaee9a456da49))
+* **deps:** bump dependabot/fetch-metadata from 3.0.0 to 3.1.0 in the actions-minor group ([afbe5bb](https://github.com/vinayakkulkarni/v-offline/commit/afbe5bbd147d0bbc7713415726971c193ee59c81))
+* **deps:** bump dependabot/fetch-metadata in the actions-minor group ([39f8184](https://github.com/vinayakkulkarni/v-offline/commit/39f81842e3d8e5a6704db60ec4bbec22b7b91c23))
+* **deps:** update v-offline requirement from ^3.5.0 to ^3.5.1 in /example ([173a243](https://github.com/vinayakkulkarni/v-offline/commit/173a243ba500d3edbf35a08edb915705848c5ea8))
+* **deps:** update v-offline requirement in /example ([5862ea3](https://github.com/vinayakkulkarni/v-offline/commit/5862ea3e8ab6f96aa4c88baaa0f5aa00914e3c33))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump vue-tsc from 2.2.12 to 3.2.6 in /example ([be11c54](https://github.com/vinayakkulkarni/v-offline/commit/be11c54b0473e44a0d75612941e43a7bc99ff558))
+* **deps-dev:** bump vue-tsc from 2.2.12 to 3.2.6 in /example ([19919aa](https://github.com/vinayakkulkarni/v-offline/commit/19919aac54d325fd003a0ee5a0f42c65e878efc7))
+* **deps-dev:** update @types/node requirement from ^25.5.0 to ^25.6.0 ([1d53681](https://github.com/vinayakkulkarni/v-offline/commit/1d53681eb6ea7c845fb4d84662665e536f2d93e3))
+* **deps-dev:** update @types/node requirement from ^25.5.0 to ^25.6.0 ([967670b](https://github.com/vinayakkulkarni/v-offline/commit/967670bd8bd85f25bdec8c4a27a0dc21446b4a5e))
+* **deps-dev:** update @vitejs/plugin-vue requirement ([5eaa018](https://github.com/vinayakkulkarni/v-offline/commit/5eaa018a49eeb61325da0081e5d6e62dacf5d47b))
+* **deps-dev:** update @vitejs/plugin-vue requirement from ^6.0.5 to ^6.0.6 ([c6efb23](https://github.com/vinayakkulkarni/v-offline/commit/c6efb23b8bdcac467318a4438f516c89ef0dca5b))
+* **deps-dev:** update @vue/runtime-dom requirement ([a3ec24c](https://github.com/vinayakkulkarni/v-offline/commit/a3ec24c3e9605a062a0e89220b55b82a8600f5d9))
+* **deps-dev:** update @vue/runtime-dom requirement from ^3.5.31 to ^3.5.33 ([9b7656c](https://github.com/vinayakkulkarni/v-offline/commit/9b7656c004b94ea8f6646d1cefe98da1177617b7))
+* **deps-dev:** update sass requirement from ^1.77.6 to ^1.98.0 in /example ([bccc224](https://github.com/vinayakkulkarni/v-offline/commit/bccc2247e9d720eb65aaa6a0e28bd6ed27c21ea2))
+* **deps-dev:** update sass requirement from ^1.98.0 to ^1.99.0 ([8556770](https://github.com/vinayakkulkarni/v-offline/commit/8556770984fac237991549762a23654dcc6a25fb))
+* **deps-dev:** update sass requirement from ^1.98.0 to ^1.99.0 ([9cb3188](https://github.com/vinayakkulkarni/v-offline/commit/9cb3188477e0c67938135a0501bbb3f2f64eabeb))
+* **deps-dev:** update sass requirement in /example ([323e58b](https://github.com/vinayakkulkarni/v-offline/commit/323e58bede4ae2f095df975d895ab1044613e8f7))
+* **deps-dev:** update typescript requirement from ^6.0.2 to ^6.0.3 ([119963d](https://github.com/vinayakkulkarni/v-offline/commit/119963de155ef53d8b147ef88e2bbb52a647ea6a))
+* **deps-dev:** update typescript requirement from ^6.0.2 to ^6.0.3 ([da14873](https://github.com/vinayakkulkarni/v-offline/commit/da148732d0736a2c50fc6fc03a914a77bf03e045))
+* **deps-dev:** update unplugin-vue requirement from ^7.1.1 to ^7.2.0 ([e22c4b5](https://github.com/vinayakkulkarni/v-offline/commit/e22c4b561c069128b4fd108c99ad1a8f1e233a48))
+* **deps-dev:** update unplugin-vue requirement from ^7.1.1 to ^7.2.0 ([5f955b6](https://github.com/vinayakkulkarni/v-offline/commit/5f955b695e22f24718611c1ce6fc095beb35378f))
+* **deps-dev:** update vite requirement from ^8.0.3 to ^8.0.9 ([5723a10](https://github.com/vinayakkulkarni/v-offline/commit/5723a10dc11ffe3e96c2feb6198e7d0bcf4bdbc8))
+* **deps-dev:** update vite requirement from ^8.0.3 to ^8.0.9 ([48d9f92](https://github.com/vinayakkulkarni/v-offline/commit/48d9f92c2b846bfc75160dc9e9eb33221c39e111))
+* **deps-dev:** update vite requirement from ^8.0.9 to ^8.0.10 ([5d996eb](https://github.com/vinayakkulkarni/v-offline/commit/5d996ebc467b6c2db5ce351afdb7958488edd6ce))
+* **deps-dev:** update vite requirement from ^8.0.9 to ^8.0.10 ([c5d0379](https://github.com/vinayakkulkarni/v-offline/commit/c5d0379531a978d83e04f819b81a3d7549cc658e))
+* **deps-dev:** update vite-plus requirement ([535701a](https://github.com/vinayakkulkarni/v-offline/commit/535701a0c56107ed7db2d2bdd730049058baf86e))
+* **deps-dev:** update vite-plus requirement ([72ca907](https://github.com/vinayakkulkarni/v-offline/commit/72ca90759bf911b537c4d9b16d9008ab5c1605d6))
+* **deps-dev:** update vite-plus requirement from ^0.1.14 to ^0.1.15 in the npm-development group ([0fedee0](https://github.com/vinayakkulkarni/v-offline/commit/0fedee010bdf1cd882df1722f810e6f1f3bd4c5e))
+* **deps-dev:** update vite-plus requirement from ^0.1.19 to ^0.1.20 in the npm-development group ([e49fb4d](https://github.com/vinayakkulkarni/v-offline/commit/e49fb4d48b81e041c9dad24b6e6ace6b98ce0250))
+* **deps-dev:** update vue requirement from ^3.5.31 to ^3.5.33 ([477f96f](https://github.com/vinayakkulkarni/v-offline/commit/477f96f99da482800927bebbbb3df7a7b2a54ee0))
+* **deps-dev:** update vue requirement from ^3.5.31 to ^3.5.33 ([fd5de1c](https://github.com/vinayakkulkarni/v-offline/commit/fd5de1c700450669ab34e0e09258440b738ea36e))
+* **deps-dev:** update vue-tsc requirement from ^3.2.6 to ^3.2.7 ([92f9b61](https://github.com/vinayakkulkarni/v-offline/commit/92f9b619a7e29bac2388838ccfd2421159b2c4a6))
+* **deps-dev:** update vue-tsc requirement from ^3.2.6 to ^3.2.7 ([b6a005e](https://github.com/vinayakkulkarni/v-offline/commit/b6a005e50f6c11364166fd0e94d3232babd7ce25))
+* update dependencies and fix tsconfig for TypeScript 6.0 ([500dd11](https://github.com/vinayakkulkarni/v-offline/commit/500dd11a596a48155288e316effef308505719db))
+
 ## [3.5.1](https://github.com/vinayakkulkarni/v-offline/compare/v-offline-v3.5.0...v-offline-v3.5.1) (2026-02-07)
 
 

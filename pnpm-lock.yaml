@@ -21,9 +21,6 @@ importers:
       '@types/node':
         specifier: ^25.8.0
         version: 25.8.0
-      '@vitejs/plugin-vue':
-        specifier: ^6.0.7
-        version: 6.0.7(vite@8.0.13(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
       '@vue/runtime-dom':
         specifier: ^3.5.34
         version: 3.5.34
@@ -45,9 +42,6 @@ importers:
       unplugin-vue:
         specifier: ^7.2.0
         version: 7.2.0(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(vue@3.5.34(typescript@6.0.3))(yaml@2.9.0)
-      vite:
-        specifier: ^8.0.13
-        version: 8.0.13(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(yaml@2.9.0)
       vite-plus:
         specifier: ^0.1.21
         version: 0.1.21(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(typescript@6.0.3)(vite@8.0.13(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(yaml@2.9.0))(yaml@2.9.0)
@@ -64,32 +58,32 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       unocss:
-        specifier: ^0.62.3
+        specifier: ^0.62.4
         version: 0.62.4(postcss@8.5.14)(rollup@4.60.4)(vite@5.4.21(@types/node@25.8.0)(lightningcss@1.32.0)(sass@1.99.0))
       v-github-icon:
-        specifier: ^3.2.2
+        specifier: ^3.3.0
         version: 3.3.0(vue@3.5.34(typescript@5.9.3))
       v-offline:
         specifier: ^3.5.1
         version: 3.5.1(ping.js@0.3.0)(vue@3.5.34(typescript@5.9.3))
       vue:
-        specifier: ^3.4.30
+        specifier: ^3.5.34
         version: 3.5.34(typescript@5.9.3)
     devDependencies:
       '@vitejs/plugin-vue':
-        specifier: ^5.0.4
+        specifier: ^5.2.4
         version: 5.2.4(vite@5.4.21(@types/node@25.8.0)(lightningcss@1.32.0)(sass@1.99.0))(vue@3.5.34(typescript@5.9.3))
       sass:
-        specifier: ^1.98.0
+        specifier: ^1.99.0
         version: 1.99.0
       typescript:
-        specifier: ^5.4.5
+        specifier: ^5.9.3
         version: 5.9.3
       vite:
-        specifier: ^5.3.1
+        specifier: ^5.4.21
         version: 5.4.21(@types/node@25.8.0)(lightningcss@1.32.0)(sass@1.99.0)
       vue-tsc:
-        specifier: ^3.2.6
+        specifier: ^3.2.9
         version: 3.2.9(typescript@5.9.3)
 
 packages:
@@ -1418,13 +1412,6 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
-      vue: ^3.2.25
-
-  '@vitejs/plugin-vue@6.0.7':
-    resolution: {integrity: sha512-km+p+XdSz9Sxm5rqUbqcSfZYaAniKxWBj1KURl+Jr7UaPvvX7BmaWMdP69I5rrFDeQGyxAG7NXdc57vz+snhWg==}
-    engines: {node: ^20.19.0 || >=22.12.0}
-    peerDependencies:
-      vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
       vue: ^3.2.25
 
   '@voidzero-dev/vite-plus-core@0.1.21':
@@ -3439,12 +3426,6 @@ snapshots:
     dependencies:
       vite: 5.4.21(@types/node@25.8.0)(lightningcss@1.32.0)(sass@1.99.0)
       vue: 3.5.34(typescript@5.9.3)
-
-  '@vitejs/plugin-vue@6.0.7(vite@8.0.13(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))':
-    dependencies:
-      '@rolldown/pluginutils': 1.0.1
-      vite: 8.0.13(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(yaml@2.9.0)
-      vue: 3.5.34(typescript@6.0.3)
 
   '@voidzero-dev/vite-plus-core@0.1.21(@types/node@25.8.0)(esbuild@0.28.0)(jiti@2.6.1)(sass@1.99.0)(tsx@4.22.0)(typescript@6.0.3)(yaml@2.9.0)':
     dependencies:

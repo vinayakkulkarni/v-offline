@@ -15,7 +15,7 @@ tags: template, v-show, v-if, conditional, performance
 <template>
   <div>
     <button @click="showDetails = !showDetails">Toggle</button>
-    
+
     <!-- BAD: Creates/destroys DOM on every click -->
     <div v-if="showDetails" class="details-panel">
       <ExpensiveComponent :data="data" />
@@ -24,9 +24,9 @@ tags: template, v-show, v-if, conditional, performance
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const showDetails = ref(false)
-// User toggles this rapidly...
+  import { ref } from 'vue';
+  const showDetails = ref(false);
+  // User toggles this rapidly...
 </script>
 ```
 
@@ -36,7 +36,7 @@ const showDetails = ref(false)
 <template>
   <div>
     <button @click="showDetails = !showDetails">Toggle</button>
-    
+
     <!-- GOOD: Just toggles display: none -->
     <div v-show="showDetails" class="details-panel">
       <ExpensiveComponent :data="data" />
@@ -45,22 +45,22 @@ const showDetails = ref(false)
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const showDetails = ref(false)
+  import { ref } from 'vue';
+  const showDetails = ref(false);
 </script>
 ```
 
 **When to use which:**
 
-| Scenario | Use |
-|----------|-----|
-| Tabs toggled by user | `v-show` |
-| Dropdown menus | `v-show` |
-| Accordion panels | `v-show` |
-| Feature flags (rarely change) | `v-if` |
-| Auth-gated content | `v-if` |
-| Error states | `v-if` |
-| Initial expensive render | `v-if` (lazy) |
+| Scenario                      | Use           |
+| ----------------------------- | ------------- |
+| Tabs toggled by user          | `v-show`      |
+| Dropdown menus                | `v-show`      |
+| Accordion panels              | `v-show`      |
+| Feature flags (rarely change) | `v-if`        |
+| Auth-gated content            | `v-if`        |
+| Error states                  | `v-if`        |
+| Initial expensive render      | `v-if` (lazy) |
 
 **v-if is lazier (better initial load):**
 
@@ -68,7 +68,7 @@ const showDetails = ref(false)
 <template>
   <!-- v-if: Component not created until condition is true -->
   <HeavyComponent v-if="isVisible" />
-  
+
   <!-- v-show: Component created immediately, just hidden -->
   <HeavyComponent v-show="isVisible" />
 </template>
@@ -85,14 +85,14 @@ const showDetails = ref(false)
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+  import { ref, watch } from 'vue';
 
-const isOpen = ref(false)
-const hasBeenOpened = ref(false)
+  const isOpen = ref(false);
+  const hasBeenOpened = ref(false);
 
-watch(isOpen, (open) => {
-  if (open) hasBeenOpened.value = true
-})
+  watch(isOpen, (open) => {
+    if (open) hasBeenOpened.value = true;
+  });
 </script>
 ```
 
@@ -117,7 +117,7 @@ watch(isOpen, (open) => {
       {{ item.name }}
     </div>
   </div>
-  
+
   <!-- GOOD: Only creates when shown -->
   <div v-if="showList">
     <div v-for="item in thousandItems" :key="item.id">

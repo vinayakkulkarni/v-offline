@@ -19,7 +19,7 @@ Content that never changes after initial render should use `v-once` to skip all 
       <h1>{{ appTitle }}</h1>
       <p>Welcome to our application</p>
     </header>
-    
+
     <!-- Dynamic content below -->
     <main>
       <component :is="currentView" />
@@ -28,7 +28,7 @@ Content that never changes after initial render should use `v-once` to skip all 
 </template>
 
 <script setup>
-const appTitle = 'My App' // Never changes
+  const appTitle = 'My App'; // Never changes
 </script>
 ```
 
@@ -42,7 +42,7 @@ const appTitle = 'My App' // Never changes
       <h1>{{ appTitle }}</h1>
       <p>Welcome to our application</p>
     </header>
-    
+
     <!-- Dynamic content still updates -->
     <main>
       <component :is="currentView" />
@@ -51,7 +51,7 @@ const appTitle = 'My App' // Never changes
 </template>
 
 <script setup>
-const appTitle = 'My App'
+  const appTitle = 'My App';
 </script>
 ```
 
@@ -64,7 +64,7 @@ const appTitle = 'My App'
     <h2>Terms of Service</h2>
     <p>Long static content...</p>
   </div>
-  
+
   <!-- Static table headers -->
   <thead v-once>
     <tr>
@@ -73,7 +73,7 @@ const appTitle = 'My App'
       <th>Role</th>
     </tr>
   </thead>
-  
+
   <!-- Static navigation that never changes -->
   <nav v-once>
     <a href="/">Home</a>
@@ -89,12 +89,13 @@ const appTitle = 'My App'
 <template>
   <!-- DON'T: Content that might change -->
   <div v-once>
-    <p>{{ userName }}</p> <!-- If userName can change, don't use v-once -->
+    <p>{{ userName }}</p>
+    <!-- If userName can change, don't use v-once -->
   </div>
-  
+
   <!-- DON'T: Elements with dynamic bindings -->
   <button v-once :disabled="isLoading">Submit</button>
-  
+
   <!-- DON'T: Elements with event handlers that depend on changing state -->
   <button v-once @click="handleClick">Click</button>
 </template>

@@ -27,10 +27,10 @@ For large lists where each item is expensive to render, use `v-memo` to skip re-
 </template>
 
 <script setup>
-import { ref } from 'vue'
+  import { ref } from 'vue';
 
-const items = ref(generateLargeList(1000))
-const selectedId = ref(null)
+  const items = ref(generateLargeList(1000));
+  const selectedId = ref(null);
 </script>
 ```
 
@@ -53,10 +53,10 @@ const selectedId = ref(null)
 </template>
 
 <script setup>
-import { ref } from 'vue'
+  import { ref } from 'vue';
 
-const items = ref(generateLargeList(1000))
-const selectedId = ref(null)
+  const items = ref(generateLargeList(1000));
+  const selectedId = ref(null);
 </script>
 ```
 
@@ -102,21 +102,19 @@ const selectedId = ref(null)
 ```vue
 <template>
   <!-- Equivalent to v-once -->
-  <div v-memo="[]">
-    Static content that never updates
-  </div>
+  <div v-memo="[]">Static content that never updates</div>
 </template>
 ```
 
 **When to use v-memo:**
 
-| Scenario | Use v-memo? |
-|----------|------------|
-| List with 100+ items | Yes |
-| Items have expensive child components | Yes |
-| Selection state changes frequently | Yes |
-| Simple text-only items | Probably not |
-| Small lists (< 50 items) | Usually not |
+| Scenario                              | Use v-memo?  |
+| ------------------------------------- | ------------ |
+| List with 100+ items                  | Yes          |
+| Items have expensive child components | Yes          |
+| Selection state changes frequently    | Yes          |
+| Simple text-only items                | Probably not |
+| Small lists (< 50 items)              | Usually not  |
 
 **Pitfall - forgetting dependencies:**
 
@@ -124,9 +122,10 @@ const selectedId = ref(null)
 <template>
   <!-- BAD: Missing item.name as dependency -->
   <div v-memo="[item.id === selectedId]">
-    {{ item.name }} <!-- Won't update if name changes! -->
+    {{ item.name }}
+    <!-- Won't update if name changes! -->
   </div>
-  
+
   <!-- GOOD: Include all reactive dependencies -->
   <div v-memo="[item.id === selectedId, item.name]">
     {{ item.name }}

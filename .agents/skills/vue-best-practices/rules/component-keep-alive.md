@@ -16,7 +16,7 @@ Use `<KeepAlive>` to cache component instances when switching between them, pres
   <div>
     <button @click="currentTab = 'search'">Search</button>
     <button @click="currentTab = 'results'">Results</button>
-    
+
     <!-- Component destroyed and recreated on each switch -->
     <SearchForm v-if="currentTab === 'search'" />
     <ResultsTable v-if="currentTab === 'results'" />
@@ -24,10 +24,10 @@ Use `<KeepAlive>` to cache component instances when switching between them, pres
 </template>
 
 <script setup>
-import { ref } from 'vue'
+  import { ref } from 'vue';
 
-const currentTab = ref('search')
-// User's search input is lost when switching tabs!
+  const currentTab = ref('search');
+  // User's search input is lost when switching tabs!
 </script>
 ```
 
@@ -38,7 +38,7 @@ const currentTab = ref('search')
   <div>
     <button @click="currentTab = 'search'">Search</button>
     <button @click="currentTab = 'results'">Results</button>
-    
+
     <!-- Components cached, state preserved -->
     <KeepAlive>
       <component :is="currentTabComponent" />
@@ -47,18 +47,18 @@ const currentTab = ref('search')
 </template>
 
 <script setup>
-import { ref, computed, shallowRef } from 'vue'
-import SearchForm from './SearchForm.vue'
-import ResultsTable from './ResultsTable.vue'
+  import { ref, computed, shallowRef } from 'vue';
+  import SearchForm from './SearchForm.vue';
+  import ResultsTable from './ResultsTable.vue';
 
-const currentTab = ref('search')
+  const currentTab = ref('search');
 
-const tabs = {
-  search: SearchForm,
-  results: ResultsTable
-}
+  const tabs = {
+    search: SearchForm,
+    results: ResultsTable,
+  };
 
-const currentTabComponent = computed(() => tabs[currentTab.value])
+  const currentTabComponent = computed(() => tabs[currentTab.value]);
 </script>
 ```
 
@@ -70,12 +70,12 @@ const currentTabComponent = computed(() => tabs[currentTab.value])
   <KeepAlive include="SearchForm,ResultsTable">
     <component :is="currentView" />
   </KeepAlive>
-  
+
   <!-- Cache all except these -->
   <KeepAlive exclude="HeavyComponent">
     <component :is="currentView" />
   </KeepAlive>
-  
+
   <!-- Using regex -->
   <KeepAlive :include="/Form$/">
     <component :is="currentView" />
@@ -98,21 +98,21 @@ const currentTabComponent = computed(() => tabs[currentTab.value])
 
 ```vue
 <script setup>
-import { onActivated, onDeactivated } from 'vue'
+  import { onActivated, onDeactivated } from 'vue';
 
-// Called when component is inserted from cache
-onActivated(() => {
-  console.log('Component activated from cache')
-  // Refresh data if needed
-  fetchLatestData()
-})
+  // Called when component is inserted from cache
+  onActivated(() => {
+    console.log('Component activated from cache');
+    // Refresh data if needed
+    fetchLatestData();
+  });
 
-// Called when component is removed to cache
-onDeactivated(() => {
-  console.log('Component deactivated to cache')
-  // Cleanup if needed
-  pauseVideoPlayback()
-})
+  // Called when component is removed to cache
+  onDeactivated(() => {
+    console.log('Component deactivated to cache');
+    // Cleanup if needed
+    pauseVideoPlayback();
+  });
 </script>
 ```
 
@@ -131,13 +131,13 @@ onDeactivated(() => {
 
 **When to use KeepAlive:**
 
-| Scenario | Use KeepAlive? |
-|----------|---------------|
-| Tab-based navigation with forms | Yes |
-| Wizard/stepper with user input | Yes |
-| Dashboard with expensive charts | Yes |
-| List → Detail → Back to list | Yes |
-| Simple static content pages | No |
+| Scenario                                         | Use KeepAlive?          |
+| ------------------------------------------------ | ----------------------- |
+| Tab-based navigation with forms                  | Yes                     |
+| Wizard/stepper with user input                   | Yes                     |
+| Dashboard with expensive charts                  | Yes                     |
+| List → Detail → Back to list                     | Yes                     |
+| Simple static content pages                      | No                      |
 | Components with real-time data that must refresh | Maybe (use onActivated) |
 
 Reference: [KeepAlive](https://vuejs.org/guide/built-ins/keep-alive.html)

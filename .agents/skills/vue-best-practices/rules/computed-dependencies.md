@@ -13,23 +13,23 @@ Computed properties recalculate when ANY dependency changes. Keep dependencies m
 
 ```vue
 <script setup>
-import { reactive, computed } from 'vue'
+  import { reactive, computed } from 'vue';
 
-const state = reactive({
-  user: {
-    name: 'John',
-    email: 'john@example.com',
-    preferences: { theme: 'dark', notifications: true },
-    lastLogin: new Date(),
-    sessionCount: 42
-  }
-})
+  const state = reactive({
+    user: {
+      name: 'John',
+      email: 'john@example.com',
+      preferences: { theme: 'dark', notifications: true },
+      lastLogin: new Date(),
+      sessionCount: 42,
+    },
+  });
 
-// BAD: Depends on entire user object
-// Recalculates when ANY user property changes
-const greeting = computed(() => {
-  return `Hello, ${state.user.name}!`
-})
+  // BAD: Depends on entire user object
+  // Recalculates when ANY user property changes
+  const greeting = computed(() => {
+    return `Hello, ${state.user.name}!`;
+  });
 </script>
 ```
 
@@ -37,23 +37,23 @@ const greeting = computed(() => {
 
 ```vue
 <script setup>
-import { reactive, computed } from 'vue'
+  import { reactive, computed } from 'vue';
 
-const state = reactive({
-  user: {
-    name: 'John',
-    email: 'john@example.com',
-    preferences: { theme: 'dark', notifications: true },
-    lastLogin: new Date(),
-    sessionCount: 42
-  }
-})
+  const state = reactive({
+    user: {
+      name: 'John',
+      email: 'john@example.com',
+      preferences: { theme: 'dark', notifications: true },
+      lastLogin: new Date(),
+      sessionCount: 42,
+    },
+  });
 
-// GOOD: Only depends on user.name
-// Only recalculates when name changes
-const greeting = computed(() => {
-  return `Hello, ${state.user.name}!`
-})
+  // GOOD: Only depends on user.name
+  // Only recalculates when name changes
+  const greeting = computed(() => {
+    return `Hello, ${state.user.name}!`;
+  });
 </script>
 ```
 
@@ -61,24 +61,24 @@ const greeting = computed(() => {
 
 ```vue
 <script setup>
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue'
 
-const items = ref<Item[]>([...])
+  const items = ref<Item[]>([...])
 
-// BAD: Depends on entire items array
-// Recalculates when ANY item changes
-const expensiveComputed = computed(() => {
-  return items.value.some(item => item.status === 'active')
-})
+  // BAD: Depends on entire items array
+  // Recalculates when ANY item changes
+  const expensiveComputed = computed(() => {
+    return items.value.some(item => item.status === 'active')
+  })
 
-// BETTER: Derive a simpler dependency first
-const activeStatuses = computed(() => 
-  items.value.map(item => item.status)
-)
+  // BETTER: Derive a simpler dependency first
+  const activeStatuses = computed(() =>
+    items.value.map(item => item.status)
+  )
 
-const hasActiveItem = computed(() =>
-  activeStatuses.value.includes('active')
-)
+  const hasActiveItem = computed(() =>
+    activeStatuses.value.includes('active')
+  )
 </script>
 ```
 
@@ -86,19 +86,17 @@ const hasActiveItem = computed(() =>
 
 ```vue
 <script setup>
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue';
 
-const data = ref({ a: 1, b: 2, c: 3 })
+  const data = ref({ a: 1, b: 2, c: 3 });
 
-// BAD: Overlapping dependencies cause extra recalculations
-const sumAB = computed(() => data.value.a + data.value.b)
-const sumBC = computed(() => data.value.b + data.value.c)
-const total = computed(() => sumAB.value + sumBC.value) // b counted twice
+  // BAD: Overlapping dependencies cause extra recalculations
+  const sumAB = computed(() => data.value.a + data.value.b);
+  const sumBC = computed(() => data.value.b + data.value.c);
+  const total = computed(() => sumAB.value + sumBC.value); // b counted twice
 
-// BETTER: Direct calculation
-const total = computed(() => 
-  data.value.a + data.value.b + data.value.c
-)
+  // BETTER: Direct calculation
+  const total = computed(() => data.value.a + data.value.b + data.value.c);
 </script>
 ```
 
@@ -106,25 +104,25 @@ const total = computed(() =>
 
 ```vue
 <script setup>
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue';
 
-// BAD: One reactive object
-const form = reactive({
-  name: '',
-  email: '',
-  message: ''
-})
+  // BAD: One reactive object
+  const form = reactive({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-// Any change triggers this recompute
-const isValid = computed(() => form.name && form.email)
+  // Any change triggers this recompute
+  const isValid = computed(() => form.name && form.email);
 
-// GOOD: Separate refs for truly independent values
-const name = ref('')
-const email = ref('')
-const message = ref('')
+  // GOOD: Separate refs for truly independent values
+  const name = ref('');
+  const email = ref('');
+  const message = ref('');
 
-// Only depends on name and email, not message
-const isValid = computed(() => name.value && email.value)
+  // Only depends on name and email, not message
+  const isValid = computed(() => name.value && email.value);
 </script>
 ```
 

@@ -4,7 +4,7 @@ description: Vue.js performance optimization guidelines for building fast, maint
 license: MIT
 metadata:
   author: vinayakkulkarni
-  version: "1.0.0"
+  version: '1.0.0'
 ---
 
 # Vue Best Practices
@@ -14,6 +14,7 @@ Comprehensive performance optimization guide for Vue.js applications. Contains 4
 ## When to Apply
 
 Reference these guidelines when:
+
 - Writing new Vue components
 - Implementing reactive state and computed properties
 - Reviewing code for performance issues
@@ -23,16 +24,16 @@ Reference these guidelines when:
 
 ## Rule Categories by Priority
 
-| Priority | Category | Impact | Prefix |
-|----------|----------|--------|--------|
-| 1 | Reactivity Fundamentals | CRITICAL | `reactivity-` |
-| 2 | Component Performance | CRITICAL | `component-` |
-| 3 | Computed & Watchers | HIGH | `computed-` |
-| 4 | Template Optimization | MEDIUM-HIGH | `template-` |
-| 5 | Composition API Patterns | MEDIUM | `composable-` |
-| 6 | State Management | MEDIUM | `state-` |
-| 7 | Async & Data Fetching | LOW-MEDIUM | `async-` |
-| 8 | Advanced Patterns | LOW | `advanced-` |
+| Priority | Category                 | Impact      | Prefix        |
+| -------- | ------------------------ | ----------- | ------------- |
+| 1        | Reactivity Fundamentals  | CRITICAL    | `reactivity-` |
+| 2        | Component Performance    | CRITICAL    | `component-`  |
+| 3        | Computed & Watchers      | HIGH        | `computed-`   |
+| 4        | Template Optimization    | MEDIUM-HIGH | `template-`   |
+| 5        | Composition API Patterns | MEDIUM      | `composable-` |
+| 6        | State Management         | MEDIUM      | `state-`      |
+| 7        | Async & Data Fetching    | LOW-MEDIUM  | `async-`      |
+| 8        | Advanced Patterns        | LOW         | `advanced-`   |
 
 ## Quick Reference
 
@@ -109,6 +110,7 @@ rules/_sections.md
 ```
 
 Each rule file contains:
+
 - Brief explanation of why it matters
 - Incorrect code example with explanation
 - Correct code example with explanation

@@ -14,20 +14,12 @@ When `v-if` and `v-for` are on the same element, `v-if` has higher priority in V
 ```vue
 <template>
   <!-- BAD in Vue 3: v-if is evaluated first, but 'item' doesn't exist yet! -->
-  <div 
-    v-for="item in items" 
-    v-if="item.isActive"
-    :key="item.id"
-  >
+  <div v-for="item in items" v-if="item.isActive" :key="item.id">
     {{ item.name }}
   </div>
-  
+
   <!-- BAD: v-if evaluated for every iteration -->
-  <div 
-    v-for="item in items"
-    v-if="shouldShowList"
-    :key="item.id"
-  >
+  <div v-for="item in items" v-if="shouldShowList" :key="item.id">
     {{ item.name }}
   </div>
 </template>
@@ -44,16 +36,16 @@ When `v-if` and `v-for` are on the same element, `v-if` has higher priority in V
 </template>
 
 <script setup>
-import { computed } from 'vue'
+  import { computed } from 'vue'
 
-const props = defineProps<{
-  items: Item[]
-}>()
+  const props = defineProps<{
+    items: Item[]
+  }>()
 
-// Filter once, not per-render
-const activeItems = computed(() => 
-  props.items.filter(item => item.isActive)
-)
+  // Filter once, not per-render
+  const activeItems = computed(() =>
+    props.items.filter(item => item.isActive)
+  )
 </script>
 ```
 
@@ -67,7 +59,7 @@ const activeItems = computed(() =>
       {{ item.name }}
     </div>
   </template>
-  
+
   <!-- Or use a wrapper element -->
   <div v-if="shouldShowList" class="list">
     <div v-for="item in items" :key="item.id">
@@ -88,13 +80,13 @@ const activeItems = computed(() =>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+  import { computed } from 'vue';
 
-const visibleActiveItems = computed(() => 
-  items.value
-    .filter(item => item.isActive)
-    .filter(item => item.isVisible)
-)
+  const visibleActiveItems = computed(() =>
+    items.value
+      .filter((item) => item.isActive)
+      .filter((item) => item.isVisible),
+  );
 </script>
 ```
 
@@ -102,9 +94,7 @@ const visibleActiveItems = computed(() =>
 
 ```vue
 <template>
-  <div v-if="activeItems.length === 0">
-    No active items
-  </div>
+  <div v-if="activeItems.length === 0">No active items</div>
   <div v-else>
     <div v-for="item in activeItems" :key="item.id">
       {{ item.name }}
@@ -113,11 +103,11 @@ const visibleActiveItems = computed(() =>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+  import { computed } from 'vue';
 
-const activeItems = computed(() => 
-  items.value.filter(item => item.isActive)
-)
+  const activeItems = computed(() =>
+    items.value.filter((item) => item.isActive),
+  );
 </script>
 ```
 

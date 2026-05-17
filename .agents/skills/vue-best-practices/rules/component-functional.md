@@ -22,41 +22,41 @@ For simple, stateless presentational components, keep them lightweight without u
 </template>
 
 <script setup>
-import { computed, ref, watch, onMounted } from 'vue'
+  import { computed, ref, watch, onMounted } from 'vue'
 
-const props = defineProps<{
-  variant: 'primary' | 'secondary'
-  size: 'sm' | 'md' | 'lg'
-}>()
+  const props = defineProps<{
+    variant: 'primary' | 'secondary'
+    size: 'sm' | 'md' | 'lg'
+  }>()
 
-const emit = defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  const emit = defineEmits<{
+    click: [event: MouseEvent]
+  }>()
 
-// Unnecessary state for a simple button
-const isHovered = ref(false)
-const clickCount = ref(0)
+  // Unnecessary state for a simple button
+  const isHovered = ref(false)
+  const clickCount = ref(0)
 
-// Unnecessary watcher
-watch(() => props.variant, () => {
-  console.log('variant changed')
-})
+  // Unnecessary watcher
+  watch(() => props.variant, () => {
+    console.log('variant changed')
+  })
 
-// Unnecessary lifecycle
-onMounted(() => {
-  console.log('mounted')
-})
+  // Unnecessary lifecycle
+  onMounted(() => {
+    console.log('mounted')
+  })
 
-const buttonClasses = computed(() => [
-  'btn',
-  `btn-${props.variant}`,
-  `btn-${props.size}`
-])
+  const buttonClasses = computed(() => [
+    'btn',
+    `btn-${props.variant}`,
+    `btn-${props.size}`
+  ])
 
-function handleClick(e: MouseEvent) {
-  clickCount.value++
-  emit('click', e)
-}
+  function handleClick(e: MouseEvent) {
+    clickCount.value++
+    emit('click', e)
+  }
 </script>
 ```
 
@@ -65,7 +65,7 @@ function handleClick(e: MouseEvent) {
 ```vue
 <!-- IconButton.vue -->
 <template>
-  <button 
+  <button
     :class="['btn', `btn-${variant}`, `btn-${size}`]"
     @click="$emit('click', $event)"
   >
@@ -74,14 +74,14 @@ function handleClick(e: MouseEvent) {
 </template>
 
 <script setup>
-defineProps<{
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
-}>()
+  defineProps<{
+    variant?: 'primary' | 'secondary'
+    size?: 'sm' | 'md' | 'lg'
+  }>()
 
-defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  defineEmits<{
+    click: [event: MouseEvent]
+  }>()
 </script>
 ```
 
@@ -90,21 +90,19 @@ defineEmits<{
 ```vue
 <!-- IconButton.vue -->
 <template>
-  <button 
-    :class="['btn', `btn-${variant}`, `btn-${size}`]"
-  >
+  <button :class="['btn', `btn-${variant}`, `btn-${size}`]">
     <slot />
   </button>
 </template>
 
 <script setup>
-withDefaults(defineProps<{
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
-}>(), {
-  variant: 'primary',
-  size: 'md'
-})
+  withDefaults(defineProps<{
+    variant?: 'primary' | 'secondary'
+    size?: 'sm' | 'md' | 'lg'
+  }>(), {
+    variant: 'primary',
+    size: 'md'
+  })
 </script>
 ```
 
@@ -112,10 +110,10 @@ withDefaults(defineProps<{
 
 ```typescript
 // For components with very dynamic rendering logic
-import { h } from 'vue'
+import { h } from 'vue';
 
 export default function DynamicHeading(props: { level: number }, { slots }) {
-  return h(`h${props.level}`, slots.default?.())
+  return h(`h${props.level}`, slots.default?.());
 }
 ```
 
@@ -123,12 +121,12 @@ export default function DynamicHeading(props: { level: number }, { slots }) {
 
 ```tsx
 // DynamicList.tsx
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {
     items: { type: Array, required: true },
-    renderItem: { type: Function, required: true }
+    renderItem: { type: Function, required: true },
   },
   setup(props) {
     return () => (
@@ -137,20 +135,20 @@ export default defineComponent({
           <li key={index}>{props.renderItem(item)}</li>
         ))}
       </ul>
-    )
-  }
-})
+    );
+  },
+});
 ```
 
 **Guidelines for simple components:**
 
-| Feature | Include? |
-|---------|----------|
-| Props | Yes, if needed |
-| Emits | Yes, if needed |
-| computed() | Only if logic is complex |
+| Feature          | Include?                               |
+| ---------------- | -------------------------------------- |
+| Props            | Yes, if needed                         |
+| Emits            | Yes, if needed                         |
+| computed()       | Only if logic is complex               |
 | ref()/reactive() | Only if component needs internal state |
-| watch() | Rarely - prefer computed |
-| Lifecycle hooks | Only if truly needed |
+| watch()          | Rarely - prefer computed               |
+| Lifecycle hooks  | Only if truly needed                   |
 
 Reference: [SFC Syntax](https://vuejs.org/api/sfc-spec.html)

@@ -1,18 +1,42 @@
 {
   "name": "v-offline",
   "version": "3.5.1",
+  "private": false,
   "description": "Offline and Online components for Vue",
+  "keywords": [
+    "detect",
+    "disconnect",
+    "internet-connectivity",
+    "offline",
+    "online",
+    "vuejs"
+  ],
+  "homepage": "https://github.com/vinayakkulkarni/v-offline#readme",
+  "bugs": {
+    "url": "https://github.com/vinayakkulkarni/v-offline/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vinayak Kulkarni",
+    "email": "inbox.vinayak@gmail.com",
+    "url": "https://vinayakkulkarni.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinayakkulkarni/v-offline.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
-  "files": [
-    "dist"
-  ],
-  "types": "./dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "lint": "vp lint",
     "lint:fix": "vp lint --fix",
@@ -24,10 +48,6 @@
   },
   "dependencies": {
     "ping.js": "^0.3.0"
-  },
-  "peerDependencies": {
-    "ping.js": "^0.3.0",
-    "vue": "^3.5.27"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -46,32 +66,10 @@
     "vue": "^3.5.34",
     "vue-tsc": "^3.2.9"
   },
-  "keywords": [
-    "vuejs",
-    "offline",
-    "online",
-    "detect",
-    "internet-connectivity",
-    "disconnect"
-  ],
-  "author": {
-    "name": "Vinayak Kulkarni",
-    "email": "inbox.vinayak@gmail.com",
-    "url": "https://vinayakkulkarni.dev"
+  "peerDependencies": {
+    "ping.js": "^0.3.0",
+    "vue": "^3.5.27"
   },
-  "license": "MIT",
-  "access": "public",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vinayakkulkarni/v-offline.git"
-  },
-  "private": false,
-  "sideEffects": false,
-  "bugs": {
-    "url": "https://github.com/vinayakkulkarni/v-offline/issues"
-  },
-  "homepage": "https://github.com/vinayakkulkarni/v-offline#readme",
-  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -82,5 +80,7 @@
       "name": "node",
       "version": ">=24"
     }
-  }
+  },
+  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499",
+  "access": "public"
 }

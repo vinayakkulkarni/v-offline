@@ -9,6 +9,6 @@
     ".wrangler",
     "coverage",
     "*.min.js",
-    "*.min.css"
-  ]
+    "*.min.css",
+  ],
 }

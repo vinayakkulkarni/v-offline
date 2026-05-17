@@ -1,0 +1,38 @@
+name: Lint Branch Name
+
+on:
+  workflow_call:
+
+jobs:
+  validate-branch-name:
+    name: Validate branch name
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check branch name
+        run: |
+          branch="${{ github.head_ref }}"
+          pattern="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)/[a-z0-9]+(-[a-z0-9]+)*$"
+
+          if [[ "$branch" =~ ^release-please-- ]] || [[ "$branch" =~ ^dependabot/ ]] || [[ "$branch" =~ ^changeset-release/ ]]; then
+            echo "✅ Automated branch '$branch' — skipping validation."
+            exit 0
+          fi
+
+          if [[ ! "$branch" =~ $pattern ]]; then
+            echo "❌ Invalid branch name: '$branch'"
+            echo ""
+            echo "Branch names must follow the pattern:"
+            echo "  <type>/<kebab-case-description>"
+            echo ""
+            echo "Valid types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+            echo ""
+            echo "Examples:"
+            echo "  ✅  feat/add-hero-section"
+            echo "  ✅  fix/contact-form-validation"
+            echo "  ❌  feature/AddHeroSection"
+            exit 1
+          fi
+
+          echo "✅ Branch name '$branch' is valid."

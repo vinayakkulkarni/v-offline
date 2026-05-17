@@ -1,0 +1,41 @@
+name: 'The Pipeline'
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, reopened, synchronize, edited]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+concurrency:
+  group: pipeline-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-branch:
+    name: 'Lint branch'
+    if: github.event_name == 'pull_request' && github.event.action != 'edited'
+    uses: ./.github/workflows/lint-branch.yml
+
+  lint-pr:
+    name: 'Lint PR'
+    if: github.event_name == 'pull_request'
+    uses: ./.github/workflows/lint-pr.yml
+    secrets: inherit
+
+  ci:
+    name: 'CI'
+    needs: [lint-branch, lint-pr]
+    if: |
+      always() &&
+      github.event.action != 'edited' &&
+      (needs.lint-branch.result == 'success' || needs.lint-branch.result == 'skipped') &&
+      (needs.lint-pr.result == 'success' || needs.lint-pr.result == 'skipped')
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit

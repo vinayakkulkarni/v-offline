@@ -1,28 +1,64 @@
-name: 'Lint PR'
+name: Lint PR
 
 on:
-  pull_request_target:
-    types:
-      - opened
-      - edited
-      - synchronize
+  workflow_call:
+
+permissions:
+  pull-requests: write
 
 jobs:
   validate-pr-title:
     name: Validate PR title
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
     steps:
-      - uses: amannn/action-semantic-pull-request@v5.5.3
+      - uses: amannn/action-semantic-pull-request@v6
+        id: lint_pr_title
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  check-sign-off:
-    if: startsWith(github.head_ref, 'releases/v') == false
-    name: Write comment if unsigned commits found
-    env:
-      FORCE_COLOR: 1
-    runs-on: ubuntu-latest
-    steps:
-      - uses: live627/check-pr-signoff-action@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            perf
+            test
+            build
+            ci
+            chore
+            revert
+          subjectPattern: ^(?![A-Z]).+$
+          subjectPatternError: |
+            The subject "{subject}" found in the pull request title "{title}"
+            doesn't match the configured pattern. Please ensure the subject
+            starts with a lowercase letter, not uppercase.
+
+      - uses: marocchino/sticky-pull-request-comment@v3
+        if: always() && (steps.lint_pr_title.outputs.error_message != null)
+        with:
+          header: pr-title-lint-error
+          message: |
+            ### ❌ Invalid PR title
+
+            PR titles must follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) spec.
+
+            **Error:**
+            ```
+            ${{ steps.lint_pr_title.outputs.error_message }}
+            ```
+
+            **Valid examples:**
+            - `feat: add hero section`
+            - `fix: correct typo in contact form`
+            - `chore: format and lint`
+            - `feat(ui): add Button component`
+            - `refactor!: drop Node.js 16 support`
+
+      - uses: marocchino/sticky-pull-request-comment@v3
+        if: steps.lint_pr_title.outputs.error_message == null
+        with:
+          header: pr-title-lint-error
+          delete: true

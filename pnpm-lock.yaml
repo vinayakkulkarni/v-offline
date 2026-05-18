@@ -21,9 +21,6 @@ importers:
       '@types/node':
         specifier: ^25.8.0
         version: 25.8.0
-      '@vue/runtime-dom':
-        specifier: ^3.5.34
-        version: 3.5.34
       husky:
         specifier: latest
         version: 9.1.7

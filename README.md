@@ -1,23 +1,16 @@
 # V-Offline ⚡️
 
-[![CI](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/ci.yml?label=CI&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/ci.yml)
-[![CodeQL](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/codeql.yml?label=CodeQL&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/codeql.yml)
-[![Ship.js Trigger](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/shipjs-trigger.yml?label=⛴%20Ship.js%20trigger)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/shipjs-trigger.yml)
+[![Pipeline](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/pipeline.yml?logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/pipeline.yml)
 [![npm](https://img.shields.io/npm/dm/v-offline?logo=npm)](http://npm-stat.com/charts.html?package=v-offline)
 [![npm](https://img.shields.io/npm/v/v-offline/latest?logo=npm)](https://www.npmjs.com/package/v-offline)
 [![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/latest?label=@latest%20size&logo=vue.js)](https://bundlephobia.com/package/v-offline@latest)
 [![npm](https://img.shields.io/npm/v/v-offline/legacy?logo=npm)](https://www.npmjs.com/package/v-offline)
 [![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/legacy?label=@legacy%20size&logo=vue.js)](https://bundlephobia.com/package/v-offline@legacy)
 [![npm type definitions](https://img.shields.io/npm/types/v-offline)](https://github.com/vinayakkulkarni/v-offline/blob/master/package.json)
-[![DeepScan grade](https://deepscan.io/api/teams/9055/projects/16121/branches/339368/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9055&pid=16121&bid=339368)
-[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/vinayakkulkarni/v-offline)](https://snyk.io/test/github/vinayakkulkarni/v-offline)
 [![GitHub contributors](https://img.shields.io/github/contributors/vinayakkulkarni/v-offline?logo=github)](https://github.com/vinayakkulkarni/v-offline/graphs/contributors)
 [![FOSSA](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline?ref=badge_shield)
 
-[![eslint](https://img.shields.io/npm/dependency-version/v-offline/dev/eslint?logo=eslint)](https://eslint.org/)
-[![prettier](https://img.shields.io/npm/dependency-version/v-offline/dev/prettier?logo=prettier)](https://prettier.io/)
-[![vite](https://img.shields.io/npm/dependency-version/v-offline/dev/vite?logo=vite)](https://vitejs.dev/)
-[![vue](https://img.shields.io/npm/dependency-version/v-offline/dev/vue?logo=vue.js)](https://vuejs.org/)
+[![vite-plus](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-offline/dev/vite-plus?logo=vite)](https://github.com/voidzero-dev/vite-plus)
 [![typescript](https://img.shields.io/npm/dependency-version/v-offline/dev/typescript?logo=TypeScript)](https://www.typescriptlang.org/)
 
 ⚠️ Docs are for Vue 3, for Vue 2 docs, [click here](https://github.com/vinayakkulkarni/v-offline#v-offline-%EF%B8%8F)

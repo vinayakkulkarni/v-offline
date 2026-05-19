@@ -1,17 +1,22 @@
 # V-Offline ⚡️
 
-[![Pipeline](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/pipeline.yml?logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/pipeline.yml)
-[![npm](https://img.shields.io/npm/dm/v-offline?logo=npm)](http://npm-stat.com/charts.html?package=v-offline)
-[![npm](https://img.shields.io/npm/v/v-offline/latest?logo=npm)](https://www.npmjs.com/package/v-offline)
-[![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/latest?label=@latest%20size&logo=vue.js)](https://bundlephobia.com/package/v-offline@latest)
-[![npm](https://img.shields.io/npm/v/v-offline/legacy?logo=npm)](https://www.npmjs.com/package/v-offline)
-[![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-offline/legacy?label=@legacy%20size&logo=vue.js)](https://bundlephobia.com/package/v-offline@legacy)
-[![npm type definitions](https://img.shields.io/npm/types/v-offline)](https://github.com/vinayakkulkarni/v-offline/blob/master/package.json)
-[![GitHub contributors](https://img.shields.io/github/contributors/vinayakkulkarni/v-offline?logo=github)](https://github.com/vinayakkulkarni/v-offline/graphs/contributors)
-[![FOSSA](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinayakkulkarni%2Fv-offline?ref=badge_shield)
+<!-- Badges -->
 
-[![vite-plus](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-offline/dev/vite-plus?logo=vite)](https://github.com/voidzero-dev/vite-plus)
-[![typescript](https://img.shields.io/npm/dependency-version/v-offline/dev/typescript?logo=TypeScript)](https://www.typescriptlang.org/)
+[![Pipeline](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/pipeline.yml?branch=main&logo=github-actions&label=pipeline)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/pipeline.yml)
+[![GitHub release](https://img.shields.io/github/v/release/vinayakkulkarni/v-offline?sort=semver&logo=github&label=release)](https://github.com/vinayakkulkarni/v-offline/releases)
+[![npm](https://img.shields.io/npm/v/v-offline?logo=npm&label=npm)](https://www.npmjs.com/package/v-offline)
+[![JSR](https://img.shields.io/jsr/v/@vinayakkulkarni/v-offline?logo=jsr&label=jsr)](https://jsr.io/@vinayakkulkarni/v-offline)
+[![npm downloads](https://img.shields.io/npm/dm/v-offline?logo=npm&label=downloads)](http://npm-stat.com/charts.html?package=v-offline)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/v-offline?label=size)](https://bundlephobia.com/package/v-offline@latest)
+[![types](https://img.shields.io/npm/types/v-offline?logo=typescript&label=types)](https://github.com/vinayakkulkarni/v-offline/blob/main/package.json)
+[![License](https://img.shields.io/github/license/vinayakkulkarni/v-offline?logo=github&label=license)](./LICENSE)
+
+[![vite-plus](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-offline/dev/vite-plus?logo=vite&label=vite-plus)](https://github.com/voidzero-dev/vite-plus)
+[![typescript](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-offline/dev/typescript?logo=TypeScript&label=typescript)](https://www.typescriptlang.org/)
+[![pnpm](https://img.shields.io/github/package-json/packageManager/vinayakkulkarni/v-offline?label=pnpm&logo=pnpm)](https://pnpm.io/)
+[![node](https://img.shields.io/node/v/v-offline?logo=node.js&label=node)](https://nodejs.org/)
+
+<!-- End Badges -->
 
 ⚠️ Docs are for Vue 3, for Vue 2 docs, [click here](https://github.com/vinayakkulkarni/v-offline#v-offline-%EF%B8%8F)
 
@@ -19,9 +24,9 @@
 
 - Detect offline & online events for your vue app.
 - Built from scratch usign Vue 2 & Composition API with TypeScript
-- For Vue >3.x version – `npm i v-offline@latest`
-- For Vue >=2.7 version – `npm i v-offline@legacy`
-- For Vue <2.7 version – `npm i v-offline@2.3.0`
+- For Vue >3.x version – `pnpm add v-offline@latest`
+- For Vue >=2.7 version – `pnpm add v-offline@legacy`
+- For Vue <2.7 version – `pnpm add v-offline@2.3.0`
 
 ## Table of Contents
 
@@ -52,7 +57,7 @@
 ### Installation
 
 ```sh
-npm install --save v-offline ping.js
+pnpm add v-offline ping.js
 ```
 
 CDN: [UNPKG](https://unpkg.com/v-offline/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-offline/dist/) (available as `window.VOffline`)
@@ -61,10 +66,10 @@ CDN: [UNPKG](https://unpkg.com/v-offline/dist/) | [jsDelivr](https://cdn.jsdeliv
 
 ```bash
 # install dependencies
-$ npm install
+$ pnpm install
 
 # package the library
-$ npm run build
+$ pnpm run build
 ```
 
 ### Usage

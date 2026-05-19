@@ -6,5 +6,6 @@
     "exclude": [
       "!dist"
     ]
-  }
+  },
+  "description": "Vue 3 component and composable for detecting online and offline network status with reactive state and customizable polling."
 }

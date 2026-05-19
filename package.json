@@ -2,7 +2,7 @@
   "name": "v-offline",
   "version": "3.5.1",
   "private": false,
-  "description": "Offline and Online components for Vue",
+  "description": "Vue 3 component and composable for detecting online and offline network status with reactive state and customizable polling.",
   "keywords": [
     "detect",
     "disconnect",

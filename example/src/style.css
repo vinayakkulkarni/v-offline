@@ -1,4 +1,4 @@
-@import '@unocss/reset/tailwind.css';
+@import 'tailwindcss';
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

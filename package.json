@@ -50,12 +50,12 @@
     "ping.js": "^0.3.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
     "@types/node": "^25.9.0",
-    "husky": "latest",
-    "is-ci": "latest",
-    "lint-staged": "latest",
+    "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
+    "lint-staged": "^17.0.5",
     "sass": "^1.99.0",
     "typescript": "^6.0.3",
     "unplugin-vue": "^7.2.0",

@@ -13,22 +13,22 @@ importers:
         version: 0.3.0
     devDependencies:
       '@commitlint/cli':
-        specifier: latest
+        specifier: ^21.0.1
         version: 21.0.1(@types/node@25.9.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional':
-        specifier: latest
+        specifier: ^21.0.1
         version: 21.0.1
       '@types/node':
         specifier: ^25.9.0
         version: 25.9.0
       husky:
-        specifier: latest
+        specifier: ^9.1.7
         version: 9.1.7
       is-ci:
-        specifier: latest
+        specifier: ^4.1.0
         version: 4.1.0
       lint-staged:
-        specifier: latest
+        specifier: ^17.0.5
         version: 17.0.5
       sass:
         specifier: ^1.99.0

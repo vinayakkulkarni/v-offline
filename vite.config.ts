@@ -2,6 +2,19 @@ import Vue from 'unplugin-vue/rolldown';
 import { defineConfig } from 'vite-plus';
 
 export default defineConfig({
+  lint: {
+    plugins: ['typescript', 'vue', 'import'],
+    ignorePatterns: [
+      '.nuxt',
+      '.output',
+      'dist',
+      'node_modules',
+      '.wrangler',
+      'coverage',
+      '*.min.js',
+      '*.min.css',
+    ],
+  },
   pack: {
     entry: ['src/index.ts'],
     format: ['esm'],

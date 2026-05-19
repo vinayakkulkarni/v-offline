@@ -61,3 +61,9 @@ jobs:
 
       - name: Publish to npm with provenance
         run: npm publish --provenance --access public --ignore-scripts
+
+      - name: Sync JSR version
+        run: node scripts/bump-jsr-version.mjs
+
+      - name: Publish to JSR
+        run: pnpm dlx jsr publish --allow-dirty --allow-slow-types

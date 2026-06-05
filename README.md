@@ -3,6 +3,7 @@
 <!-- Badges -->
 
 [![Pipeline](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/pipeline.yml?branch=main&logo=github-actions&label=pipeline)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/pipeline.yml)
+[![Doctor](https://img.shields.io/badge/doctor-audited-2ea043?logo=vuedotjs&label=doctor)](https://github.com/geoql/doctor)
 [![GitHub release](https://img.shields.io/github/v/release/vinayakkulkarni/v-offline?sort=semver&logo=github&label=release)](https://github.com/vinayakkulkarni/v-offline/releases)
 [![npm](https://img.shields.io/npm/v/v-offline?logo=npm&label=npm)](https://www.npmjs.com/package/v-offline)
 [![JSR](https://img.shields.io/jsr/v/@vinayakkulkarni/v-offline?logo=jsr&label=jsr)](https://jsr.io/@vinayakkulkarni/v-offline)

@@ -39,3 +39,14 @@ jobs:
       (needs.lint-pr.result == 'success' || needs.lint-pr.result == 'skipped')
     uses: ./.github/workflows/ci.yml
     secrets: inherit
+
+  doctor:
+    name: 'Doctor'
+    needs: [lint-branch, lint-pr]
+    if: |
+      always() &&
+      github.event.action != 'edited' &&
+      (needs.lint-branch.result == 'success' || needs.lint-branch.result == 'skipped') &&
+      (needs.lint-pr.result == 'success' || needs.lint-pr.result == 'skipped')
+    uses: ./.github/workflows/doctor.yml
+    secrets: inherit

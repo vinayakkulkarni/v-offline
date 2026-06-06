@@ -2,6 +2,10 @@ name: 'Doctor'
 
 on:
   workflow_call:
+    secrets:
+      DOCTOR_API_KEY:
+        description: 'API key for pushing scores to app.the-doctor.report'
+        required: false
 
 permissions:
   contents: read
@@ -21,3 +25,5 @@ jobs:
           framework: vue
           threshold: ${{ vars.DOCTOR_THRESHOLD || '70' }}
           fail-on: error
+          api-key: ${{ secrets.DOCTOR_API_KEY }}
+          project: ${{ github.repository }}

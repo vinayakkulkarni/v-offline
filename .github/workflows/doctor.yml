@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Audit with vue-doctor
-        uses: geoql/doctor-action@v1
+        uses: geoql/doctor-action@v2
         with:
           framework: vue
           threshold: ${{ vars.DOCTOR_THRESHOLD || '70' }}

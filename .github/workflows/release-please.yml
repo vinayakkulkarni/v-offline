@@ -44,7 +44,7 @@ jobs:
           ref: ${{ needs.release-please.outputs.tag_name || github.event.inputs.tag }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@v6.0.9
 
       - name: Setup Node.js
         uses: actions/setup-node@v6

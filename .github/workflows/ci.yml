@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version-file: '.nvmrc'
+          node-version: 26
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -33,6 +33,12 @@ jobs:
 
       - name: Check formatting
         run: pnpm run format:check
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Run tests
+        run: pnpm run test
 
   build:
     name: 'Build'
@@ -49,11 +55,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version-file: '.nvmrc'
+          node-version: 26
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build the package
-        run: pnpm run build
+      - name: Build the package and demo
+        run: pnpm run demo:build

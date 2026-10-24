@@ -2,7 +2,7 @@
   <SiteHeader />
   <main class="mx-auto w-full max-w-6xl px-5 pb-16 sm:px-8">
     <section
-      class="grid gap-10 border-b border-line pb-12 pt-6 lg:grid-cols-[1.25fr_1fr] lg:gap-14 lg:pt-12"
+      class="grid gap-10 border-b border-line pb-12 pt-6 lg:grid-cols-hero lg:gap-14 lg:pt-12"
     >
       <div class="min-w-0">
         <p class="font-mono text-xs uppercase tracking-wider text-muted">
@@ -16,7 +16,7 @@
           @detected-condition="onDetected"
         >
           <p
-            class="mt-2 font-black leading-[0.85] tracking-tight text-[clamp(4rem,17vw,11rem)]"
+            class="mt-2 text-status font-black tracking-tight"
             aria-live="polite"
           >
             {{ online ? 'online' : 'offline' }}

@@ -15,7 +15,7 @@
       <li
         v-for="entry in entries"
         :key="entry.id"
-        class="grid grid-cols-[auto_1fr] gap-x-3 px-4 py-2.5 font-mono text-xs sm:grid-cols-[auto_auto_1fr]"
+        class="grid grid-cols-log gap-x-3 px-4 py-2.5 font-mono text-xs sm:grid-cols-log-wide"
       >
         <time class="text-muted">{{ entry.time }}</time>
         <span :class="entry.online ? 'text-online' : 'text-signal'">

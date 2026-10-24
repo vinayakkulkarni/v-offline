@@ -15,6 +15,21 @@
   --color-signal: oklch(0.64 0.19 35);
   --color-signal-ink: oklch(0.99 0.01 35);
   --color-online: oklch(0.52 0.13 155);
+
+  --text-status: clamp(4rem, 17vw, 11rem);
+  --text-status--line-height: 0.85;
+}
+
+@utility grid-cols-hero {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+}
+
+@utility grid-cols-log {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+@utility grid-cols-log-wide {
+  grid-template-columns: auto auto minmax(0, 1fr);
 }
 
 @layer base {

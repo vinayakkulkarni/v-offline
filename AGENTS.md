@@ -22,7 +22,9 @@ v-offline/
 │   ├── components/     # VOffline component
 │   ├── index.ts        # Public exports
 │   └── install.ts      # Vue plugin installer
+├── example/            # Demo app (deployed as the v-offline-demo Worker)
 ├── dist/               # Built output (ESM only)
+├── wrangler.jsonc      # Demo Worker config
 ├── package.json
 ├── vite.config.ts
 ├── tsconfig.json
@@ -42,7 +44,10 @@ v-offline/
 | Package Mgr | pnpm                              |
 | Git Hooks   | Husky + lint-staged + commitlint  |
 | Release     | release-please                    |
-| Node        | 24                                |
+| Tests       | vp test (Vitest + happy-dom)      |
+| Demo        | Vite + Vue in `example/`          |
+| Demo deploy | wrangler (Cloudflare Workers)     |
+| Node        | 26                                |
 
 ---
 
@@ -54,7 +59,11 @@ pnpm run lint:fix      # vp lint --fix
 pnpm run format        # vp fmt
 pnpm run format:check  # vp fmt --check
 pnpm run build         # vp pack (tsdown + dts)
-pnpm run test          # Tests
+pnpm run typecheck     # vue-tsc --noEmit
+pnpm run test          # vp test run
+pnpm run demo:dev      # demo dev server
+pnpm run demo:build    # build the package and the demo
+pnpm run deploy        # build and deploy the demo to v-offline.vinayakkulkarni.dev
 ```
 
 ---

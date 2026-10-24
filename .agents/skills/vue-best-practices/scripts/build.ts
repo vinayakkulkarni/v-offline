@@ -64,7 +64,7 @@ function generateAgentsMd(skillBody: string, rules: string[]): string {
   return `# Vue Best Practices - Complete Reference
 
 > This file is auto-generated. Do not edit directly.
-> Edit individual rule files in the \`rules/\` directory and run \`bun run build\`.
+> Edit individual rule files in the \`rules/\` directory and run \`pnpm run build\`.
 
 ${skillBody.trim()}
 

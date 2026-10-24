@@ -3,7 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>V-Offline Demo</title>
+    <title>v-offline · Online and offline detection for Vue 3</title>
+    <meta
+      name="description"
+      content="v-offline is a Vue 3 component that detects online and offline status with browser events and a ping check. Try it live."
+    />
+    <link rel="canonical" href="https://v-offline.vinayakkulkarni.dev/" />
+    <meta property="og:title" content="v-offline" />
+    <meta
+      property="og:description"
+      content="Online and offline detection for Vue 3, with a ping check."
+    />
+    <meta property="og:url" content="https://v-offline.vinayakkulkarni.dev/" />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='90' fill='%23e8590c'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <script>
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var dark =
+          stored === 'dark' ||
+          ((stored === null || stored === 'system') &&
+            matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+      })();
+    </script>
+    <script
+      async
+      src="https://analytics.geoql.in/js/pa-AIQu6TXqtQyNHiFiwtEIH.js"
+    ></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+    <script>
+      window.op =
+        window.op ||
+        function () {
+          (window.op.q = window.op.q || []).push(Array.from(arguments));
+        };
+      window.op('init', {
+        apiUrl: 'https://events.geoql.in/api',
+        clientId: 'a55cb75c-6e4c-4ef0-a0ee-b084246424bd',
+        trackScreenViews: true,
+        trackOutgoingLinks: true,
+        trackAttributes: true,
+      });
+    </script>
+    <script src="https://openpanel.dev/op1.js" defer async></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+    </script>
   </head>
   <body>
     <div id="app"></div>

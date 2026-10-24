@@ -17,12 +17,8 @@ Deep watchers traverse entire object trees on every change. For large objects, t
 
   const state = reactive({
     users: [], // Could be 1000+ users
-    settings: {
-      /* nested settings */
-    },
-    cache: {
-      /* large cache object */
-    },
+    settings: {/* nested settings */},
+    cache: {/* large cache object */},
   });
 
   // BAD: Deep traverses entire state tree on ANY change
@@ -130,9 +126,7 @@ Deep watchers traverse entire object trees on every change. For large objects, t
 <script setup>
   import { reactive, computed, watch } from 'vue';
 
-  const items = reactive([
-    /* large array */
-  ]);
+  const items = reactive([/* large array */]);
 
   // Compute a simple value to watch
   const itemCount = computed(() => items.length);

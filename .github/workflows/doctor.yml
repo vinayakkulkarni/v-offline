@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: read
+  # pr-comment: true posts the doctor report on the pull request.
+  pull-requests: write
 
 jobs:
   doctor:

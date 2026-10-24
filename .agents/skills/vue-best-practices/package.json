@@ -9,7 +9,7 @@
     "url": "https://vinayakkulkarni.dev"
   },
   "scripts": {
-    "build": "bun run scripts/build.ts",
-    "validate": "bun run scripts/validate.ts"
+    "build": "node scripts/build.ts",
+    "validate": "node scripts/validate.ts"
   }
 }

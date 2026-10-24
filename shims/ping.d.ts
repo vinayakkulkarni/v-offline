@@ -1,8 +1,13 @@
 declare module 'ping.js' {
-  export type CallbackFunc = (err: boolean, ping: number) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export type PingFunc = (source: string, cb?: CallbackFunc) => Promise<any>;
+  export type CallbackFunc = (err: string | null, ping: number) => void;
+  export type PingFunc = (source: string, cb?: CallbackFunc) => Promise<number>;
+  export interface PingOptions {
+    favicon?: string;
+    timeout?: number;
+    logError?: boolean;
+  }
   export default class Ping {
+    constructor(options?: PingOptions);
     ping: PingFunc;
   }
 }

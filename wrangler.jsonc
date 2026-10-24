@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "v-offline-demo",
+  "account_id": "bd11b1c42ee2759044a1769f80f704dd",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./example/dist",
+  },
+  "routes": [
+    {
+      "pattern": "v-offline.vinayakkulkarni.dev",
+      "custom_domain": true,
+    },
+  ],
+  "observability": {
+    "enabled": true,
+  },
+}

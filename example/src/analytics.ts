@@ -1,6 +1,6 @@
 // GA4 measurement ID for v-offline.vinayakkulkarni.dev.
 // Empty until the property exists; GA4 stays off while it is empty.
-const GA_MEASUREMENT_ID = '';
+const GA_MEASUREMENT_ID = 'G-LDTVDNLS00';
 
 type EventProps = Record<string, string | number | boolean>;
 

@@ -19,6 +19,8 @@
 
 <!-- End Badges -->
 
+**[Live demo](https://v-offline.vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline)** · [npm](https://www.npmjs.com/package/v-offline) · [JSR](https://jsr.io/@vinayakkulkarni/v-offline)
+
 ⚠️ Docs are for Vue 3, for Vue 2 docs, [click here](https://github.com/vinayakkulkarni/v-offline#v-offline-%EF%B8%8F)
 
 ## Features
@@ -44,12 +46,13 @@
     - [Props](#props)
     - [Events](#events)
   - [Contributing](#contributing)
+  - [More from the author](#more-from-the-author)
   - [Author](#author)
   - [License](#license)
 
 ## Demo
 
-Live demo: **[v-offline.vinayakkulkarni.dev](https://v-offline.vinayakkulkarni.dev)**. The demo source is in [`example/`](./example). Run it locally with `pnpm run demo:dev`.
+Live demo: **[v-offline.vinayakkulkarni.dev](https://v-offline.vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline)**. The demo source is in [`example/`](./example). Run it locally with `pnpm run demo:dev`.
 
 ## Requirements
 
@@ -183,12 +186,23 @@ _Note_:
 2. Commits & PRs will be allowed only if the commit messages & PR titles follow the [conventional commit standard](https://www.conventionalcommits.org/), _read more about it [here](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum)_
 3. PS. Ensure your commits are signed. _[Read why](https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html)_
 
+## More from the author
+
+- [v-tweakpane](https://v-tweakpane.vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline) — Vue 3 wrapper for Tweakpane GUI panels
+- [v-pip](https://v-pip.vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline) — Vue 3 wrapper for the Picture-in-Picture API
+- [v-intl](https://v-intl.vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline) — native Intl formatting components for Vue 3
+- [v-clappr](https://v-clappr.vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline) — Vue 3 wrapper for the Clappr media player
+- [nxui](https://nxui.geoql.in?utm_source=github&utm_medium=readme&utm_campaign=v-offline) — animated copy-paste UI components for Vue 3 and Nuxt
+- [shadscan-vue](https://shadscan-vue.geoql.in?utm_source=github&utm_medium=readme&utm_campaign=v-offline) — UI-fundamentals audit for shadcn-vue apps
+
+See every project at [vinayakkulkarni.dev/projects](https://vinayakkulkarni.dev/projects?utm_source=github&utm_medium=readme&utm_campaign=v-offline) and [geoql.in](https://geoql.in?utm_source=github&utm_medium=readme&utm_campaign=v-offline).
+
 ## Author
 
-**v-offline** &copy; [Vinayak](https://vinayakkulkarni.dev), Released under the [MIT](./LICENSE) License.<br>
+**v-offline** &copy; [Vinayak](https://vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline), Released under the [MIT](./LICENSE) License.<br>
 Authored and maintained by Vinayak Kulkarni with help from contributors ([list](https://github.com/vinayakkulkarni/v-offline/contributors)).
 
-> [vinayakkulkarni.dev](https://vinayakkulkarni.dev) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
+> [vinayakkulkarni.dev](https://vinayakkulkarni.dev?utm_source=github&utm_medium=readme&utm_campaign=v-offline) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
 
 ## License
 

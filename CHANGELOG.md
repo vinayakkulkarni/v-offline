@@ -72,6 +72,13 @@
 
 
 
+## [3.6.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.6.0...v3.6.1) (2026-10-28)
+
+
+### Documentation
+
+* link live demo and related projects ([#2632](https://github.com/vinayakkulkarni/v-offline/issues/2632)) ([333965c](https://github.com/vinayakkulkarni/v-offline/commit/333965c7205e31ecc42c2e26c657a42687bebd7a))
+
 ## [3.6.0](https://github.com/vinayakkulkarni/v-offline/compare/v3.5.1...v3.6.0) (2026-10-25)
 
 

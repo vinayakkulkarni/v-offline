@@ -1,6 +1,6 @@
 {
   "name": "v-offline",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "private": false,
   "description": "Vue 3 component and composable for detecting online and offline network status with reactive state and customizable polling.",
   "keywords": [

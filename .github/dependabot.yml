@@ -3,6 +3,11 @@ updates:
   - package-ecosystem: npm
     versioning-strategy: increase
     directory: '/'
+    # TypeScript 7 is held: vue-tsc and vp pack need the TypeScript 7.1
+    # API. Remove this ignore when both support TypeScript 7.
+    ignore:
+      - dependency-name: typescript
+        versions: ['>=7']
     schedule:
       interval: daily
       time: '00:00'
@@ -28,6 +33,10 @@ updates:
   - package-ecosystem: npm
     versioning-strategy: increase
     directory: '/example'
+    # Same TypeScript 7 hold as the root entry above.
+    ignore:
+      - dependency-name: typescript
+        versions: ['>=7']
     schedule:
       interval: daily
       time: '00:00'

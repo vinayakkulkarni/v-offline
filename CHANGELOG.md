@@ -72,6 +72,14 @@
 
 
 
+## [3.6.2](https://github.com/vinayakkulkarni/v-offline/compare/v3.6.1...v3.6.2) (2026-10-29)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump wrangler ([f763117](https://github.com/vinayakkulkarni/v-offline/commit/f76311793da18225727075185d457d05d48080b1))
+* **deps-dev:** bump wrangler from 4.152.0 to 4.153.0 in the npm-development group ([0e0d3a1](https://github.com/vinayakkulkarni/v-offline/commit/0e0d3a187f56cd98aa6bd711b5faf809eeeefba0))
+
 ## [3.6.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.6.0...v3.6.1) (2026-10-28)
 
 

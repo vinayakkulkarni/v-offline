@@ -56,18 +56,18 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@vue/test-utils": "^2.5.1",
     "happy-dom": "^21.0.4",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^17.6.0",
     "typescript": "^6.0.3",
-    "unplugin-vue": "^8.0.0",
+    "unplugin-vue": "^8.0.1",
     "vite-plus": "^1.4.0",
     "vue": "^3.5.44",
     "vue-tsc": "^3.3.13",
-    "wrangler": "^4.153.0"
+    "wrangler": "^4.155.0"
   },
   "peerDependencies": {
     "ping.js": "^0.3.0",

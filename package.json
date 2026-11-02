@@ -66,8 +66,8 @@
     "unplugin-vue": "^8.0.1",
     "vite-plus": "^1.4.0",
     "vue": "^3.5.44",
-    "vue-tsc": "^3.3.13",
-    "wrangler": "^4.155.0"
+    "vue-tsc": "^3.3.14",
+    "wrangler": "^4.156.0"
   },
   "peerDependencies": {
     "ping.js": "^0.3.0",

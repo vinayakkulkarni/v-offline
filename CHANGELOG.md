@@ -72,6 +72,20 @@
 
 
 
+## [3.6.2](https://github.com/vinayakkulkarni/v-offline/compare/v3.6.1...v3.6.2) (2026-11-05)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump the npm-development group with 2 updates ([a2333de](https://github.com/vinayakkulkarni/v-offline/commit/a2333de5a021d2978431dd96b751878e388de440))
+* **deps-dev:** bump the npm-development group with 2 updates ([0596436](https://github.com/vinayakkulkarni/v-offline/commit/05964364ecdd2ca469f6d38334a7fec3742edb68))
+* **deps-dev:** bump the npm-development group with 3 updates ([0e7f7ab](https://github.com/vinayakkulkarni/v-offline/commit/0e7f7ab2183fa17424d4a718b70c711b7179670c))
+* **deps-dev:** bump the npm-development group with 3 updates ([322b9c6](https://github.com/vinayakkulkarni/v-offline/commit/322b9c6001fd45a66cf42beca2806427d5d1cb2d))
+* **deps-dev:** bump wrangler ([fc43b3c](https://github.com/vinayakkulkarni/v-offline/commit/fc43b3ca2a0d269bba0b20d0c923cb977f10bbf1))
+* **deps-dev:** bump wrangler ([f763117](https://github.com/vinayakkulkarni/v-offline/commit/f76311793da18225727075185d457d05d48080b1))
+* **deps-dev:** bump wrangler from 4.152.0 to 4.153.0 in the npm-development group ([0e0d3a1](https://github.com/vinayakkulkarni/v-offline/commit/0e0d3a187f56cd98aa6bd711b5faf809eeeefba0))
+* **deps-dev:** bump wrangler from 4.156.0 to 4.156.2 in the npm-development group ([0790e12](https://github.com/vinayakkulkarni/v-offline/commit/0790e1255b53488e62f8bf86b9eddd12258d31c0))
+
 ## [3.6.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.6.0...v3.6.1) (2026-10-28)
 
 

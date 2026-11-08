@@ -40,7 +40,7 @@ jobs:
 
       - name: Setup pnpm
         if: steps.token.outputs.present == 'true'
-        uses: pnpm/action-setup@v6.1.0
+        uses: pnpm/action-setup@v6.1.1
 
       - name: Setup Node.js
         if: steps.token.outputs.present == 'true'

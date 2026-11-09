@@ -64,10 +64,10 @@
     "lint-staged": "^17.6.0",
     "typescript": "^6.0.3",
     "unplugin-vue": "^8.0.1",
-    "vite-plus": "^1.4.0",
+    "vite-plus": "^1.5.0",
     "vue": "^3.5.45",
     "vue-tsc": "^3.3.14",
-    "wrangler": "^4.156.2"
+    "wrangler": "^4.158.0"
   },
   "peerDependencies": {
     "ping.js": "^0.3.0",

@@ -65,7 +65,7 @@
     "typescript": "^6.0.3",
     "unplugin-vue": "^8.0.1",
     "vite-plus": "^1.4.0",
-    "vue": "^3.5.44",
+    "vue": "^3.5.45",
     "vue-tsc": "^3.3.14",
     "wrangler": "^4.156.2"
   },

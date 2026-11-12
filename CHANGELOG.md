@@ -72,6 +72,36 @@
 
 
 
+## [3.6.2](https://github.com/vinayakkulkarni/v-offline/compare/v3.6.1...v3.6.2) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deps:** bump the actions-minor group with 2 updates ([894f100](https://github.com/vinayakkulkarni/v-offline/commit/894f100d5c60bf70baad42306a5059b2f680d976))
+* **deps:** bump the actions-minor group with 2 updates ([c65349c](https://github.com/vinayakkulkarni/v-offline/commit/c65349cd6d5f58be21b2cfb618cf3800775fc53c))
+* **deps:** bump vue ([1843a70](https://github.com/vinayakkulkarni/v-offline/commit/1843a701668309b3430270c9af2b3b1ffa7b977d))
+* **deps:** bump vue from 3.5.44 to 3.5.45 in the npm-production group across 1 directory ([3b382f4](https://github.com/vinayakkulkarni/v-offline/commit/3b382f439f0623581afe468bbb9a87f6712983e1))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump the npm-development group across 1 directory with 3 updates ([5a8b905](https://github.com/vinayakkulkarni/v-offline/commit/5a8b90502d169d310581094d77f3e16da211275f))
+* **deps-dev:** bump the npm-development group across 1 directory with 3 updates ([d976c35](https://github.com/vinayakkulkarni/v-offline/commit/d976c35e0f41727ca68eb4a7a4ce5725873d56a1))
+* **deps-dev:** bump the npm-development group across 1 directory with 5 updates ([d0ed7de](https://github.com/vinayakkulkarni/v-offline/commit/d0ed7de3707f5c43ed5f0b066e22f3347eea413e))
+* **deps-dev:** bump the npm-development group across 1 directory with 5 updates ([5e08d2c](https://github.com/vinayakkulkarni/v-offline/commit/5e08d2cf92ffa797dd7f3a81e626a3e937ed20d3))
+* **deps-dev:** bump the npm-development group with 2 updates ([a2333de](https://github.com/vinayakkulkarni/v-offline/commit/a2333de5a021d2978431dd96b751878e388de440))
+* **deps-dev:** bump the npm-development group with 2 updates ([0596436](https://github.com/vinayakkulkarni/v-offline/commit/05964364ecdd2ca469f6d38334a7fec3742edb68))
+* **deps-dev:** bump the npm-development group with 3 updates ([8efc8f2](https://github.com/vinayakkulkarni/v-offline/commit/8efc8f2fc0c788947789ec2dee674839004c1c16))
+* **deps-dev:** bump the npm-development group with 3 updates ([9f62d18](https://github.com/vinayakkulkarni/v-offline/commit/9f62d1819609c261555fdd28c5f47f0e60c15eb6))
+* **deps-dev:** bump the npm-development group with 3 updates ([0e7f7ab](https://github.com/vinayakkulkarni/v-offline/commit/0e7f7ab2183fa17424d4a718b70c711b7179670c))
+* **deps-dev:** bump the npm-development group with 3 updates ([322b9c6](https://github.com/vinayakkulkarni/v-offline/commit/322b9c6001fd45a66cf42beca2806427d5d1cb2d))
+* **deps-dev:** bump vite from 8.3.6 to 8.3.7 in /example in the npm-development group ([beeaae2](https://github.com/vinayakkulkarni/v-offline/commit/beeaae2cc9f100f391af8f941e978d8dcc5ed3a7))
+* **deps-dev:** bump vite in /example in the npm-development group ([720c566](https://github.com/vinayakkulkarni/v-offline/commit/720c5669b050145292f7d4a4ccd58fb1a7c82703))
+* **deps-dev:** bump wrangler ([fc43b3c](https://github.com/vinayakkulkarni/v-offline/commit/fc43b3ca2a0d269bba0b20d0c923cb977f10bbf1))
+* **deps-dev:** bump wrangler ([f763117](https://github.com/vinayakkulkarni/v-offline/commit/f76311793da18225727075185d457d05d48080b1))
+* **deps-dev:** bump wrangler from 4.152.0 to 4.153.0 in the npm-development group ([0e0d3a1](https://github.com/vinayakkulkarni/v-offline/commit/0e0d3a187f56cd98aa6bd711b5faf809eeeefba0))
+* **deps-dev:** bump wrangler from 4.156.0 to 4.156.2 in the npm-development group ([0790e12](https://github.com/vinayakkulkarni/v-offline/commit/0790e1255b53488e62f8bf86b9eddd12258d31c0))
+
 ## [3.6.1](https://github.com/vinayakkulkarni/v-offline/compare/v3.6.0...v3.6.1) (2026-10-28)
 
 

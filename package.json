@@ -67,7 +67,7 @@
     "vite-plus": "^1.6.0",
     "vue": "^3.5.45",
     "vue-tsc": "^3.3.14",
-    "wrangler": "^4.162.0"
+    "wrangler": "^4.163.0"
   },
   "peerDependencies": {
     "ping.js": "^0.3.0",

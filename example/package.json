@@ -12,7 +12,7 @@
   "dependencies": {
     "ping.js": "^0.3.0",
     "v-offline": "workspace:*",
-    "vue": "^3.5.45"
+    "vue": "^3.5.46"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.5",
